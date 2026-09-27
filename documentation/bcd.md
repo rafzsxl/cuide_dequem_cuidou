@@ -31,12 +31,12 @@ erDiagram
         int ID PK
         int ID_USER FK 
         varchar(255) Titulo
-        text Descrição
-        timestamp Data_Criação
+        text Descricao
         varchar(255) URL_Imagem
+        timestamp Data_Criacao
     }
 
-    USERS ||--o| VOLUNTARIOS : "São"
+    USERS ||--o| VOLUNTARIOS : "Sao"
     VOLUNTARIOS ||--o{ DOACOES : "Fazem"
     USERS ||--o{ CAMPANHAS: "Criou"
 

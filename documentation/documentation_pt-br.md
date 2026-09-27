@@ -11,6 +11,7 @@
 - Publicação, edição e remoção de campanhas de arrecadação da CDQC, incluindo upload de imagens;
 - Envio de doações dos usuários voluntários (apenas teórico, sem integração real de API de pagamento);
 - Cadastro de interessados em voluntariado;
+- Visualização de usuários e doações pelo administrador;
 - Exibição de relatórios de transparência institucional (conteúdo estático, sem persistência em banco);
 - Exibição de conteúdo institucional (Quem Somos, Parceiros, Contato)
 
@@ -38,6 +39,7 @@
 - Permitir que usuários se cadastrem como voluntários;
 - Exibir conteúdo de transparência e prestação de contas;
 - Permitir que administradores criem, editem e removam campanhas, incluindo upload de imagens;
+- Permitir que administradores visualizem usuários e doações cadastrados;
 - Exibir conteúdo institucional (missão, parceiros, contato)
 
 ### 2.3 Características dos Usuários
@@ -46,7 +48,7 @@
 | Visitante (não logado) | Básico | Navegar pelo site, visualizar campanhas, transparência e conteúdo institucional |
 | Usuário comum (não voluntário) | Básico | Cadastrar-se, fazer login, editar perfil, cadastrar-se como voluntário |
 | Voluntário | Básico | Todas as funções do usuário comum, além de realizar doações |
-| Administrador (ADM) | Intermediário | Criar/editar/remover campanhas (com upload de imagem), gerenciar usuários |
+| Administrador (ADM) | Intermediário | Criar/editar/remover campanhas (com upload de imagem), visualizar usuários e doações |
 
 ### 2.4 Restrições
 - O sistema deve seguir as diretrizes de acessibilidade [WCAG 2.1](https://guia-wcag.com/), nível AA;
@@ -74,10 +76,10 @@
 **Data:** 2026-09-24
 
 ### - RF003 - Logout de Usuário
-**Descrição:** O sistema deve permitir que o usuário encerre sua sessão através do botão "Fazer Logout" disponível na página `profile.php`.
+**Descrição:** O sistema deve permitir que o usuário encerre sua sessão. O usuário acessa o botão "Fazer Logout" na página `profile.php`, é direcionado à página `logout.php` e confirma a saída informando a senha da conta e clicando no botão "Sair".
 **Prioridade:** Alta
-**Versão:** 1.0
-**Data:** 2026-09-24
+**Versão:** 1.2
+**Data:** 2026-09-27
 
 ### - RF004 - Visualização de Perfil
 **Descrição:** O sistema deve exibir na página `profile.php` as informações do usuário logado, como e-mail cadastrado.
@@ -98,34 +100,34 @@
 **Data:** 2026-09-24
 
 ### - RF007 - Criação de Campanha (ADM)
-**Descrição:** O sistema deve permitir que o usuário Administrador adicione uma nova campanha, incluindo upload de imagem, através do botão "ADICIONAR" na página `campaigns.php`, visível apenas quando `User == ADM`.
+**Descrição:** O sistema deve permitir que o Administrador crie uma nova campanha informando título, descrição e imagem (upload), através da página `create_campaign.php`, acessada pelo botão "ADICIONAR" na página `campaigns.php`, visível apenas quando `User == ADM`.
 **Prioridade:** Alta
-**Versão:** 1.0
-**Data:** 2026-09-24
+**Versão:** 1.2
+**Data:** 2026-09-27
 
 ### - RF008 - Edição de Campanha (ADM)
-**Descrição:** O sistema deve permitir que o Administrador edite os dados de uma campanha existente (título, descrição e imagem) através do botão "Editar" na página `campaigns.php`.
+**Descrição:** O sistema deve permitir que o Administrador edite os dados de uma campanha existente (título, descrição e imagem) através da página `update_campaign.php`, acessada pelo botão "Editar" na página `campaigns.php`.
 **Prioridade:** Alta
-**Versão:** 1.1
-**Data:** 2026-09-26
+**Versão:** 1.2
+**Data:** 2026-09-27
 
 ### - RF009 - Remoção de Campanha (ADM)
-**Descrição:** O sistema deve permitir que o Administrador remova uma campanha existente através do botão "Remover" na página `campaigns.php`.
+**Descrição:** O sistema deve permitir que o Administrador remova uma campanha existente através da página `delete_campaign.php`, acessada pelo botão "Remover" na página `campaigns.php`, mediante confirmação com a senha da conta.
 **Prioridade:** Alta
-**Versão:** 1.1
-**Data:** 2026-09-26
+**Versão:** 1.2
+**Data:** 2026-09-27
 
 ### - RF010 - Envio de Doação (Teórico)
-**Descrição:** O sistema deve permitir que o usuário voluntário simule o envio de uma doação através da página `donate.php`, sem integração real com sistema de pagamento.
+**Descrição:** O sistema deve permitir que o usuário voluntário simule o envio de uma doação, informando o valor e confirmando com a senha da conta, através da página `donate.php`, sem integração real com sistema de pagamento.
 **Prioridade:** Alta
-**Versão:** 1.0
-**Data:** 2026-09-24
+**Versão:** 1.2
+**Data:** 2026-09-27
 
 ### - RF011 - Cadastro de Voluntário
-**Descrição:** O sistema deve permitir que o usuário se registre como voluntário, informando nome completo, CPF e data de nascimento, através da página `volunteer.php`.
+**Descrição:** O sistema deve permitir que o usuário se registre como voluntário, informando nome completo, data de nascimento e senha da conta, através da página `volunteer.php`.
 **Prioridade:** Alta
-**Versão:** 1.0
-**Data:** 2026-09-24
+**Versão:** 1.2
+**Data:** 2026-09-27
 
 ### - RF012 - Visualização de Transparência
 **Descrição:** O sistema deve exibir na página `transparency.php` o total arrecadado e um link para download do relatório de gastos e receitas em formato PDF.
@@ -134,10 +136,10 @@
 **Data:** 2026-09-26
 
 ### - RF013 - Visualização Institucional (Quem Somos)
-**Descrição:** O sistema deve exibir na página `about.php` a missão, visão, valores e história da CDQC.
+**Descrição:** O sistema deve exibir na página `about.php` a missão, princípios e história da CDQC.
 **Prioridade:** Média
-**Versão:** 1.0
-**Data:** 2026-09-24
+**Versão:** 1.2
+**Data:** 2026-09-27
 
 ### - RF014 - Visualização de Parceiros
 **Descrição:** O sistema deve exibir na página `partners.php` um carrossel de imagens com projetos e instituições parceiras da CDQC.
@@ -152,10 +154,22 @@
 **Data:** 2026-09-26
 
 ### - RF016 - Navegação por Menu Hambúrguer
-**Descrição:** O sistema deve exibir um menu hambúrguer responsivo, contendo os links: Quem Somos, Campanhas, Transparência e Parceiros.
+**Descrição:** O sistema deve exibir um menu hambúrguer responsivo, contendo os links: Início, Quem Somos, Campanhas, Transparência, Parceiros e Contatos.
 **Prioridade:** Média
-**Versão:** 1.0
-**Data:** 2026-09-24
+**Versão:** 1.2
+**Data:** 2026-09-27
+
+### - RF017 - Visualização de Usuários (ADM)
+**Descrição:** O sistema deve permitir que o Administrador visualize a lista de usuários e voluntários cadastrados, através da página `view_users.php`, acessível pelo botão "Visualizar Usuários" no header quando `User == ADM`.
+**Prioridade:** Média
+**Versão:** 1.2
+**Data:** 2026-09-27
+
+### - RF018 - Visualização de Doações (ADM)
+**Descrição:** O sistema deve permitir que o Administrador visualize o histórico de doações realizadas pelos voluntários, através da página `view_donations.php`, acessível pelo botão "Ver Doações" no header quando `User == ADM`.
+**Prioridade:** Média
+**Versão:** 1.2
+**Data:** 2026-09-27
 
 ---
 
@@ -187,10 +201,10 @@
 **Data:** 2026-09-24
 
 ### - RN005 - Doação Restrita a Voluntários
-**Descrição:** O sistema deve permitir o envio de doações apenas para usuários já cadastrados como voluntários. Usuários não voluntários devem ser direcionados ao cadastro de voluntariado antes de doar.
+**Descrição:** O sistema deve permitir o envio de doações apenas para usuários logados que já estejam cadastrados como voluntários. Usuários não voluntários devem ser direcionados ao cadastro de voluntariado antes de doar.
 **Prioridade:** Alta
-**Versão:** 1.1
-**Data:** 2026-09-26
+**Versão:** 1.2
+**Data:** 2026-09-27
 
 ### - RN006 - Validação de Upload de Imagem
 **Descrição:** O sistema deve aceitar, no upload de imagens de campanhas, apenas arquivos dos tipos JPG, PNG ou WEBP, com tamanho máximo de 5MB.
@@ -209,6 +223,24 @@
 **Prioridade:** Alta
 **Versão:** 1.1
 **Data:** 2026-09-26
+
+### - RN009 - Restrição de Visualização Administrativa
+**Descrição:** Os botões "Visualizar Usuários" e "Ver Doações" só devem ser exibidos no header, e as páginas `view_users.php` e `view_donations.php` só devem ser acessíveis, quando `User == ADM`.
+**Prioridade:** Alta
+**Versão:** 1.2
+**Data:** 2026-09-27
+
+### - RN010 - Exibição Condicional do Menu de Voluntariado
+**Descrição:** O acesso à página `volunteer.php` deve ser oferecido apenas para usuários logados que ainda não sejam voluntários (`User = Logado && != Voluntário`).
+**Prioridade:** Média
+**Versão:** 1.2
+**Data:** 2026-09-27
+
+### - RN011 - Confirmação por Senha na Exclusão de Campanha
+**Descrição:** A exclusão de uma campanha deve exigir que o Administrador informe a senha da sua conta na página `delete_campaign.php`.
+**Prioridade:** Alta
+**Versão:** 1.2
+**Data:** 2026-09-27
 
 ---
 
@@ -255,7 +287,8 @@
 |    1.1   | 2026-09-20 | Refinamento do escopo e objetivos do projeto |
 |    1.2   | 2026-09-24 | Adicionando Arquivos para Cadastro, Login e Logout |
 |    1.3   | 2026-09-24 | Preenchimento completo de RF, RN e RNF |
-|    1.4   | 2026-09-26 | Finalização da Documentação & Lançamento para a Núvem|
+|    1.4   | 2026-09-26 | Finalização da Documentação & Lançamento para a Nuvem |
+|    1.5   | 2026-09-27 | Correção da Documentação e Implementação do Header e Footer |
 
 ---
 

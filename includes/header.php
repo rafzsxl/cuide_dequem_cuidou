@@ -1,18 +1,28 @@
 <header>
     <a href="../index.html">
-        <img src="../images/logo.png" alt="Logo" align="middle">
+        <img src="../images/logo.png" alt="Logo" width="10%">
     </a>
-    <nav>
-        <div>
-            <a href="auth\login.php" target="_blank">Login</a>
-            <a href="" target="_blank"></a>
-            <a href="" target="_blank"></a>
-            <a href="" target="_blank"></a>
-            <a href="" target="_blank"></a>
-        </div>
-        <div>
-            <a href="/minisistema/login/login.php"></a>
-            <a href="/minisistema/login/logout.php"></a>
-        </div>
+    <div>
+        <a href="../pages/donate.php">
+            <button>Doe Agora</button>
+        </a>
+    </div>
+
+    
+
+    <input type="checkbox" name="" id="menu-toggle">
+    <label for="menu-toggle" class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </label>
+    <nav class="nav-menu">
+        <a href="index.html">Incio</a>
+        <a href="produtos.html">Quem Somos?</a>
+        <a href="contato.html">Contatos</a>
+        <a href="contato.html">Campanhas</a>
+        <a href="contato.html">Transparencia</a>
+        <a href="contato.html">Parceiros</a>
     </nav>
 </header>
+<hr>

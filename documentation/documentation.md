@@ -11,6 +11,7 @@
 - Publishing, editing, and removal of CDQC's fundraising campaigns, including image uploads;
 - Submission of donations by volunteer users (theoretical only, no real payment API integration);
 - Registration of individuals interested in volunteering;
+- Viewing of users and donations by the administrator;
 - Display of institutional transparency content (static content, not stored in the database);
 - Display of institutional content (About Us, Partners, Contact)
 
@@ -38,6 +39,7 @@
 - Allow users to register as volunteers;
 - Display transparency and accountability content;
 - Allow administrators to create, edit, and remove campaigns, including image uploads;
+- Allow administrators to view registered users and donations;
 - Display institutional content (mission, partners, contact)
 
 ### 2.3 User Characteristics
@@ -46,7 +48,7 @@
 | Visitor (not logged in) | Basic | Browse the website, view campaigns, transparency, and institutional content |
 | Regular user (not a volunteer) | Basic | Sign up, log in, edit profile, register as a volunteer |
 | Volunteer | Basic | All regular user functions, plus making donations |
-| Administrator (ADM) | Intermediate | Create/edit/remove campaigns (with image upload), manage users |
+| Administrator (ADM) | Intermediate | Create/edit/remove campaigns (with image upload), view users and donations |
 
 ### 2.4 Constraints
 - The system must follow the [WCAG 2.1](https://guia-wcag.com/) accessibility guidelines, level AA;
@@ -74,10 +76,10 @@
 **Date:** 2026-09-24
 
 ### - FR003 - User Logout
-**Description:** The system must allow the user to end their session through the "Log Out" button available on the `profile.php` page.
+**Description:** The system must allow the user to end their session. The user clicks the "Log Out" button on the `profile.php` page, is directed to the `logout.php` page, and confirms the exit by entering the account password and clicking the "Exit" button.
 **Priority:** High
-**Version:** 1.0
-**Date:** 2026-09-24
+**Version:** 1.2
+**Date:** 2026-09-27
 
 ### - FR004 - Profile View
 **Description:** The system must display the logged-in user's information, such as their registered email, on the `profile.php` page.
@@ -98,34 +100,34 @@
 **Date:** 2026-09-24
 
 ### - FR007 - Campaign Creation (ADM)
-**Description:** The system must allow an Administrator to add a new campaign, including image upload, through the "ADD" button on the `campaigns.php` page, visible only when `User == ADM`.
+**Description:** The system must allow the Administrator to create a new campaign by providing a title, description, and image (upload), through the `create_campaign.php` page, accessed via the "ADD" button on the `campaigns.php` page, visible only when `User == ADM`.
 **Priority:** High
-**Version:** 1.0
-**Date:** 2026-09-24
+**Version:** 1.2
+**Date:** 2026-09-27
 
 ### - FR008 - Campaign Editing (ADM)
-**Description:** The system must allow the Administrator to edit an existing campaign's data (title, description, and image) through the "Edit" button on the `campaigns.php` page.
+**Description:** The system must allow the Administrator to edit an existing campaign's data (title, description, and image) through the `update_campaign.php` page, accessed via the "Edit" button on the `campaigns.php` page.
 **Priority:** High
-**Version:** 1.1
-**Date:** 2026-09-26
+**Version:** 1.2
+**Date:** 2026-09-27
 
 ### - FR009 - Campaign Removal (ADM)
-**Description:** The system must allow the Administrator to remove an existing campaign through the "Remove" button on the `campaigns.php` page.
+**Description:** The system must allow the Administrator to remove an existing campaign through the `delete_campaign.php` page, accessed via the "Remove" button on the `campaigns.php` page, upon confirmation with the account password.
 **Priority:** High
-**Version:** 1.1
-**Date:** 2026-09-26
+**Version:** 1.2
+**Date:** 2026-09-27
 
 ### - FR010 - Donation Submission (Theoretical)
-**Description:** The system must allow a volunteer user to simulate a donation through the `donate.php` page, without real integration with a payment system.
+**Description:** The system must allow a volunteer user to simulate a donation, by entering the amount and confirming with the account password, through the `donate.php` page, without real integration with a payment system.
 **Priority:** High
-**Version:** 1.0
-**Date:** 2026-09-24
+**Version:** 1.2
+**Date:** 2026-09-27
 
 ### - FR011 - Volunteer Registration
-**Description:** The system must allow the user to register as a volunteer, providing full name, CPF, and date of birth, through the `volunteer.php` page.
+**Description:** The system must allow the user to register as a volunteer, providing full name, date of birth, and account password, through the `volunteer.php` page.
 **Priority:** High
-**Version:** 1.0
-**Date:** 2026-09-24
+**Version:** 1.2
+**Date:** 2026-09-27
 
 ### - FR012 - Transparency View
 **Description:** The system must display, on the `transparency.php` page, the total amount raised and a link to download the income and expense report in PDF format.
@@ -134,10 +136,10 @@
 **Date:** 2026-09-26
 
 ### - FR013 - Institutional View (About Us)
-**Description:** The system must display CDQC's mission, vision, values, and history on the `about.php` page.
+**Description:** The system must display CDQC's mission, principles, and history on the `about.php` page.
 **Priority:** Medium
-**Version:** 1.0
-**Date:** 2026-09-24
+**Version:** 1.2
+**Date:** 2026-09-27
 
 ### - FR014 - Partners View
 **Description:** The system must display, on the `partners.php` page, an image carousel featuring CDQC's projects and partner institutions.
@@ -152,10 +154,22 @@
 **Date:** 2026-09-26
 
 ### - FR016 - Hamburger Menu Navigation
-**Description:** The system must display a responsive hamburger menu containing the links: About Us, Campaigns, Transparency, and Partners.
+**Description:** The system must display a responsive hamburger menu containing the links: Home, About Us, Campaigns, Transparency, Partners, and Contact.
 **Priority:** Medium
-**Version:** 1.0
-**Date:** 2026-09-24
+**Version:** 1.2
+**Date:** 2026-09-27
+
+### - FR017 - Users View (ADM)
+**Description:** The system must allow the Administrator to view the list of registered users and volunteers through the `view_users.php` page, accessible via the "View Users" button in the header when `User == ADM`.
+**Priority:** Medium
+**Version:** 1.2
+**Date:** 2026-09-27
+
+### - FR018 - Donations View (ADM)
+**Description:** The system must allow the Administrator to view the history of donations made by volunteers through the `view_donations.php` page, accessible via the "View Donations" button in the header when `User == ADM`.
+**Priority:** Medium
+**Version:** 1.2
+**Date:** 2026-09-27
 
 ---
 
@@ -187,10 +201,10 @@
 **Date:** 2026-09-24
 
 ### - BR005 - Donations Restricted to Volunteers
-**Description:** The system must only allow donations from users already registered as volunteers. Non-volunteer users must be directed to the volunteer registration page before donating.
+**Description:** The system must only allow donations from logged-in users who are already registered as volunteers. Non-volunteer users must be directed to the volunteer registration page before donating.
 **Priority:** High
-**Version:** 1.1
-**Date:** 2026-09-26
+**Version:** 1.2
+**Date:** 2026-09-27
 
 ### - BR006 - Image Upload Validation
 **Description:** The system must only accept JPG, PNG, or WEBP file types for campaign image uploads, with a maximum size of 5MB.
@@ -209,6 +223,24 @@
 **Priority:** High
 **Version:** 1.1
 **Date:** 2026-09-26
+
+### - BR009 - Administrative View Restriction
+**Description:** The "View Users" and "View Donations" buttons must only be displayed in the header, and the `view_users.php` and `view_donations.php` pages must only be accessible, when `User == ADM`.
+**Priority:** High
+**Version:** 1.2
+**Date:** 2026-09-27
+
+### - BR010 - Conditional Display of Volunteering Access
+**Description:** Access to the `volunteer.php` page must only be offered to logged-in users who are not yet volunteers (`User = Logged in && != Volunteer`).
+**Priority:** Medium
+**Version:** 1.2
+**Date:** 2026-09-27
+
+### - BR011 - Password Confirmation for Campaign Deletion
+**Description:** Deleting a campaign must require the Administrator to enter their account password on the `delete_campaign.php` page.
+**Priority:** High
+**Version:** 1.2
+**Date:** 2026-09-27
 
 ---
 
@@ -256,6 +288,7 @@
 |    1.2   | 2026-09-24 | Added files for Sign Up, Login, and Logout |
 |    1.3   | 2026-09-24 | Full completion of FR, BR, and NFR |
 |    1.4   | 2026-09-26 | Documentation finalized & released to the cloud |
+|    1.5   | 2026-09-27 | Correction of Documentation and Implementation of the Header and Footer |
 
 ---
 
