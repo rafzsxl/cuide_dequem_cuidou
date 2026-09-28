@@ -289,6 +289,7 @@
 |    1.3   | 2026-09-24 | Full completion of FR, BR, and NFR |
 |    1.4   | 2026-09-26 | Documentation finalized & released to the cloud |
 |    1.5   | 2026-09-27 | Correction of Documentation and Implementation of the Header and Footer |
+|    1.6   | 2026-09-27 |  Adding content to the “index,” “transparency,” “partners,” “donate,” “contact,” and “about” pages, but without using PHP|
 
 ---
 

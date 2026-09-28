@@ -289,6 +289,7 @@
 |    1.3   | 2026-09-24 | Preenchimento completo de RF, RN e RNF |
 |    1.4   | 2026-09-26 | Finalização da Documentação & Lançamento para a Nuvem |
 |    1.5   | 2026-09-27 | Correção da Documentação e Implementação do Header e Footer |
+|    1.6   | 2026-09-27 | Colocando conteudo dentro do "index", "transparency", "partners", "donate", "contact" e "about" mas sem php |
 
 ---
 
