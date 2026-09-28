@@ -299,3 +299,5 @@
 | CLAUDE | 2026-09-20 | Dar nome à ONG |
 | GEMINI | 2026-09-20 | Gerar logo da CDQC |
 | CLAUDE | 2026-09-22 | Gerar perguntas para estruturar o briefing |
+| CLAUDE | 2026-09-27 | Rever Principios |
+| CLAUDE | 2026-09-27 | Gerar uma história para a CDQC |

@@ -1,16 +1,16 @@
 <hr>
 <footer>
   <div>
-    <a href="">
+    <a href="../pages\donate.php">
       <button>Doe Agora</button>
     </a>
   </div>
   <div>
-    <a href="">
+    <a href="../pages\contact.php">
       <button>Contatos</button>
     </a>
 </div>
   <div>
-    <p>&copy; 2026 CuideDeQuemCuidou. Todos os direitos reservados</p>
+    <p><b><i>&copy; 2026 CuideDeQuemCuidou. Todos os direitos reservados</i></b></p>
   </div>
 </footer>

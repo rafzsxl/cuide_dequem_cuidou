@@ -1,5 +1,5 @@
 <header>
-    <a href="../index.html">
+    <a href="../index.php">
         <img src="../images/logo.png" alt="Logo" width="10%">
     </a>
     <div>
@@ -17,12 +17,12 @@
         <span></span>
     </label>
     <nav class="nav-menu">
-        <a href="index.html">Incio</a>
-        <a href="produtos.html">Quem Somos?</a>
-        <a href="contato.html">Contatos</a>
-        <a href="contato.html">Campanhas</a>
-        <a href="contato.html">Transparencia</a>
-        <a href="contato.html">Parceiros</a>
+        <a href="index.php">Incio</a>
+        <a href="../pages\about.php">Quem Somos?</a>
+        <a href="../pages\campaigns.php">Campanhas</a>
+        <a href="../pages\contact.php">Contatos</a>
+        <a href="../pages\partners.php">Parceiros</a>
+        <a href="../pages\transparency.php">Transparencia</a>
     </nav>
 </header>
 <hr>
