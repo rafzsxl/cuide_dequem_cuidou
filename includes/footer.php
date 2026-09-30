@@ -1,7 +1,7 @@
 <hr>
 <footer>
   <div>
-    <a href="../pages\donate.php">
+    <a href="../donations\donate.php">
       <button>Doe Agora</button>
     </a>
   </div>

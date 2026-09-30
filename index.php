@@ -10,7 +10,7 @@
 <?php include 'includes/header.php'; ?>
 
 <body>
-    <h1>Bem Vindo à Cuide De Quem Cuidou</h1>
+    <h1>Bem Vindo a Cuide De Quem Cuidou</h1>
 
     <hr>
 

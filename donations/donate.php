@@ -10,7 +10,15 @@
 <?php include '../includes/header.php'; ?>
 <body>
     <h1>Doar</h1>
+    <main>
+
+
+
+
+
+
     
+    </main>
 
 </body>
 <?php include '../includes/footer.php'; ?>

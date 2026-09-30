@@ -291,6 +291,7 @@
 |    1.5   | 2026-09-27 | Correction of Documentation and Implementation of the Header and Footer |
 |    1.6   | 2026-09-27 |  Adding content to the “index,” “transparency,” “partners,” “donate,” “contact,” and “about” pages, but without using PHP|
 |    1.7   | 2026-09-29 |  Adding content to “logout.php,” “sign_up.php,” and “logout.php” & Creating “edit.php,” but without integrating the backend yet |
+|    1.8   | 2026-09-30 |  Fixing a few errors along the way, creating the “donations” folder and the “profile.php” file, as well as adding a route to the profile in the header, adding content to some pages, and changing the BCD structure to include Nome and “Nascimento” in the Users table and “Telefone” and “CPF” in the Voluntarios table. |
 
 ---
 

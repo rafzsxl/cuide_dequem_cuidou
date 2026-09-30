@@ -20,10 +20,10 @@
             <input type="text" name="email" id="email" placeholder="Insira o E-mail" required><br>
             <label type="senha">Senha:</label>
             <input type="password" name="senha" id="senha" placeholder="Insira a senha" required><br>
-            <label for="">CPF:</label>
-            <input type="text" name="cpf" id="cpf" placeholder="Insira o CPF" required><br>
-            <label for="">Telefone:</label>
-            <input type="text" name="telefone" id="telefone" placeholder="Insira o Telefone" required><br>
+            <label for="nome">Nome:</label>
+            <input type="text" name="nome" id="nome" placeholder="Insira o seu Nome" required><br>
+            <label for="nascimento">Nascimento:</label>
+            <input type="date" name="nascimento" id="nascimento" placeholder="Insira a data do seu Nascimento" required><br>
             <input type="submit" value="Editar">
             <input type="reset" value="Limpar">
         </form>

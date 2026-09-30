@@ -5,8 +5,8 @@ erDiagram
         int ID PK
         varchar(255) Email
         varchar(255) Password
-        varchar(255) CPF
-        varchar(255) Telefone
+        varchar(255) Nome
+        date Nasc
         boolean ADM
 
     }
@@ -14,8 +14,8 @@ erDiagram
     VOLUNTARIOS{
         int ID PK
         int ID_User FK
-        varchar(255) Nome
-        date Nasc
+        varchar(255) CPF
+        varchar(255) Telefone
         timestamp Data_Volun
     }
 
