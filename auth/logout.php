@@ -1,11 +1,30 @@
-<?php
-if(session_status() == PHP_SESSION_NONE){
-    session_start();
-}
-$_SESSION = array();
-session_destroy();
+<?php require_once '../includes/functions.php'; ?>
+<!DOCTYPE html>
+<html lang="pt-br">
 
-header("Location: ../index.php");
-exit();
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logout</title>
+</head>
 
-?>
+<?php include '../includes/header.php'; ?>
+
+<hr>
+
+<body>
+    <main>
+        <h1>Sair da Conta</h1>
+        <form action="" method="post">
+            <label type="senha">Senha:</label>
+            <input type="password" name="senha" id="senha" placeholder="Insira a senha" required><br>
+            <input type="submit" value="Sair">
+            <input type="reset" value="Limpar">
+        </form>
+
+    </main>
+</body>
+<hr>
+<?php include '../includes/footer.php'; ?>
+
+</html>
