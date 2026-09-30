@@ -1,8 +1,8 @@
 <?php
-$host = "";
-$dbname = "";
-$user = "";
-$pass = "";
+$host = "192.168.10.67";
+$dbname = "cdqc";
+$user = "cdqc";
+$pass = "adm123";
 
 try {
     $conexao = new PDO ( // PDO = PHP Data Objects

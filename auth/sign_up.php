@@ -28,6 +28,12 @@
             <input type="reset" value="Limpar">
         </form>
 
+        <?php
+        if ($_SERVER['REQUEST_METHOD'] == "POST"){
+            criar_user($conexao, $_POST['email'], $_POST['senha'], $_POST['nome'], $_POST['nascimento'], false);
+        }       
+        ?>
+
     </main>
 </body>
 <hr>

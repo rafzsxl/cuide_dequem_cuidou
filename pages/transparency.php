@@ -11,14 +11,14 @@
 <body>
     <h1>Transparencia</h1>
     <section id="Total">
-        <h3>Total Arrecadado desde 2025:</h3>
+        <h3>Total Arrecadado desde Dezebro de 2025:</h3>
     </section>
 
     <section id="Gastos_2023">
         <h3>Nossos Gastos desde 2015</h3>
         <p>Acesse o Link pelo botão abaixo e veja nossos gatsos desde 2015</p>
         <a href="https://sesisenaispedu-my.sharepoint.com/:w:/g/personal/rafael_costa38_portalsesisp_org_br/IQCXerBjxg1ZQ46ZCnYmOsVUAYh7zla-r8KERimK7v6582E?e=ChbpPa" target="_blank">
-            <button>Me Leve</button>
+            <button>Visualizar</button>
         </a>
     </section>
 </body>

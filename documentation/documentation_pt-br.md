@@ -292,6 +292,7 @@
 |    1.6   | 2026-09-27 | Colocando conteudo dentro do "index", "transparency", "partners", "donate", "contact" e "about" mas sem php |
 |    1.7   | 2026-09-29 | Adicionando conteudo dentro de "logout.php", "sign_up.php" e "logout.php" & Criando do "edit.php", mas sem integrar o backend ainda |
 |    1.8   | 2026-09-30 | Arrumando Alguns erros de Caminho, Criando a Pasta "donations" e o arquivo "profile.php", além de adicionar rota no header para profile, adicionar conteudo a algumas páginas e trocar estrutura do bcd com "Nome" e "Nascimento" dentro da tabela Users e "Telefone" e "CPF" dentro de Voluntários. |
+|    1.9   | 2026-09-30 | Adicionando Mais Conteúdo e Implementando algumas Funções. |
 
 ---
 

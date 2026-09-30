@@ -20,6 +20,7 @@
             <input type="text" name="email" id="email" placeholder="Insira o E-mail" required><br>
             <label type="senha">Senha:</label>
             <input type="password" name="senha" id="senha" placeholder="Insira a senha" required><br>
+            <a href="sign_up.php">Ainda Não Possui Uma Conta?</a><br>
             <input type="submit" value="Cadastrar">
             <input type="reset" value="Limpar">
         </form>
