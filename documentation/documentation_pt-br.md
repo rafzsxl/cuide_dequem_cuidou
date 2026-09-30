@@ -290,6 +290,7 @@
 |    1.4   | 2026-09-26 | Finalização da Documentação & Lançamento para a Nuvem |
 |    1.5   | 2026-09-27 | Correção da Documentação e Implementação do Header e Footer |
 |    1.6   | 2026-09-27 | Colocando conteudo dentro do "index", "transparency", "partners", "donate", "contact" e "about" mas sem php |
+|    1.7   | 2026-09-29 | Adicionando conteudo dentro de "logout.php", "sign_up.php" e "logout.php" & Criando do "edit.php", mas sem integrar o backend ainda |
 
 ---
 

@@ -290,6 +290,7 @@
 |    1.4   | 2026-09-26 | Documentation finalized & released to the cloud |
 |    1.5   | 2026-09-27 | Correction of Documentation and Implementation of the Header and Footer |
 |    1.6   | 2026-09-27 |  Adding content to the “index,” “transparency,” “partners,” “donate,” “contact,” and “about” pages, but without using PHP|
+|    1.7   | 2026-09-29 |  Adding content to “logout.php,” “sign_up.php,” and “logout.php” & Creating “edit.php,” but without integrating the backend yet |
 
 ---
 
