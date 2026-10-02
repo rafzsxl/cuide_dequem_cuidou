@@ -1,5 +1,5 @@
-<?php require_once '../includes/functions.php'; 
-require_once __DIR__ . 'verifica_user.php';?>
+<?php require_once '../includes/functions.php';
+require_once 'verify_user.php'; ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -20,7 +20,15 @@ require_once __DIR__ . 'verifica_user.php';?>
             <input type="submit" value="Apagar">
             <input type="reset" value="Limpar">
         </form>
-
+        <?php
+        if ($_SERVER['REQUEST_METHOD'] == "POST") {
+            if (delete_user($conexao, $_POST['senha'])) {
+                header("Location: ../index.php");
+                exit();
+            }
+            $erro = "Senha inválida";
+        }
+        ?>
     </main>
 </body>
 

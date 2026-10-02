@@ -1,5 +1,5 @@
 <?php require_once '../includes/functions.php';
-require_once __DIR__ . 'verifica_user.php';?>
+require_once 'verify_user.php'; ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -27,7 +27,18 @@ require_once __DIR__ . 'verifica_user.php';?>
             <input type="submit" value="Editar">
             <input type="reset" value="Limpar">
         </form>
-
+        <?php
+        if ($_SERVER['REQUEST_METHOD'] == "POST") {
+            if (atualizar_user($conexao, $_SESSION['id'], $_POST['email'], $_POST['senha'], $_POST['nome'], $_POST['nascimento'])) {
+                echo "Usuário atualizado com sucesso!";
+                header("Location: ../index.php");
+                exit();
+            }
+            else{
+                echo "A mudança não pode ser concluida no momento";
+            }
+        }
+        ?>
     </main>
 </body>
 

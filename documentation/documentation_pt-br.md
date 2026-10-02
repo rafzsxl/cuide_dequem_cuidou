@@ -294,6 +294,7 @@
 |    1.8   | 2026-09-30 | Arrumando Alguns erros de Caminho, Criando a Pasta "donations" e o arquivo "profile.php", além de adicionar rota no header para profile, adicionar conteudo a algumas páginas e trocar estrutura do bcd com "Nome" e "Nascimento" dentro da tabela Users e "Telefone" e "CPF" dentro de Voluntários. |
 |    1.9   | 2026-09-30 | Adicionando Mais Conteúdo e Implementando algumas Funções. |
 |    2.0   | 2026-10-02 | Implementando Função de Login |
+|    2.1   | 2026-10-02 | Implementando Funções de Editar, Logout e Delete |
 
 ---
 
@@ -306,3 +307,4 @@
 | CLAUDE | 2026-09-22 | Gerar perguntas para estruturar o briefing |
 | CLAUDE | 2026-09-27 | Rever Principios |
 | CLAUDE | 2026-09-27 | Gerar uma história para a CDQC |
+| CLAUDE | 2026-10-02 | Ajuda com a Correção da function satualizar_user |

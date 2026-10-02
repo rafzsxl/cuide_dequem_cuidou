@@ -23,6 +23,9 @@
        <a href="logout.php">
             <button>Fazer Logout</button>
         </a>
+       <a href="delete.php">
+            <button>Deletar Conta</button>
+        </a>
         
         <br>
 
