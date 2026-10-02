@@ -10,7 +10,7 @@
 
 <?php include '../includes/header.php'; ?>
 
-<hr>
+
 
 <body>
     <main>
@@ -35,7 +35,7 @@
         
     </main>
 </body>
-<hr>
+
 <?php include '../includes/footer.php'; ?>
 
 </html>

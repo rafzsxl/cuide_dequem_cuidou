@@ -1,5 +1,5 @@
 <?php require_once '../includes/functions.php'; 
-require_once __DIR__ . 'verifica_user.php';?>
+require_once '/verify_user.php';?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -11,7 +11,6 @@ require_once __DIR__ . 'verifica_user.php';?>
 
 <?php include '../includes/header.php'; ?>
 
-<hr>
 
 <body>
     <main>
@@ -25,7 +24,7 @@ require_once __DIR__ . 'verifica_user.php';?>
 
     </main>
 </body>
-<hr>
+
 <?php include '../includes/footer.php'; ?>
 
 </html>

@@ -11,7 +11,6 @@ require_once __DIR__ . 'verifica_user.php';?>
 
 <?php include '../includes/header.php'; ?>
 
-<hr>
 
 <body>
     <main>
@@ -31,7 +30,7 @@ require_once __DIR__ . 'verifica_user.php';?>
 
     </main>
 </body>
-<hr>
+
 <?php include '../includes/footer.php'; ?>
 
 </html>

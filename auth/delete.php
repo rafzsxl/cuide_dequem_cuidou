@@ -11,8 +11,6 @@ require_once __DIR__ . 'verifica_user.php';?>
 
 <?php include '../includes/header.php'; ?>
 
-<hr>
-
 <body>
     <main>
         <h1>Apagar Conta</h1>
@@ -25,7 +23,7 @@ require_once __DIR__ . 'verifica_user.php';?>
 
     </main>
 </body>
-<hr>
+
 <?php include '../includes/footer.php'; ?>
 
 </html>

@@ -10,7 +10,6 @@
 
 <?php include '../includes/header.php'; ?>
 
-<hr>
 
 <body>
     <main>
@@ -24,10 +23,21 @@
             <input type="submit" value="Cadastrar">
             <input type="reset" value="Limpar">
         </form>
-
+                <?php
+        if ($_SERVER['REQUEST_METHOD'] == "POST") {
+            $usuario = consulta_user($conexao, $_POST['email']);
+                if ($usuario['email'] == $_POST['email'] && $usuario['password'] == $_POST['senha']) {
+                    session_start();
+                    $_SESSION['id'] = $usuario['id'];
+                    header("Location: ../index.php");
+                    exit();
+                } else{
+                    echo "Usuário ou Senha Invalidos";
+                    }}
+                    ?>
     </main>
 </body>
-<hr>
+
 <?php include '../includes/footer.php'; ?>
 
 </html>

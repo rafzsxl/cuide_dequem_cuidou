@@ -279,7 +279,7 @@
 
 ---
 
-## 4.0 Controle de Versão
+## 4.0 Controle git de Versão
 ### Histórico de Versão
 |  Versão  |    Data    | Modificações |
 |---------:|:----------:|:--------------|
@@ -293,6 +293,7 @@
 |    1.7   | 2026-09-29 | Adicionando conteudo dentro de "logout.php", "sign_up.php" e "logout.php" & Criando do "edit.php", mas sem integrar o backend ainda |
 |    1.8   | 2026-09-30 | Arrumando Alguns erros de Caminho, Criando a Pasta "donations" e o arquivo "profile.php", além de adicionar rota no header para profile, adicionar conteudo a algumas páginas e trocar estrutura do bcd com "Nome" e "Nascimento" dentro da tabela Users e "Telefone" e "CPF" dentro de Voluntários. |
 |    1.9   | 2026-09-30 | Adicionando Mais Conteúdo e Implementando algumas Funções. |
+|    2.0   | 2026-10-02 | Implementando Função de Login |
 
 ---
 

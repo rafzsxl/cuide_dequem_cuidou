@@ -11,11 +11,11 @@ function criar_user($conexao, $email, $senha, $nome, $nascimento, $admin = false
         $stmt = $conexao->prepare($sql);
         $stmt->bindParam(":email", $email);
         $stmt->bindParam(":senha",  $senha);
-        $stmt->bindParam("nome",  $nome);
+        $stmt->bindParam("nome",  $nome); // binParam vincula uma variável e não um valor fixo
         $stmt->bindParam(":nascimento",  $nascimento);
-        
+
         //PDO exige que booleanos sejam passados com o tipo explícito PDO::PARAM_BOOL 
-        $stmt->bindValue(":admin", $admin, PDO::PARAM_BOOL);
+        $stmt->bindValue(":admin", $admin, PDO::PARAM_BOOL); //bindValue Vincula um valor fixo
 
         $stmt->execute();
         echo "Usuário Criado com Sucesso";
@@ -24,14 +24,13 @@ function criar_user($conexao, $email, $senha, $nome, $nascimento, $admin = false
     }
 }
 
-function consulta_user($conexao, $email, $password)
+// Função de Login de Usuário
+function consulta_user($conexao, $email)
 {
-    $sql = "SELECT id, email, password FROM users WHERE email = :email && password = :password";
+    $sql = "SELECT id, email, password FROM users WHERE email = :email";
     try {
         $stmt = $conexao->prepare($sql);
         $stmt->bindParam(":email", $email);
-        $stmt->bindParam(":password", $password);
-
         $stmt->execute();
 
         $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -39,6 +38,26 @@ function consulta_user($conexao, $email, $password)
 
     } catch (PDOException $e) {
         echo "ERRO: " . $e->getMessage();
+    }
+}
+
+
+// Fução para Editar Usuário
+function editar_user($conexao, $email, $senha, $nome, $nascimento, $admin = false)
+{
+    $sql = "UPDATE users SET email = :email, password = :senha, nome = :nome, nascimento = :nascimento, admin = : admin";
+    try {
+        $stmt = $conexao->prepare($sql);
+        $stmt->bindParam(":email", $email);
+        $stmt->bindParam(":senha",  $senha);
+        $stmt->bindParam("nome",  $nome);
+        $stmt->bindParam(":nascimento",  $nascimento);
+        $stmt->bindValue(":admin", $admin, PDO::PARAM_BOOL);
+
+        $stmt->execute();
+        echo "Usuário Editado com Sucesso!";
+    } catch (PDOException $e) {
+        echo "Erro: " . $e->getMessage();
     }
 }
 
@@ -60,5 +79,3 @@ function criar_volun($conexao, $cpf, $telefone, $data_volun, $user_id)
         echo "Erro: " . $e->getMessage();
     }
 }
-
-?>

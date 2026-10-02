@@ -10,8 +10,6 @@
 
 <?php include '../includes/header.php'; ?>
 
-<hr>
-
 <body>
     <main>
         <h1>Crie sua Conta</h1>
@@ -36,7 +34,7 @@
 
     </main>
 </body>
-<hr>
+
 <?php include '../includes/footer.php'; ?>
 
 </html>
