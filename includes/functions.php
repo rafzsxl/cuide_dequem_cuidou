@@ -8,6 +8,7 @@ function criar_user($conexao, $email, $senha, $nome, $nascimento, $admin = false
 {
     $sql = "INSERT INTO users (email, password, nome, nascimento, admin) VALUES (:email, :senha, :nome , :nascimento, :admin)";
     try {
+        // $stmt representa um objeto de instrução preparada
         $stmt = $conexao->prepare($sql);
         $stmt->bindParam(":email", $email);
         $stmt->bindParam(":senha",  $senha);
@@ -107,4 +108,43 @@ function delete_user($conexao, $senha)
         }
     }
     else{ echo "Senha Incorreta";}
+}
+
+
+
+// Funções de Voluntarios
+
+// Função para Criar Um Voluntário // Fução para Criar Usuário
+// Cadastra o usuário logado como voluntário, depois de conferir a senha
+function criar_volun($conexao, $cpf, $telefone, $senha)
+{
+    // Id do usuário logado, guardado na sessão durante o login
+    $id = $_SESSION['id'];
+
+    // Busca a senha do usuário para conferir
+    $stmt = $conexao->prepare("SELECT password FROM users WHERE id = :id");
+    $stmt->bindParam(":id", $id);
+    $stmt->execute();
+    $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    // Senha errada ou usuário não encontrado
+    if (!$usuario || $usuario['password'] != $senha) {
+        echo "Senha Incorreta";
+    }
+
+    try {
+        // id_user liga o voluntário ao usuário (chave estrangeira)
+        $sql = "INSERT INTO voluntarios (id_user, cpf, telefone, data_volun)
+                VALUES (:id_user, :cpf, :telefone, NOW())";
+        $stmt = $conexao->prepare($sql);
+        $stmt->bindParam(":id_user", $id);
+        $stmt->bindParam(":cpf", $cpf);
+        $stmt->bindParam(":telefone", $telefone);
+        $stmt->execute();
+
+        echo "Cadastro Bem Sucedido";
+    } catch (PDOException $e) {
+        echo "Erro: " . $e->getMessage();
+        echo "Cadastro não foi bem sucedido";
+    }
 }

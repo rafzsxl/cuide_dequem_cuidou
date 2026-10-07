@@ -1,6 +1,6 @@
 <header>
     <a href="../index.php">
-        <img src="../images/logo.png" alt="Logo" width="10%">
+        <img src="../images/media/logo.png" alt="Logo" width="10%">
     </a>
     <div>
         <a href="../donations/donate.php">
@@ -9,7 +9,7 @@
     </div>
 
     <a href="../auth/profile.php">
-        <img src="../images/user_profile.png" alt="Logo" width="10%">
+        <img src="../images/media/user_profile.png" alt="Logo" width="10%">
     </a>
 
     <input type="checkbox" name="" id="menu-toggle">

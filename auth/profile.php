@@ -15,7 +15,7 @@
 <body>
     <main>
 
-        <img src="../images/user_profile.png" alt="Logo" width="10%">
+        <img src="../images/media/user_profile.png" alt="Logo" width="10%">
         
         <a href="edit.php">
             <button>Editar</button>
