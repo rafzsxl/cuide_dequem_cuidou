@@ -26,16 +26,15 @@ function criar_user($conexao, $email, $senha, $nome, $nascimento, $admin = false
 }
 
 // Função de Login de Usuário
-function consulta_user($conexao, $email)
+function login_user($conexao, $email)
 {
-    $sql = "SELECT id, email, password FROM users WHERE email = :email";
+    $sql = "SELECT id, email, password, admin FROM users WHERE email = :email";
     try {
         $stmt = $conexao->prepare($sql);
         $stmt->bindParam(":email", $email);
         $stmt->execute();
 
-        $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
-        return $usuario;
+        return $stmt->fetch(PDO::FETCH_ASSOC);
     } catch (PDOException $e) {
         echo "ERRO: " . $e->getMessage();
     }
@@ -106,8 +105,9 @@ function delete_user($conexao, $senha)
             echo "Erro: " . $e->getMessage();
             return false;  // falhou ao apagar, a sessão continua ativa
         }
+    } else {
+        echo "Senha Incorreta";
     }
-    else{ echo "Senha Incorreta";}
 }
 
 
@@ -123,13 +123,19 @@ function criar_volun($conexao, $cpf, $telefone, $senha)
     $stmt->execute();
     $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    // Senha errada: para aqui e avisa quem chamou
+    // Senha errada: para aqui
     if (!$usuario || $usuario['password'] != $senha) {
+        echo "Senha Inválida";
+        return false;
+    }
+
+    // Já é voluntário: não cadastra de novo
+    if (id_volun($conexao, $id)) {
+        echo "Você já é voluntário.";
         return false;
     }
 
     try {
-        // Ajuste "id_user" para o nome real da coluna no seu banco
         $sql = "INSERT INTO voluntarios (user_id, cpf, telefone, data_volun)
                 VALUES (:user_id, :cpf, :telefone, NOW())";
         $stmt = $conexao->prepare($sql);
@@ -146,8 +152,7 @@ function criar_volun($conexao, $cpf, $telefone, $senha)
 }
 
 // Função para demonstrar todos os Voluntários com INNER JOIN
-// Função para demonstrar todos os Voluntários com INNER JOIN (sem a senha)
-function relatorio($conexao)
+function relatorio_volun($conexao)
 {
     // Lista só as colunas desejadas; "password" fica de fora
     // "AS" dá nomes diferentes aos dois ids para não sobrescrever um ao outro
@@ -173,5 +178,115 @@ function relatorio($conexao)
         }
     } catch (PDOException $e) {
         echo "Erro: " . $e->getMessage();
+    }
+}
+
+// Função para apagar voluntario
+function apagar_volun($conexao, $id)
+{
+    $sql = "DELETE FROM voluntarios WHERE id = :id";
+    try {
+        $stmt = $conexao->prepare($sql);
+        $stmt->bindParam(":id", $id);
+        $stmt->execute();
+        echo "Voluntário de ID = $id Removido com sucesso";
+    } catch (PDOException $e) {
+        echo "ERRO: " . $e->getMessage();
+    }
+}
+
+// Retorna o id do voluntário ligado ao usuário, ou false se não for voluntário
+function id_volun($conexao, $user_id)
+{
+    $stmt = $conexao->prepare("SELECT id FROM voluntarios WHERE user_id = :user_id");
+    $stmt->bindParam(":user_id", $user_id);
+    $stmt->execute();
+    $volun = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    return $volun ? $volun['id'] : false;
+}
+
+// Funções de doações
+function relatorio_doacoes($conexao)
+{
+    $sql = "SELECT d.id AS id_doacao, d.valor, d.data,
+               v.id AS id_volun, v.cpf, v.telefone,
+               u.id AS id_user, u.nome, u.email
+        FROM doacoes d
+        INNER JOIN voluntarios v ON d.id_volun = v.id
+        INNER JOIN users u ON v.user_id = u.id
+        ORDER BY d.id";
+    try {
+        $stmt = $conexao->prepare($sql);
+        $stmt->execute();
+        $voluntarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        foreach ($voluntarios as $voluntario) {
+            echo "ID Voluntário: {$voluntario['id_volun']}<br>";
+        }
+    } catch (PDOException $e) {
+        echo "Erro: " . $e->getMessage();
+    }
+}
+
+// Registra uma doação do usuário logado (que precisa ser voluntário)
+function doar($conexao, $valor, $senha)
+{
+    $id = $_SESSION['id'];
+
+    // Confere a senha do usuário logado
+    $stmt = $conexao->prepare("SELECT password FROM users WHERE id = :id");
+    $stmt->bindParam(":id", $id);
+    $stmt->execute();
+    $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    if (!$usuario || $usuario['password'] != $senha) {
+        echo "Senha Inválida";
+        return false;   // para aqui
+    }
+
+    // Converte o id do usuário no id do voluntário
+    $volun_id = id_volun($conexao, $id);
+    if (!$volun_id) {
+        return false;   // não é voluntário
+    }
+
+    try {
+        $sql = "INSERT INTO doacoes (id_volun, valor, data)
+                VALUES (:id_volun, :valor, NOW())";
+        $stmt = $conexao->prepare($sql);
+        $stmt->bindParam(":id_volun", $volun_id);
+        $stmt->bindParam(":valor", $valor);
+        $stmt->execute();
+
+        return true;
+    } catch (PDOException $e) {
+        echo "Erro: " . $e->getMessage();
+        return false;
+    }
+}
+
+// Funções de ADM
+
+// Cria uma campanha em nome do admin
+function criar_camp($conexao, $titulo, $descricao, $url)
+{
+    $id = $_SESSION['id'];
+
+    try {
+        // Ajuste os nomes das colunas se o banco usar outros (ex: url_imagem)
+        $sql = "INSERT INTO campanhas (user_id, titulo, descricao, url_imagem, data_criacao)
+                VALUES (:user_id, :titulo, :descricao, :url, NOW())";
+        $stmt = $conexao->prepare($sql);
+        $stmt->bindParam(":user_id", $id);
+        $stmt->bindParam(":titulo", $titulo);
+        $stmt->bindParam(":descricao", $descricao);
+        $stmt->bindParam(":url", $url);
+        $stmt->execute();
+
+        return true;
+    } catch (PDOException $e) {
+        echo "Erro: " . $e->getMessage();
+        return false;
     }
 }

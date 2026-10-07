@@ -342,6 +342,7 @@
 |    2.1   | 2026-10-02 | Implementando Funções de Editar, Logout e Delete |
 |    2.2   | 2026-10-04 | Implementando Função de Voluntariar-se |
 |    2.2   | 2026-10-07 | FIX: Arrumando Função de Voluntariar-se e Adicionado Função para a Visualização de Voluntário|
+|    2.3   | 2026-10-07 | Implementando diversas novas funções |
 
 ---
 

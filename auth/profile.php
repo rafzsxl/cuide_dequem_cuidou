@@ -1,4 +1,5 @@
-<?php require_once 'verify_user.php';?>
+<?php require_once 'verify_user.php'; 
+require_once '../includes/functions.php';?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -16,26 +17,28 @@
     <main>
 
         <img src="../images/media/user_profile.png" alt="Logo" width="10%">
-        
+
         <a href="edit.php">
             <button>Editar</button>
         </a>
-       <a href="logout.php">
+        <a href="logout.php">
             <button>Fazer Logout</button>
         </a>
-       <a href="delete.php">
+        <a href="delete.php">
             <button>Deletar Conta</button>
         </a>
-        
+
         <br>
 
         <a href="../donations/donate.php">
             <button>Contribua</button>
         </a>
-        <a href="../volunteers/volunteer.php">
-            <button>Voluntariar-se</button>
-        </a>
-        
+        <?php if (!id_volun($conexao, $_SESSION['id'])): ?>
+            <a href="../volunteers/volunteer.php">
+                <button>Voluntariar-se</button>
+            </a>
+        <?php endif; ?>
+
     </main>
 </body>
 

@@ -1,5 +1,6 @@
-<?php require_once '../includes/functions.php'; 
-require_once '../auth/verify_user.php';?>
+<?php require_once '../includes/functions.php';
+require_once '../volunteers/verify_user.php';
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -27,6 +28,11 @@ require_once '../auth/verify_user.php';?>
             <input type="submit" value="Cadastrar">
         </form>
         <?php
+        // Já é voluntário: não precisa se cadastrar de novo
+        if (id_volun($conexao, $_SESSION['id'])) {
+            header("Location: ../auth/profile.php");
+            exit();
+        }
 
         if ($_SERVER['REQUEST_METHOD'] == "POST") {
             if (criar_volun($conexao, $_POST['cpf'], $_POST['telefone'], $_POST['senha'])) {

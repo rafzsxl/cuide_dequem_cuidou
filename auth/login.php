@@ -23,18 +23,27 @@
             <input type="submit" value="Cadastrar">
             <input type="reset" value="Limpar">
         </form>
-                <?php
+        <?php
+        if (session_status() == PHP_SESSION_NONE) {
+            session_start();
+        }
+
         if ($_SERVER['REQUEST_METHOD'] == "POST") {
-            $usuario = consulta_user($conexao, $_POST['email']);
-                if ($usuario['email'] == $_POST['email'] && $usuario['password'] == $_POST['senha']) {
-                    session_start();
-                    $_SESSION['id'] = $usuario['id'];
-                    header("Location: ../index.php");
-                    exit();
-                } else{
-                    echo "Usuário ou Senha Invalidos";
-                    }}
-                    ?>
+            $usuario = login_user($conexao, $_POST['email']);
+
+            // A consulta já filtra pelo e-mail, então só precisa conferir a senha
+            if ($usuario && $usuario['password'] == $_POST['senha']) {
+                $_SESSION['id'] = $usuario['id'];
+
+                // Converte para true/false de verdade (o PostgreSQL pode devolver 't'/'f')
+                $_SESSION['admin'] = in_array($usuario['admin'], [true, 't', 1, '1'], true);
+
+                header("Location: ../index.php");
+                exit();
+            }
+            $erro = "Usuário ou senha inválidos";
+        }
+        ?>
     </main>
 </body>
 

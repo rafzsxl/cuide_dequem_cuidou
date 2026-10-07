@@ -14,7 +14,7 @@ require_once '../admin/verify_adm.php';?>
     <?php include '../includes/header.php'; ?>
     <hr>
     <main>
-        <?php relatorio($conexao); ?><br>
+        <?php relatorio_volun($conexao); ?><br>
     </main>
     <?php  include '../includes/footer.php'; ?>
 

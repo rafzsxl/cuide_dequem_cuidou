@@ -345,13 +345,14 @@ LGPD reference: <https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l1
 |    2.1   | 2026-10-02 | Implementing the Edit, Logout, and Delete functions |
 |    2.2   | 2026-10-04 | Implementing the Volunteer Function |
 |    2.2   | 2026-10-07 | FIX: Fixing the Volunteer Function and adding function for viewing volunteer|
+|    2.3   | 2026-10-07 | Implementing several new features|
 
 ## 5.0 Use of AI
 
 ### AI Usage Log
 
 | **AI** | **Date**   | **Purpose**                                    |
-|--------|------------|------------------------------------------------|
+|:--------|:------------:|:------------------------------------------------|
 | CLAUDE | 2026-09-20 | Naming the NGO                                 |
 | GEMINI | 2026-09-20 | Generating the CDQC logo                       |
 | CLAUDE | 2026-09-22 | Generating questions to structure the briefing |
