@@ -1,4 +1,5 @@
-<?php require_once '../includes/functions.php'; ?>
+<?php require_once '../includes/functions.php'; 
+require_once '../auth/verify_user.php';?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -26,15 +27,14 @@
             <input type="submit" value="Cadastrar">
         </form>
         <?php
+
         if ($_SERVER['REQUEST_METHOD'] == "POST") {
-            // Agora passa os 4 argumentos, incluindo a senha
             if (criar_volun($conexao, $_POST['cpf'], $_POST['telefone'], $_POST['senha'])) {
                 header("Location: ../auth/profile.php");
                 exit();
             }
-            $erro = "Senha inválida ou você já é voluntário.";
+            $erro = "Senha inválida ou não foi possível cadastrar.";
         }
-        ?>
         ?>
     </main>
 </body>

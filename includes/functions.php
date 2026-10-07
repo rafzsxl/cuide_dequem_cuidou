@@ -113,38 +113,65 @@ function delete_user($conexao, $senha)
 
 
 // Funções de Voluntarios
-
-// Função para Criar Um Voluntário // Fução para Criar Usuário
 // Cadastra o usuário logado como voluntário, depois de conferir a senha
 function criar_volun($conexao, $cpf, $telefone, $senha)
 {
-    // Id do usuário logado, guardado na sessão durante o login
     $id = $_SESSION['id'];
 
-    // Busca a senha do usuário para conferir
     $stmt = $conexao->prepare("SELECT password FROM users WHERE id = :id");
     $stmt->bindParam(":id", $id);
     $stmt->execute();
     $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    // Senha errada ou usuário não encontrado
+    // Senha errada: para aqui e avisa quem chamou
     if (!$usuario || $usuario['password'] != $senha) {
-        echo "Senha Incorreta";
+        return false;
     }
 
     try {
-        // id_user liga o voluntário ao usuário (chave estrangeira)
-        $sql = "INSERT INTO voluntarios (id_user, cpf, telefone, data_volun)
-                VALUES (:id_user, :cpf, :telefone, NOW())";
+        // Ajuste "id_user" para o nome real da coluna no seu banco
+        $sql = "INSERT INTO voluntarios (user_id, cpf, telefone, data_volun)
+                VALUES (:user_id, :cpf, :telefone, NOW())";
         $stmt = $conexao->prepare($sql);
-        $stmt->bindParam(":id_user", $id);
+        $stmt->bindParam(":user_id", $id);
         $stmt->bindParam(":cpf", $cpf);
         $stmt->bindParam(":telefone", $telefone);
         $stmt->execute();
 
-        echo "Cadastro Bem Sucedido";
+        return true;
     } catch (PDOException $e) {
         echo "Erro: " . $e->getMessage();
-        echo "Cadastro não foi bem sucedido";
+        return false;
+    }
+}
+
+// Função para demonstrar todos os Voluntários com INNER JOIN
+// Função para demonstrar todos os Voluntários com INNER JOIN (sem a senha)
+function relatorio($conexao)
+{
+    // Lista só as colunas desejadas; "password" fica de fora
+    // "AS" dá nomes diferentes aos dois ids para não sobrescrever um ao outro
+    $sql = "SELECT a.id AS id_volun, a.cpf, a.telefone, a.data_volun,
+                   b.id AS id_user, b.nome, b.email, b.nascimento
+            FROM voluntarios a
+            INNER JOIN users b ON a.user_id = b.id
+            ORDER BY a.id";
+    try {
+        $stmt = $conexao->prepare($sql);
+        $stmt->execute();
+        $voluntarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        foreach ($voluntarios as $voluntario) {
+            echo "ID Voluntário: {$voluntario['id_volun']}<br>";
+            echo "ID Usuário: {$voluntario['id_user']}<br>";
+            echo "Nome: {$voluntario['nome']}<br>";
+            echo "E-mail: {$voluntario['email']}<br>";
+            echo "Nascimento: {$voluntario['nascimento']}<br>";
+            echo "CPF: {$voluntario['cpf']}<br>";
+            echo "Telefone: {$voluntario['telefone']}<br>";
+            echo "Data: {$voluntario['data_volun']}<br><br>";
+        }
+    } catch (PDOException $e) {
+        echo "Erro: " . $e->getMessage();
     }
 }
