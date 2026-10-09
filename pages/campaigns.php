@@ -12,6 +12,7 @@
     <h1>Campanhas</h1>
     <main>
         <?php campanhas($conexao); ?><br>
+        <h4>Em BREVE</h4>
     </main>
 </body>
 <?php include '../includes/footer.php'; ?>

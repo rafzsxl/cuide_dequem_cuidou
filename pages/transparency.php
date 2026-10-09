@@ -12,6 +12,7 @@
     <h1>Transparencia</h1>
     <section id="Total">
         <h3>Total Arrecadado desde Dezebro de 2025:</h3>
+        <?php total_doacoes($conexao); ?><br>
     </section>
 
     <section id="Gastos_2023">

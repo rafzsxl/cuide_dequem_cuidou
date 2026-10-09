@@ -1,5 +1,5 @@
 <?php require_once '../includes/functions.php';
-require_once '../volunteers/verify_user.php';
+require_once '../auth/verify_user.php';
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">

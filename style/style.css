@@ -1,15 +1,13 @@
 *{
     background-color: aliceblue;
     font-family:'Open Sans';
-    font-size: 18px;
-    line-height: 1.6;
 }
 p{
     color: black;
 } 
 :root {
     --bg-header: #FFFFFF;
-    --bg-painel: #FFF8E1;      /* creme claro, como o painel do esboço */
+    --bg-painel: #FFF8E1;
     --texto: #1E293B;
     --borda: #CBD5E1;
     --destaque: #047857;

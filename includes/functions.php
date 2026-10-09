@@ -167,6 +167,7 @@ function relatorio_volun($conexao)
         $voluntarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         foreach ($voluntarios as $voluntario) {
+            $data = date('H:i - d/m/Y', strtotime($voluntario['data_volun']));
             echo "ID Voluntário: {$voluntario['id_volun']}<br>";
             echo "ID Usuário: {$voluntario['id_user']}<br>";
             echo "Nome: {$voluntario['nome']}<br>";
@@ -174,7 +175,7 @@ function relatorio_volun($conexao)
             echo "Nascimento: {$voluntario['nascimento']}<br>";
             echo "CPF: {$voluntario['cpf']}<br>";
             echo "Telefone: {$voluntario['telefone']}<br>";
-            echo "Data: {$voluntario['data_volun']}<br><br>";
+            echo "Voluntário desde: {$data}<br><hr>";
         }
     } catch (PDOException $e) {
         echo "Erro: " . $e->getMessage();
@@ -333,6 +334,26 @@ function campanhas($conexao)
             echo "<img src='{$campanha['url_imagem']}' alt='{$campanha['titulo']}' width='300'><br>";
             echo "Iniciada em: {$data}<br><hr>";
         }
+    } catch (PDOException $e) {
+        echo "Erro: " . $e->getMessage();
+    }
+}
+
+function total_doacoes($conexao)
+{
+    $sql = "SELECT SUM(valor) AS total FROM doacoes";
+    try {
+        $stmt = $conexao->prepare($sql);
+        $stmt->execute();
+        $resultado = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        // Se não houver doações, define o total como 0
+        $total = $resultado['total'] ?? 0;
+
+        // Formata para o padrão brasileiro (ex: R$ 5.000,00)
+        $total_formatado = number_format($total, 2, ',', '.');
+
+        echo "<strong>R$ {$total_formatado}</strong>";
     } catch (PDOException $e) {
         echo "Erro: " . $e->getMessage();
     }

@@ -13,7 +13,9 @@ require_once '../admin/verify_adm.php';?>
 
 <body>
     <?php include '../includes/header.php'; ?>
-    <hr>
+    <a>
+        <button>
+    </a>
     <main>
         <?php relatorio_volun($conexao); ?><br>
     </main>
