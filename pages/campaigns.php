@@ -1,4 +1,4 @@
-<?php require_once '../includes/functions.php';?>
+<?php require_once '../includes/functions.php'; ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -9,8 +9,10 @@
 </head>
 <?php include '../includes/header.php'; ?>
 <body>
-    <h1>Campanhas</h1>   
-
+    <h1>Campanhas</h1>
+    <main>
+        <?php campanhas($conexao); ?><br>
+    </main>
 </body>
 <?php include '../includes/footer.php'; ?>
 </html>

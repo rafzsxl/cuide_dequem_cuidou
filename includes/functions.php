@@ -222,7 +222,18 @@ function relatorio_doacoes($conexao)
         $voluntarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         foreach ($voluntarios as $voluntario) {
-            echo "ID Voluntário: {$voluntario['id_volun']}<br>";
+            foreach ($voluntarios as $item) {
+                echo "<strong>Doação ID:</strong> {$item['id_doacao']}<br>";
+                echo "<strong>Valor:</strong> R$ {$item['valor']}<br>";
+                echo "<strong>Data:</strong> {$item['data']}<br>";
+                echo "<strong>Voluntário ID:</strong> {$item['id_volun']}<br>";
+                echo "<strong>CPF:</strong> {$item['cpf']}<br>";
+                echo "<strong>Telefone:</strong> {$item['telefone']}<br>";
+                echo "<strong>Usuário ID:</strong> {$item['id_user']}<br>";
+                echo "<strong>Nome:</strong> {$item['nome']}<br>";
+                echo "<strong>E-mail:</strong> {$item['email']}<br>";
+                echo "<hr>"; // Linha divisória entre cada registro
+            }
         }
     } catch (PDOException $e) {
         echo "Erro: " . $e->getMessage();
@@ -302,5 +313,27 @@ function apagar_camp($conexao, $id)
         echo "Campanha de ID = $id Removido com sucesso";
     } catch (PDOException $e) {
         echo "ERRO: " . $e->getMessage();
+    }
+}
+
+// Funções para demonstrar todas as campanhas
+function campanhas($conexao)
+{
+    $sql = "SELECT * FROM campanhas";
+    try {
+        $stmt = $conexao->prepare($sql);
+        $stmt->execute();
+        $campanhas = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        foreach ($campanhas as $campanha) {
+            $data = date('d/m/Y', strtotime($campanha['data_criacao']));
+
+            echo "<strong>{$campanha['titulo']}</strong><br>";
+            echo "{$campanha['descricao']}<br>";
+            echo "<img src='{$campanha['url_imagem']}' alt='{$campanha['titulo']}' width='300'><br>";
+            echo "Iniciada em: {$data}<br><hr>";
+        }
+    } catch (PDOException $e) {
+        echo "Erro: " . $e->getMessage();
     }
 }
