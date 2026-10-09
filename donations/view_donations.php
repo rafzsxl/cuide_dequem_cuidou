@@ -1,6 +1,6 @@
-<?php 
+<?php
 require_once '../includes/functions.php';
-require_once '../admin/verify_adm.php';?>
+require_once '../admin/verify_adm.php'; ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -13,12 +13,14 @@ require_once '../admin/verify_adm.php';?>
 
 <body>
     <?php include '../includes/header.php'; ?>
+    <h1>Todas as Doações</h1>
     <hr>
     <main>
         <?php relatorio_doacoes($conexao); ?>
     </main>
-    <?php  include '../includes/footer.php'; ?>
-
+    <h3>Total Arrecadado:</h3>
+    <?php total_doacoes($conexao); ?><br>
 </body>
+<?php include '../includes/footer.php'; ?>
 
 </html>

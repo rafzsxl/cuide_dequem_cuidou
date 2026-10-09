@@ -344,6 +344,8 @@
 |    2.2   | 2026-10-07 | FIX: Arrumando Função de Voluntariar-se e Adicionado Função para a Visualização de Voluntário|
 |    2.3   | 2026-10-07 | Implementando diversas novas funções |
 |    2.4   | 2026-10-08 | Iniciando a Estilização do site e criando páginas do perfil adm |
+|    2.5   | 2026-10-09 | Arumando Bugs de Caminho e Adicionando função para a visualização de campanhas |
+|    2.6   | 2026-10-09 | Implementando Funções nas páginas principais do CDQC e nas páginas especiais |
 
 ---
 

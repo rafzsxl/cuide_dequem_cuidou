@@ -347,6 +347,8 @@ LGPD reference: <https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l1
 |    2.2   | 2026-10-07 | FIX: Fixing the Volunteer Function and adding function for viewing volunteer|
 |    2.3   | 2026-10-07 | Implementing several new features |
 |    2.4   | 2026-10-08 | Starting to Style the Website and Creating Admin Profile Pages |
+|    2.5   | 2026-10-09 | Fixing Route Bugs and Adding a Feature to View Campaigns |
+|    2.4   | 2026-10-08 | Implementing Features on the CDQC Main Pages and Special Pages |
 
 ## 5.0 Use of AI
 

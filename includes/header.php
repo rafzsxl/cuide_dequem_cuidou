@@ -1,10 +1,6 @@
 <?php
-if (session_status() === PHP_SESSION_NONE) {
-    session_start();
-}
-
-// Verifica se o usuário logado é administrador (coluna 'admin' == true)
-$is_admin = !empty($_SESSION['admin']) && $_SESSION['admin'] === true;
+// Utiliza __DIR__ para garantir que o PHP busque o arquivo na pasta 'includes'
+require_once __DIR__ . '/functions.php';
 ?>
 
 <header>
@@ -13,12 +9,13 @@ $is_admin = !empty($_SESSION['admin']) && $_SESSION['admin'] === true;
     </a>
 
     <div>
-        <?php if ($is_admin): ?>
-            <!-- O que aparece apenas para Administrador (admin = true) -->
-            <a href="../admin/users.php"><button class="btn-blue">Visualizar Usuários</button></a>
-            <a href="../donations/report.php"><button class="btn-green">Ver Doações</button></a>
+        <?php if (isAdmin()): ?>
+            <!-- O que aparece apenas para Administrador -->
+            <a href="../volunteers/view_volunteer.php"><button class="btn-blue">Visualizar Usuários</button></a>
+            <a href="../donations/view_donations.php"><button class="btn-green">Ver Doações</button></a>
+            <a href="../pages/campaigns.php"><button class="btn-yellow">Campanhas</button></a>
         <?php else: ?>
-            <!-- O que aparece apenas para Usuários Comuns (admin = false) -->
+            <!-- O que aparece apenas para Usuários Comuns -->
             <a href="../donations/donate.php">
                 <button>Doe Agora</button>
             </a>
@@ -37,7 +34,7 @@ $is_admin = !empty($_SESSION['admin']) && $_SESSION['admin'] === true;
     </label>
 
     <nav class="nav-menu">
-        <a href="../index.php">Início</a>
+        <a href="/index.php">Início</a>
         <a href="../pages/campaigns.php">Campanhas</a>
         <a href="../pages/contact.php">Contatos</a>
         <a href="../pages/partners.php">Parceiros</a>

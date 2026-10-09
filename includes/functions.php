@@ -1,23 +1,30 @@
 <?php
-require_once '../database/connect.php';
+require_once __DIR__ . '/../database/connect.php';
 
-// Funçoes de Autenticação
+// Função para verificar se o usuário é admin == true
+function isAdmin()
+{
+    if (session_status() === PHP_SESSION_NONE) {
+        session_start();
+    }
 
-// Fução para Criar Usuário
+    return !empty($_SESSION['admin']) && $_SESSION['admin'] === true;
+}
+
+// --- FUNÇÕES DE AUTENTICAÇÃO E USUÁRIOS ---
+
+// Criar Usuário
 function criar_user($conexao, $email, $senha, $nome, $nascimento, $admin = false)
 {
-    $sql = "INSERT INTO users (email, password, nome, nascimento, admin) VALUES (:email, :senha, :nome , :nascimento, :admin)";
+    $sql = "INSERT INTO users (email, password, nome, nascimento, admin) VALUES (:email, :senha, :nome, :nascimento, :admin)";
     try {
-        // $stmt representa um objeto de instrução preparada
         $stmt = $conexao->prepare($sql);
         $stmt->bindParam(":email", $email);
-        $stmt->bindParam(":senha",  $senha);
-        $stmt->bindParam("nome",  $nome); // binParam vincula uma variável e não um valor fixo
-        $stmt->bindParam(":nascimento",  $nascimento);
-
-        //PDO exige que booleanos sejam passados com o tipo explícito PDO::PARAM_BOOL 
-        $stmt->bindValue(":admin", $admin, PDO::PARAM_BOOL); //bindValue Vincula um valor fixo
-
+        $stmt->bindParam(":senha", $senha);
+        $stmt->bindParam(":nome", $nome);
+        $stmt->bindParam(":nascimento", $nascimento);
+        $stmt->bindValue(":admin", $admin, PDO::PARAM_BOOL);
+        
         $stmt->execute();
         echo "Usuário Criado com Sucesso";
     } catch (PDOException $e) {
@@ -33,117 +40,107 @@ function login_user($conexao, $email)
         $stmt = $conexao->prepare($sql);
         $stmt->bindParam(":email", $email);
         $stmt->execute();
-
+        
         return $stmt->fetch(PDO::FETCH_ASSOC);
     } catch (PDOException $e) {
         echo "ERRO: " . $e->getMessage();
     }
 }
 
-// Função para o Logout de Usuários
+// Função de Logout
 function logout_user($conexao, $senha)
 {
-    // Recebe o id do usuário Logado e armazena na variável $id
     $id = $_SESSION['id'];
-
+    
     $stmt = $conexao->prepare("SELECT password FROM users WHERE id = :id");
     $stmt->bindParam(":id", $id);
-    // Executa a consulta no banco
     $stmt->execute();
     $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
-
+    
     if ($usuario && $usuario['password'] == $senha) {
         $_SESSION = array();
         session_destroy();
     }
 }
 
-// Função para Editar os dados do Usuário
+// Função de Atualizar Usuário
 function atualizar_user($conexao, $id, $email, $senha, $nome, $nascimento)
 {
     $sql = "UPDATE users SET email = :email, password = :password, nome = :nome, nascimento = :nascimento WHERE id = :id";
     try {
         $stmt = $conexao->prepare($sql);
-
-        // Os nomes dos marcadores são fixos e iguais aos do SQL
         $stmt->bindParam(":id", $id);
         $stmt->bindParam(":email", $email);
         $stmt->bindParam(":password", $senha);
         $stmt->bindParam(":nome", $nome);
         $stmt->bindParam(":nascimento", $nascimento);
-
+        
         $stmt->execute();
     } catch (PDOException $e) {
         echo "Erro: " . $e->getMessage();
     }
 }
 
-
-// Função para sair da sessão e apagar conta
+// Função para deletar Usuário
 function delete_user($conexao, $senha)
 {
-    // Id do usuário logado, guardado na sessão durante o login
     $id = $_SESSION['id'];
-
-    // Busca a senha do usuário para conferir antes de apagar
+    
     $stmt = $conexao->prepare("SELECT password FROM users WHERE id = :id");
     $stmt->bindParam(":id", $id);
     $stmt->execute();
     $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
-    // Só continua se o usuário existir e a senha digitada for igual à do banco
+
     if ($usuario && $usuario['password'] == $senha) {
         try {
-            // Apaga o usuário do banco (tem que ser ANTES de destruir a sessão)
             $stmt = $conexao->prepare("DELETE FROM users WHERE id = :id");
             $stmt->bindParam(":id", $id);
             $stmt->execute();
-            // Depois de apagar, encerra a sessão
+            
             $_SESSION = array();
             session_destroy();
-            return true;   // conta apagada e sessão encerrada
+            return true;
         } catch (PDOException $e) {
             echo "Erro: " . $e->getMessage();
-            return false;  // falhou ao apagar, a sessão continua ativa
+            return false;
         }
     } else {
         echo "Senha Incorreta";
+        return false;
     }
 }
 
 
+// --- FUNÇÕES DE VOLUNTÁRIOS ---
 
-// Funções de Voluntarios
-// Cadastra o usuário logado como voluntário, depois de conferir a senha
+// Função para criar voluntário
 function criar_volun($conexao, $cpf, $telefone, $senha)
 {
     $id = $_SESSION['id'];
-
+    
     $stmt = $conexao->prepare("SELECT password FROM users WHERE id = :id");
     $stmt->bindParam(":id", $id);
     $stmt->execute();
     $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
-
-    // Senha errada: para aqui
+    
     if (!$usuario || $usuario['password'] != $senha) {
         echo "Senha Inválida";
         return false;
     }
-
-    // Já é voluntário: não cadastra de novo
+    
     if (id_volun($conexao, $id)) {
         echo "Você já é voluntário.";
         return false;
     }
-
+    
     try {
-        $sql = "INSERT INTO voluntarios (user_id, cpf, telefone, data_volun)
-                VALUES (:user_id, :cpf, :telefone, NOW())";
+        $sql = "INSERT INTO voluntarios (user_id, cpf, telefone, data_volun) VALUES (:user_id, :cpf, :telefone, NOW())";
         $stmt = $conexao->prepare($sql);
         $stmt->bindParam(":user_id", $id);
         $stmt->bindParam(":cpf", $cpf);
         $stmt->bindParam(":telefone", $telefone);
         $stmt->execute();
-
+        
         return true;
     } catch (PDOException $e) {
         echo "Erro: " . $e->getMessage();
@@ -151,11 +148,9 @@ function criar_volun($conexao, $cpf, $telefone, $senha)
     }
 }
 
-// Função para demonstrar todos os Voluntários com INNER JOIN
+// Função para visualizar todos os voluntários com INNER JOIN
 function relatorio_volun($conexao)
 {
-    // Lista só as colunas desejadas; "password" fica de fora
-    // "AS" dá nomes diferentes aos dois ids para não sobrescrever um ao outro
     $sql = "SELECT a.id AS id_volun, a.cpf, a.telefone, a.data_volun,
                    b.id AS id_user, b.nome, b.email, b.nascimento
             FROM voluntarios a
@@ -165,7 +160,7 @@ function relatorio_volun($conexao)
         $stmt = $conexao->prepare($sql);
         $stmt->execute();
         $voluntarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
+        
         foreach ($voluntarios as $voluntario) {
             $data = date('H:i - d/m/Y', strtotime($voluntario['data_volun']));
             echo "ID Voluntário: {$voluntario['id_volun']}<br>";
@@ -182,95 +177,110 @@ function relatorio_volun($conexao)
     }
 }
 
-// Função para apagar voluntario
+// Função para apagar voluntário
 function apagar_volun($conexao, $id)
 {
-    $sql = "DELETE FROM voluntarios WHERE id = :id";
     try {
-        $stmt = $conexao->prepare($sql);
-        $stmt->bindParam(":id", $id);
-        $stmt->execute();
-        echo "Voluntário de ID = $id Removido com sucesso";
+        // Inicia uma transação para garantir que ambas as exclusões ocorram com sucesso
+        $conexao->beginTransaction();
+        
+        // 1. Apaga as doações associadas a este voluntário primeiro
+        $stmtDoacoes = $conexao->prepare("DELETE FROM doacoes WHERE id_volun = :id");
+        $stmtDoacoes->bindParam(":id", $id);
+        $stmtDoacoes->execute();
+        
+        // 2. Agora apaga o voluntário sem violar a restrição de chave estrangeira
+        $stmtVolun = $conexao->prepare("DELETE FROM voluntarios WHERE id = :id");
+        $stmtVolun->bindParam(":id", $id);
+        $stmtVolun->execute();
+        
+        // Confirma as alterações no banco
+        $conexao->commit();
+        echo "Voluntário de ID = $id e suas doações associadas foram removidos com sucesso.";
     } catch (PDOException $e) {
+        // Se algo der errado, reverte as alterações
+        $conexao->rollBack();
         echo "ERRO: " . $e->getMessage();
     }
 }
 
-// Retorna o id do voluntário ligado ao usuário, ou false se não for voluntário
+// Função para demonstrar o id de um usuário
 function id_volun($conexao, $user_id)
 {
     $stmt = $conexao->prepare("SELECT id FROM voluntarios WHERE user_id = :user_id");
     $stmt->bindParam(":user_id", $user_id);
     $stmt->execute();
     $volun = $stmt->fetch(PDO::FETCH_ASSOC);
-
+    
     return $volun ? $volun['id'] : false;
 }
 
-// Funções de doações
+
+// --- FUNÇÕES DE DOAÇÕES ---
+
+// Função para demonstrar todas as Doações
 function relatorio_doacoes($conexao)
 {
     $sql = "SELECT d.id AS id_doacao, d.valor, d.data,
-               v.id AS id_volun, v.cpf, v.telefone,
-               u.id AS id_user, u.nome, u.email
-        FROM doacoes d
-        INNER JOIN voluntarios v ON d.id_volun = v.id
-        INNER JOIN users u ON v.user_id = u.id
-        ORDER BY d.id";
+                   v.id AS id_volun, v.cpf, v.telefone,
+                   u.id AS id_user, u.nome, u.email
+            FROM doacoes d
+            INNER JOIN voluntarios v ON d.id_volun = v.id
+            INNER JOIN users u ON v.user_id = u.id
+            ORDER BY d.id";
     try {
         $stmt = $conexao->prepare($sql);
         $stmt->execute();
-        $voluntarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-        foreach ($voluntarios as $voluntario) {
-            foreach ($voluntarios as $item) {
-                echo "<strong>Doação ID:</strong> {$item['id_doacao']}<br>";
-                echo "<strong>Valor:</strong> R$ {$item['valor']}<br>";
-                echo "<strong>Data:</strong> {$item['data']}<br>";
-                echo "<strong>Voluntário ID:</strong> {$item['id_volun']}<br>";
-                echo "<strong>CPF:</strong> {$item['cpf']}<br>";
-                echo "<strong>Telefone:</strong> {$item['telefone']}<br>";
-                echo "<strong>Usuário ID:</strong> {$item['id_user']}<br>";
-                echo "<strong>Nome:</strong> {$item['nome']}<br>";
-                echo "<strong>E-mail:</strong> {$item['email']}<br>";
-                echo "<hr>"; // Linha divisória entre cada registro
-            }
+        $doacoes = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        
+        // Apenas um foreach para evitar duplicação dos registros na tela
+        foreach ($doacoes as $item) {
+            $valor_formatado = number_format($item['valor'], 2, ',', '.');
+            $data_formatada = date('d/m/Y H:i', strtotime($item['data']));
+            
+            echo "<strong>Doação ID:</strong> {$item['id_doacao']}<br>";
+            echo "<strong>Valor:</strong> R$ {$valor_formatado}<br>";
+            echo "<strong>Data:</strong> {$data_formatada}<br>";
+            echo "<strong>Voluntário ID:</strong> {$item['id_volun']}<br>";
+            echo "<strong>CPF:</strong> {$item['cpf']}<br>";
+            echo "<strong>Telefone:</strong> {$item['telefone']}<br>";
+            echo "<strong>Usuário ID:</strong> {$item['id_user']}<br>";
+            echo "<strong>Nome:</strong> {$item['nome']}<br>";
+            echo "<strong>E-mail:</strong> {$item['email']}<br>";
+            echo "<hr>";
         }
     } catch (PDOException $e) {
         echo "Erro: " . $e->getMessage();
     }
 }
 
-// Registra uma doação do usuário logado (que precisa ser voluntário)
+// Função para realizar uma doação
 function doar($conexao, $valor, $senha)
 {
     $id = $_SESSION['id'];
-
-    // Confere a senha do usuário logado
+    
     $stmt = $conexao->prepare("SELECT password FROM users WHERE id = :id");
     $stmt->bindParam(":id", $id);
     $stmt->execute();
     $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
-
+    
     if (!$usuario || $usuario['password'] != $senha) {
         echo "Senha Inválida";
-        return false;   // para aqui
+        return false;
     }
-
-    // Converte o id do usuário no id do voluntário
+    
     $volun_id = id_volun($conexao, $id);
     if (!$volun_id) {
-        return false;   // não é voluntário
+        return false;
     }
-
+    
     try {
-        $sql = "INSERT INTO doacoes (id_volun, valor, data)
-                VALUES (:id_volun, :valor, NOW())";
+        $sql = "INSERT INTO doacoes (id_volun, valor, data) VALUES (:id_volun, :valor, NOW())";
         $stmt = $conexao->prepare($sql);
         $stmt->bindParam(":id_volun", $volun_id);
         $stmt->bindParam(":valor", $valor);
         $stmt->execute();
-
+        
         return true;
     } catch (PDOException $e) {
         echo "Erro: " . $e->getMessage();
@@ -278,15 +288,33 @@ function doar($conexao, $valor, $senha)
     }
 }
 
-// Funções de ADM
+// Função para calcular a soma de todas as doações, com formatação para R$
+function total_doacoes($conexao)
+{
+    $sql = "SELECT SUM(valor) AS total FROM doacoes";
+    try {
+        $stmt = $conexao->prepare($sql);
+        $stmt->execute();
+        $resultado = $stmt->fetch(PDO::FETCH_ASSOC);
+        
+        $total = $resultado['total'] ?? 0;
+        $total_formatado = number_format($total, 2, ',', '.');
+        
+        echo "<strong>R$ {$total_formatado}</strong>";
+    } catch (PDOException $e) {
+        echo "Erro: " . $e->getMessage();
+    }
+}
 
-// Cria uma campanha em nome do admin
+
+// --- FUNÇÕES DE CAMPANHAS E ADMIN ---
+
+// Funçãp para criar uma campanha
 function criar_camp($conexao, $titulo, $descricao, $url)
 {
     $id = $_SESSION['id'];
-
+    
     try {
-        // Ajuste os nomes das colunas se o banco usar outros (ex: url_imagem)
         $sql = "INSERT INTO campanhas (user_id, titulo, descricao, url_imagem, data_criacao)
                 VALUES (:user_id, :titulo, :descricao, :url, NOW())";
         $stmt = $conexao->prepare($sql);
@@ -295,7 +323,7 @@ function criar_camp($conexao, $titulo, $descricao, $url)
         $stmt->bindParam(":descricao", $descricao);
         $stmt->bindParam(":url", $url);
         $stmt->execute();
-
+        
         return true;
     } catch (PDOException $e) {
         echo "Erro: " . $e->getMessage();
@@ -303,7 +331,7 @@ function criar_camp($conexao, $titulo, $descricao, $url)
     }
 }
 
-// Função para apagar Campanha
+// Função para excluir uma campanha
 function apagar_camp($conexao, $id)
 {
     $sql = "DELETE FROM campanhas WHERE id = :id";
@@ -317,7 +345,7 @@ function apagar_camp($conexao, $id)
     }
 }
 
-// Funções para demonstrar todas as campanhas
+// Função para visualizar todas as campanhas
 function campanhas($conexao)
 {
     $sql = "SELECT * FROM campanhas";
@@ -325,10 +353,10 @@ function campanhas($conexao)
         $stmt = $conexao->prepare($sql);
         $stmt->execute();
         $campanhas = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
+        
         foreach ($campanhas as $campanha) {
             $data = date('d/m/Y', strtotime($campanha['data_criacao']));
-
+            
             echo "<strong>{$campanha['titulo']}</strong><br>";
             echo "{$campanha['descricao']}<br>";
             echo "<img src='{$campanha['url_imagem']}' alt='{$campanha['titulo']}' width='300'><br>";
@@ -339,22 +367,26 @@ function campanhas($conexao)
     }
 }
 
-function total_doacoes($conexao)
+// Função para editar uma campanha 
+function atualizar_camp($conexao, $id_campanha, $titulo, $descricao, $url)
 {
-    $sql = "SELECT SUM(valor) AS total FROM doacoes";
+    $sql = "UPDATE campanhas SET titulo = :titulo, descricao = :descricao, url_imagem = :url WHERE id = :id";
     try {
         $stmt = $conexao->prepare($sql);
+        
+        $stmt->bindParam(":id", $id_campanha);
+        $stmt->bindParam(":titulo", $titulo);
+        $stmt->bindParam(":descricao", $descricao);
+        $stmt->bindParam(":url", $url);
+        
         $stmt->execute();
-        $resultado = $stmt->fetch(PDO::FETCH_ASSOC);
-
-        // Se não houver doações, define o total como 0
-        $total = $resultado['total'] ?? 0;
-
-        // Formata para o padrão brasileiro (ex: R$ 5.000,00)
-        $total_formatado = number_format($total, 2, ',', '.');
-
-        echo "<strong>R$ {$total_formatado}</strong>";
+        return true;
     } catch (PDOException $e) {
         echo "Erro: " . $e->getMessage();
+        return false;
     }
 }
+
+
+
+        ?>
