@@ -7,6 +7,7 @@ require_once '../includes/functions.php';?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sua Conta</title>
+    <link rel="stylesheet" href="../style/style.css">
 </head>
 
 <?php include '../includes/header.php'; ?>

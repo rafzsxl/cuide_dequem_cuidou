@@ -290,3 +290,17 @@ function criar_camp($conexao, $titulo, $descricao, $url)
         return false;
     }
 }
+
+// Função para apagar Campanha
+function apagar_camp($conexao, $id)
+{
+    $sql = "DELETE FROM campanhas WHERE id = :id";
+    try {
+        $stmt = $conexao->prepare($sql);
+        $stmt->bindParam(":id", $id);
+        $stmt->execute();
+        echo "Campanha de ID = $id Removido com sucesso";
+    } catch (PDOException $e) {
+        echo "ERRO: " . $e->getMessage();
+    }
+}

@@ -345,7 +345,8 @@ LGPD reference: <https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l1
 |    2.1   | 2026-10-02 | Implementing the Edit, Logout, and Delete functions |
 |    2.2   | 2026-10-04 | Implementing the Volunteer Function |
 |    2.2   | 2026-10-07 | FIX: Fixing the Volunteer Function and adding function for viewing volunteer|
-|    2.3   | 2026-10-07 | Implementing several new features|
+|    2.3   | 2026-10-07 | Implementing several new features |
+|    2.4   | 2026-10-08 | Starting to Style the Website and Creating Admin Profile Pages |
 
 ## 5.0 Use of AI
 

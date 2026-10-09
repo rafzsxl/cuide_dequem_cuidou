@@ -1,14 +1,17 @@
-<?php 
+<?php
 require_once '../includes/functions.php';
-require_once '../admin/verify_adm.php';?>
+require_once '../admin/verify_adm.php'; ?>
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DELETE</title>
+    <title>Deletar Voluntário</title>
+    <link rel="stylesheet" href="../style/style.css">
 </head>
 <?php include '../includes/header.php'; ?>
+
 <body>
     <h1>Deletar Voluntário</h1>
     <main>
@@ -17,11 +20,12 @@ require_once '../admin/verify_adm.php';?>
             <input type="number" name="id" id="id" placeholder="Insira o ID para Apagar" required><br>
             <input type="submit" value="Apagar">
         </form>
-        <?php 
-        if ($_SERVER['REQUEST_METHOD'] =="POST") {
+        <?php
+        if ($_SERVER['REQUEST_METHOD'] == "POST") {
             apagar_volun($conexao, $_POST['id']);
         } ?>
     </main>
-<?php include '../includes/footer.php'; ?>
+    <?php include '../includes/footer.php'; ?>
 </body>
+
 </html>

@@ -343,6 +343,7 @@
 |    2.2   | 2026-10-04 | Implementando Função de Voluntariar-se |
 |    2.2   | 2026-10-07 | FIX: Arrumando Função de Voluntariar-se e Adicionado Função para a Visualização de Voluntário|
 |    2.3   | 2026-10-07 | Implementando diversas novas funções |
+|    2.4   | 2026-10-08 | Iniciando a Estilização do site e criando páginas do perfil adm |
 
 ---
 

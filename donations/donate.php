@@ -7,7 +7,7 @@ require_once '../volunteers\verify_volun.php'; ?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Doar</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style/style.css">
 </head>
 <?php include '../includes/header.php'; ?>
 
