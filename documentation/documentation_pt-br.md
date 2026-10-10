@@ -346,6 +346,8 @@
 |    2.4   | 2026-10-08 | Iniciando a Estilização do site e criando páginas do perfil adm |
 |    2.5   | 2026-10-09 | Arumando Bugs de Caminho e Adicionando função para a visualização de campanhas |
 |    2.6   | 2026-10-09 | Implementando Funções nas páginas principais do CDQC e nas páginas especiais |
+|    2.7   | 2026-10-09 | Consertando erros de caminho e melhorando a UI e UX do User Admin |
+|    2.8   | 2026-10-10 | Adicionando animação de carrossel na página de parceiros, atualizando a documentação e melhorando a UX do usuário Admin |
 
 ---
 
@@ -360,3 +362,4 @@
 | CLAUDE | 2026-09-27 | Rever Principios |
 | CLAUDE | 2026-09-27 | Gerar uma história para a CDQC |
 | CLAUDE | 2026-10-02 | Ajuda com a Correção da function atualizar_user |
+| CLAUDE | 2026-10-07 | Ajuda com INNER JOINS |

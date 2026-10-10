@@ -1,5 +1,26 @@
-<?php require_once '../includes/functions.php';
+<?php 
+require_once '../includes/functions.php';
 require_once 'verify_adm.php';
+
+// Verifica se o ID foi informado na URL
+if (!isset($_GET['id']) || empty($_GET['id'])) {
+    header("Location: ../pages/campaigns.php");
+    exit();
+}
+
+$id_campanha = $_GET['id'];
+
+// Busca os dados da campanha no banco para preencher o formulário
+$stmt = $conexao->prepare("SELECT * FROM campanhas WHERE id = :id");
+$stmt->bindParam(":id", $id_campanha);
+$stmt->execute();
+$campanha = $stmt->fetch(PDO::FETCH_ASSOC);
+
+// Se a campanha não existir, redireciona de volta
+if (!$campanha) {
+    header("Location: ../pages/campaigns.php");
+    exit();
+}
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -13,33 +34,42 @@ require_once 'verify_adm.php';
 
 <?php include '../includes/header.php'; ?>
 
-
-
 <body>
     <main>
-        <h1>Edite Uma Campanha</h1>
+        <h1>Editar Campanha</h1>
         <form action="" method="post">
-            <label for="titulo">TÍtulo:</label>
-            <input type="text" name="titulo" id="titulo" placeholder="Insira um TÍtulo" required><br>
-            <label type="text">Descrição:</label>
-            <input type="text" name="descricao" id="descricao" placeholder="Insira uma Descrição" required><br>
-            <label type="text">Url da Imagem:</label>
-            <input type="text" name="url" id="url" placeholder="URL da sua Imagem" required><br>
-            <input type="reset" value="Limpar">
-            <input type="submit" value="Criar">
+            <!-- Campo oculto para enviar o ID da campanha -->
+            <input type="hidden" name="id" value="<?php echo $campanha['id']; ?>">
+            <label for="titulo">Título:</label>
+            <input type="text" name="titulo" id="titulo" value="<?php echo htmlspecialchars($campanha['titulo']); ?>" placeholder="Insira um Título" required><br>
+            <label for="descricao">Descrição:</label>
+            <input type="text" name="descricao" id="descricao" value="<?php echo htmlspecialchars($campanha['descricao']); ?>" placeholder="Insira uma Descrição" required><br>
+            <label for="url">Url da Imagem:</label>
+            <input type="text" name="url" id="url" value="<?php echo htmlspecialchars($campanha['url_imagem']); ?>" placeholder="URL da sua Imagem" required><br>
+            <input type="reset" value="Cancelar">
+            <input type="submit" value="Salvar Alterações">
+            
         </form>
+        <?php campanhas($conexao); ?>
+
         <?php
         if ($_SERVER['REQUEST_METHOD'] == "POST") {
-            if (criar_camp($conexao, $_POST['titulo'], $_POST['descricao'], $_POST['url'])) {
+            $titulo = $_POST['titulo'];
+            $descricao = $_POST['descricao'];
+            $url = $_POST['url'];
+            $id = $_POST['id'];
+
+            // Chama a função de atualização passando o ID e os novos dados
+            if (atualizar_camp($conexao, $id, $titulo, $descricao, $url)) {
                 header("Location: ../pages/campaigns.php");
                 exit();
+            } else {
+                echo "<p style='color: red;'>Não foi possível atualizar a Campanha.</p>";
             }
-            $erro = "Não foi Possivel criar a Campanha.";
         }
         ?>
     </main>
 </body>
-
 
 <?php include '../includes/footer.php'; ?>
 

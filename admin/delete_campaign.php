@@ -1,6 +1,6 @@
 <?php
 require_once '../includes/functions.php';
-require_once '../admin/verify_adm.php'; ?>
+require_once 'verify_adm.php'; ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -20,6 +20,7 @@ require_once '../admin/verify_adm.php'; ?>
             <input type="number" name="id" id="id" placeholder="Insira o ID para Apagar" required><br>
             <input type="submit" value="Apagar">
         </form>
+        <?php campanhas($conexao); ?>
         <?php
         if ($_SERVER['REQUEST_METHOD'] == "POST") {
             apagar_camp($conexao, $_POST['id']);

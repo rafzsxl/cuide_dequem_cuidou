@@ -20,6 +20,7 @@ require_once '../admin/verify_adm.php'; ?>
             <input type="number" name="id" id="id" placeholder="Insira o ID para Apagar" required><br>
             <input type="submit" value="Apagar">
         </form>
+        <?php relatorio_volun($conexao); ?><br>
         <?php
         if ($_SERVER['REQUEST_METHOD'] == "POST") {
             apagar_volun($conexao, $_POST['id']);

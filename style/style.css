@@ -1,10 +1,12 @@
-*{
+* {
     background-color: aliceblue;
-    font-family:'Open Sans';
+    font-family: 'Open Sans';
 }
-p{
+
+p {
     color: black;
-} 
+}
+
 :root {
     --bg-header: #FFFFFF;
     --bg-painel: #FFF8E1;
@@ -16,7 +18,7 @@ p{
     --hover-texto: #064E3B;
     --foco: #1D4ED8;
 }
- 
+
 /* ---------- Cabeçalho ---------- */
 header {
     background-color: var(--bg-header);
@@ -30,13 +32,13 @@ header {
     border-bottom: 4px solid var(--destaque);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
- 
-header > a > img {
+
+header>a>img {
     height: 60px;
     width: auto;
     display: block;
 }
- 
+
 /* ---------- Botão "Doe Agora" (cabeçalho) ---------- */
 header button {
     background-color: var(--destaque);
@@ -50,16 +52,16 @@ header button {
     cursor: pointer;
     transition: background-color 0.2s, transform 0.2s;
 }
- 
+
 header button:hover {
     background-color: var(--destaque-escuro);
     transform: scale(1.05);
 }
- 
+
 header button:active {
     transform: scale(0.98);
 }
- 
+
 /* ---------- Checkbox escondido (acessível por teclado) ---------- */
 #menu-toggle {
     position: absolute;
@@ -68,7 +70,7 @@ header button:active {
     height: 1px;
     pointer-events: none;
 }
- 
+
 /* ---------- Ícone hambúrguer ---------- */
 .hamburger {
     display: flex;
@@ -85,11 +87,11 @@ header button:active {
     z-index: 10;
     transition: background-color 0.2s, border-color 0.2s;
 }
- 
+
 .hamburger:hover {
     background-color: var(--hover-bg);
 }
- 
+
 .hamburger span {
     height: 4px;
     width: 100%;
@@ -97,35 +99,35 @@ header button:active {
     border-radius: 4px;
     transition: transform 0.35s ease, opacity 0.25s ease, background-color 0.25s;
 }
- 
-#menu-toggle:focus-visible ~ .hamburger {
+
+#menu-toggle:focus-visible~.hamburger {
     outline: 4px solid var(--foco);
     outline-offset: 3px;
 }
- 
+
 /* Animação: vira "X" (distância entre barras = 4px + 7px = 11px) */
-#menu-toggle:checked ~ .hamburger {
+#menu-toggle:checked~.hamburger {
     background-color: var(--hover-bg);
     border-color: var(--destaque);
 }
- 
-#menu-toggle:checked ~ .hamburger span {
+
+#menu-toggle:checked~.hamburger span {
     background-color: var(--destaque-escuro);
 }
- 
-#menu-toggle:checked ~ .hamburger span:nth-child(1) {
+
+#menu-toggle:checked~.hamburger span:nth-child(1) {
     transform: translateY(11px) rotate(45deg);
 }
- 
-#menu-toggle:checked ~ .hamburger span:nth-child(2) {
+
+#menu-toggle:checked~.hamburger span:nth-child(2) {
     opacity: 0;
     transform: scaleX(0);
 }
- 
-#menu-toggle:checked ~ .hamburger span:nth-child(3) {
+
+#menu-toggle:checked~.hamburger span:nth-child(3) {
     transform: translateY(-11px) rotate(-45deg);
 }
- 
+
 /* ---------- Painel do menu (flutuante, à direita) ---------- */
 .nav-menu {
     position: absolute;
@@ -138,12 +140,12 @@ header button:active {
     border-radius: 20px;
     box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
     z-index: 9;
- 
+
     /* grade de 2 colunas */
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
- 
+
     /* fechado: some com animação de "abrir" saindo do canto do botão */
     opacity: 0;
     visibility: hidden;
@@ -151,7 +153,7 @@ header button:active {
     transform-origin: top right;
     transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
 }
- 
+
 /* cada link vira um botão grande */
 .nav-menu a {
     display: flex;
@@ -169,7 +171,7 @@ header button:active {
     border-radius: 16px;
     transition: background-color 0.2s, color 0.2s, transform 0.2s;
 }
- 
+
 .nav-menu a:hover,
 .nav-menu a:focus-visible {
     background-color: var(--hover-bg);
@@ -177,11 +179,11 @@ header button:active {
     transform: translateY(-3px);
     outline: none;
 }
- 
+
 .nav-menu a:focus-visible {
     box-shadow: 0 0 0 4px var(--foco);
 }
- 
+
 /* botão "Doe Aqui": ocupa a linha inteira, em destaque */
 .nav-menu a.nav-doe {
     grid-column: 1 / -1;
@@ -189,58 +191,115 @@ header button:active {
     color: #FFFFFF;
     font-size: 1.6rem;
 }
- 
+
 .nav-menu a.nav-doe:hover,
 .nav-menu a.nav-doe:focus-visible {
     background-color: var(--destaque-escuro);
     color: #FFFFFF;
 }
- 
+
 /* ---------- Abrir o menu ---------- */
-#menu-toggle:checked ~ .nav-menu {
+#menu-toggle:checked~.nav-menu {
     opacity: 1;
     visibility: visible;
     transform: translateY(0) scale(1);
 }
- 
+
 /* ---------- Telas pequenas ---------- */
 @media (max-width: 600px) {
     header {
         padding: 0.8rem 1rem;
         gap: 0.5rem;
     }
- 
-    header > a > img {
+
+    header>a>img {
         height: 48px;
     }
- 
+
     header button {
         font-size: 1.1rem;
         padding: 0.6rem 1rem;
     }
- 
+
     .hamburger {
         width: 52px;
         height: 52px;
     }
- 
+
     .nav-menu {
         right: 0.5rem;
         width: calc(100% - 1rem);
         padding: 0.9rem;
         gap: 0.8rem;
     }
- 
+
     .nav-menu a {
         font-size: 1.2rem;
         min-height: 72px;
     }
 }
- 
-/* ---------- Respeita quem desativa animações ---------- */
-@media (prefers-reduced-motion: reduce) {
-    * {
-        transition: none !important;
+@keyframes slide {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%); /* Move metade da largura para o loop contínuo */
     }
 }
- 
+
+.partners {
+    overflow: hidden;
+    padding: 30px 0;
+    background-color: #ffffff; /* Fundo branco limpo, igual à referência */
+    white-space: nowrap;
+    position: relative;
+    width: 100%;
+}
+
+/* Sombreamento/Fade suave nas extremidades */
+.partners:before,
+.partners:after {
+    position: absolute;
+    top: 0;
+    width: 200px;
+    height: 100%;
+    content: "";
+    z-index: 2;
+    pointer-events: none;
+}
+
+.partners:before {
+    left: 0;
+    background: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+}
+
+.partners:after {
+    right: 0;
+    background: linear-gradient(to left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+}
+
+.partner-logos {
+    display: inline-flex;
+    align-items: center;
+    animation: 20s slide infinite linear; /* Velocidade suave */
+}
+
+.partners:hover .partner-logos {
+    animation-play-state: paused; /* Pausa ao passar o rato */
+}
+
+.partner-logos a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 50px; 
+    background: transparent; /* Remove fundos indesejados */
+    text-decoration: none;
+}
+
+.partner-logos img {
+    height: 45px; /* Altura padronizada para as logos */
+    width: auto;
+    object-fit: contain;
+    background: transparent;
+}
