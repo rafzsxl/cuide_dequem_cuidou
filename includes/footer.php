@@ -1,4 +1,3 @@
-<hr>
 <footer>
   <div>
     <a href="../donations\donate.php">
@@ -9,7 +8,8 @@
     <a href="../pages\contact.php">
       <button>Contatos</button>
     </a>
-</div>
+  </div>
+  <br>
   <div>
     <p><b><i>&copy; 2026 CuideDeQuemCuidou. Todos os direitos reservados</i></b></p>
   </div>

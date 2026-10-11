@@ -348,13 +348,14 @@
 |    2.6   | 2026-10-09 | Implementando Funções nas páginas principais do CDQC e nas páginas especiais |
 |    2.7   | 2026-10-09 | Consertando erros de caminho e melhorando a UI e UX do User Admin |
 |    2.8   | 2026-10-10 | Adicionando animação de carrossel na página de parceiros, atualizando a documentação e melhorando a UX do usuário Admin |
+|    2.9   | 2026-10-11 | Adicionando Imagens no index, usando o codex para fazer a estilização e arrumando o update_campaign.php |
 
 ---
 
 ## 5.0 Utilização de IA
 
 ### Retrospecto do Uso de IA
-|  IA |    Data    | Intenção|
+|  **IA** |    **Data**    | **Intenção** |
 |---------:|:----------:|:--------------|
 | CLAUDE | 2026-09-20 | Dar nome à ONG |
 | GEMINI | 2026-09-20 | Gerar logo da CDQC |
@@ -363,3 +364,5 @@
 | CLAUDE | 2026-09-27 | Gerar uma história para a CDQC |
 | CLAUDE | 2026-10-02 | Ajuda com a Correção da function atualizar_user |
 | CLAUDE | 2026-10-07 | Ajuda com INNER JOINS |
+| CODEX | 2026-10-11 | Estilização da CDQC |
+| GEMINI | 2026-10-11 | Gerar imagens para o index |

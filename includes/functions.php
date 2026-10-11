@@ -356,15 +356,13 @@ function campanhas($conexao)
         
         foreach ($campanhas as $campanha) {
             $data = date('d/m/Y', strtotime($campanha['data_criacao']));
-            
-            // Se for admin, exibe o ID e opções de gerenciar
-            if (isAdmin()) {
-                echo "<small style='color: gray;'>ID da Campanha: {$campanha['id']}</small><br>";
-                // Exemplo de links para editar ou apagar (ajuste o caminho se necessário)
-                echo "<a href='../admin/edit_campaign.php?id={$campanha['id']}'>[Editar]</a> ";
-                echo "<a href='../admin/delete_campaign.php?id={$campanha['id']}'>[Apagar]</a><br>";
-            }
 
+            if (isAdmin()){
+                echo "ID: {$campanha['id']}<br>";
+            }
+            else{
+
+            }
             echo "<strong>{$campanha['titulo']}</strong><br>";
             echo "{$campanha['descricao']}<br>";
             echo "<img src='{$campanha['url_imagem']}' alt='{$campanha['titulo']}' width='300'><br>";
@@ -395,6 +393,4 @@ function atualizar_camp($conexao, $id_campanha, $titulo, $descricao, $url)
     }
 }
 
-
-
-        ?>
+?>

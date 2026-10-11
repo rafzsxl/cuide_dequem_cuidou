@@ -23,8 +23,8 @@
             <input type="text" name="nome" id="nome" placeholder="Insira o seu Nome" required><br>
             <label for="nascimento">Nascimento:</label>
             <input type="date" name="nascimento" id="nascimento" placeholder="Insira a data do seu Nascimento" required><br>
-            <input type="submit" value="Criar">
             <input type="reset" value="Limpar">
+            <input type="submit" value="Criar">
         </form>
 
         <?php

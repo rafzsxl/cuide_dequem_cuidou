@@ -329,7 +329,7 @@ LGPD reference: <https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l1
 ## 4.0 Git Version Control
 
 ### Version History
-|  Version  |    Date    | Changes |
+|  Version**  |    **Date**    | **Changes** |
 |---------:|:----------:|:--------------|
 |    1.0   | 2026-09-18 | Initial project structure |
 |    1.1   | 2026-09-20 | Refinement of the project scope and objectives |
@@ -351,16 +351,20 @@ LGPD reference: <https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l1
 |    2.6   | 2026-10-09 | Implementing Features on the CDQC Main Pages and Special Pages |
 |    2.7   | 2026-10-09 | Fixing route errors and improving the User Admin UI and UX |
 |    2.8   | 2026-10-10 | Adding a carousel animation to the partners page, updating the documentation, and improving the Admin user experience |
+|    2.9   | 2026-10-11 | Adding images to the index, using the Codex for styling, and fixing update_campaign.php |
 
 ## 5.0 Use of AI
 
 ### AI Usage Log
 
-| **AI** | **Date**   | **Purpose**                                    |
-|:--------|:------------:|:------------------------------------------------|
-| CLAUDE | 2026-09-20 | Naming the NGO                                 |
-| GEMINI | 2026-09-20 | Generating the CDQC logo                       |
+| **AI** | **Date**   | **Purpose** |
+|:--------|:------------:|:--------------|
+| CLAUDE | 2026-09-20 | Naming the NGO  |
+| GEMINI | 2026-09-20 | Generating the CDQC logo  |
 | CLAUDE | 2026-09-22 | Generating questions to structure the briefing |
 | CLAUDE | 2026-09-27 | Reviewing the principles                       |
 | CLAUDE | 2026-09-27 | Generating a story for CDQC                    |
-| CLAUDE | 2026-10-02 | Help with fixing the function satualizar_user  |
+| CLAUDE | 2026-10-02 | Help with fixing the function atualizar_user  |
+| CLAUDE | 2026-10-07 |  Help with INNER JOINS |
+| CODEX | 2026-10-11 |  CDQC Styling |
+| GEMINI | 2026-10-11 |  Generating images for index |

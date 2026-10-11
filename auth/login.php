@@ -21,8 +21,8 @@
             <label type="senha">Senha:</label>
             <input type="password" name="senha" id="senha" placeholder="Insira a senha" required><br>
             <a href="sign_up.php">Ainda Não Possui Uma Conta?</a><br>
-            <input type="submit" value="Cadastrar">
             <input type="reset" value="Limpar">
+            <input type="submit" value="Cadastrar">
         </form>
         <?php
         if (session_status() == PHP_SESSION_NONE) {

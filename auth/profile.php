@@ -1,5 +1,5 @@
-<?php require_once 'verify_user.php'; 
-require_once '../includes/functions.php';?>
+<?php require_once 'verify_user.php';
+require_once '../includes/functions.php'; ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -9,14 +9,9 @@ require_once '../includes/functions.php';?>
     <title>Sua Conta</title>
     <link rel="stylesheet" href="../style/style.css">
 </head>
-
 <?php include '../includes/header.php'; ?>
-
-
-
 <body>
     <main>
-
         <img src="../images/media/user_profile.png" alt="Logo" width="10%">
 
         <a href="edit.php">

@@ -18,8 +18,8 @@ require_once 'verify_user.php'; ?>
         <form action="" method="post">
             <label type="senha">Senha:</label>
             <input type="password" name="senha" id="senha" placeholder="Insira a senha" required><br>
-            <input type="submit" value="Apagar">
             <input type="reset" value="Limpar">
+            <input type="submit" value="Apagar">
         </form>
         <?php
         if ($_SERVER['REQUEST_METHOD'] == "POST") {

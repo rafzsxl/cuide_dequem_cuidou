@@ -10,7 +10,6 @@
 <body>
     <h1>Quem Somos?</h1>
     <section id="Missão">
-        <hr>
         <div>
             <h3>Missão</h3>
             <p>Ajudar idosos em situações delicadas, seja em situação de rua ou que os filhos não tem condições de cuidar deles no dia a dia e ajuda-los dispondo enviando voluntários diariamente para auxilia-los ou dispondo abrigo em nosso centro. Garantindo dignidade, qualidade de Vida e Inclusão social para a população da terceira idade</p>

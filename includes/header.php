@@ -5,13 +5,13 @@ require_once __DIR__ . '/functions.php';
 
 <header>
     <a href="../index.php">
-        <img src="../images/media/logo.png" alt="Logo" width="10%">
+        <img src="../images/media/logo.png" alt="Logo" width="15%">
     </a>
 
     <div>
         <?php if (isAdmin()): ?>
             <!-- O que aparece apenas para Administrador -->
-            <a href="../volunteers/view_volunteer.php"><button class="btn-blue">Visualizar Usuários</button></a>
+            <a href= "../volunteers/view_volunteer.php"><button class="btn-blue">Visualizar Voluntários</button></a>
             <a href="../donations/view_donations.php"><button class="btn-green">Ver Doações</button></a>
             <a href="../pages/campaigns.php"><button class="btn-yellow">Campanhas</button></a>
         <?php else: ?>
@@ -42,4 +42,3 @@ require_once __DIR__ . '/functions.php';
         <a href="../pages/transparency.php">Transparência</a>
     </nav>
 </header>
-<hr>
