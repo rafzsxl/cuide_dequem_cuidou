@@ -1,5 +1,28 @@
 # Integrator Project Documentation
 ## Em Portugues: [Documentação](\documentation_pt-br.md)
+
+## 📌 Table of Contents
+- [1.0 Introduction](#10-introduction)
+  - [1.1 Purpose](#11-purpose)
+  - [1.2 Scope](#12-scope)
+  - [1.3 Definitions/Abbreviations](#13-definitionsabbreviations)
+- [2.0 General Description](#20-general-description)
+  - [2.1 Product Perspective](#21-product-perspective)
+  - [2.2 Product Functions](#22-product-functions)
+  - [2.3 User Characteristics](#23-user-characteristics)
+  - [2.4 Constraints](#24-constraints)
+- [3.0 Functional Requirements](#30-functional-requirements)
+  - [3.1 Functional Requirements (FR)](#31-functional-requirements-fr)
+  - [3.2 Business Rules (BR)](#32-business-rules-br)
+  - [3.3 Non-Functional Requirements (NFR)](#33-non-functional-requirements-nfr)
+- [4.0 Git Version Control](#40-git-version-control)
+  - [Version History](#version-history)
+- [5.0 Use of AI](#50-use-of-ai)
+  - [AI Usage Log](#ai-usage-log)
+- [6.0 Prototyping](#60-prototyping)
+
+---
+
 ## 1.0 Introduction
 
 ### 1.1 Purpose
@@ -352,6 +375,8 @@ LGPD reference: <https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l1
 |    2.7   | 2026-10-09 | Fixing route errors and improving the User Admin UI and UX |
 |    2.8   | 2026-10-10 | Adding a carousel animation to the partners page, updating the documentation, and improving the Admin user experience |
 |    2.9   | 2026-10-11 | Adding images to the index, using the Codex for styling, and fixing update_campaign.php |
+|    3.0   | 2026-10-13 | Adding README_pt-br.md |
+|    3.1   | 2026-10-13 | Adding prototyping and Table of Contents in the documentation|
 
 ## 5.0 Use of AI
 
@@ -369,3 +394,8 @@ LGPD reference: <https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l1
 | CODEX | 2026-10-11 |  CDQC Styling |
 | GEMINI | 2026-10-11 |  Generating images for index |
 | CLAUDE | 2026-10-11 |  Help with testing using Supabase as a server |
+
+## 6.0 Prototyping
+<img src="../images\proto_excalidraw.png" alt="Prototyping Image">
+
+Prototyping done in [Excalidraw](https://github.com/excalidraw/excalidraw.git)

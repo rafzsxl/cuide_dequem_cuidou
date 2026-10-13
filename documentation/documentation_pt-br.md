@@ -1,5 +1,28 @@
 # Documentação do Projeto Integrador 
 ## In English: [Documentation](\documentation.md)
+
+## 📌 Sumário
+- [1.0 Introdução](#10-introdução)
+  - [1.1 Propósito](#11-propósito)
+  - [1.2 Escopo](#12-escopo)
+  - [1.3 Definições/Abreviações](#13-definiçõesabreviações)
+- [2.0 Descrição Geral](#20-descrição-geral)
+  - [2.1 Perspectiva do Produto](#21-perspectiva-do-produto)
+  - [2.2 Funções do Produto](#22-funções-do-produto)
+  - [2.3 Características dos Usuários](#23-características-dos-usuários)
+  - [2.4 Restrições](#24-restrições)
+- [3.0 Requisitos Funcionais](#30-requisitos-funcionais)
+  - [3.1 Requisitos Funcionais (RF)](#31-requisitos-funcionais-rf)
+  - [3.2 Regras de Negócio (RN)](#32-regras-de-negócio-rn)
+  - [3.3 Requisitos Não-Funcionais (RNF)](#33-requisitos-não-funcionais-rnf)
+- [4.0 Controle git de Versão](#40-controle-git-de-versão)
+  - [Histórico de Versão](#histórico-de-versão)
+- [5.0 Utilização de IA](#50-utilização-de-ia)
+  - [Retrospecto do Uso de IA](#retrospecto-do-uso-de-ia)
+- [6.0 Prototipagem](#60-prototipagem)
+
+---
+
 ## 1.0 Introdução
 
 ### 1.1 Propósito
@@ -349,6 +372,7 @@
 |    2.7   | 2026-10-09 | Consertando erros de caminho e melhorando a UI e UX do User Admin |
 |    2.8   | 2026-10-10 | Adicionando animação de carrossel na página de parceiros, atualizando a documentação e melhorando a UX do usuário Admin |
 |    2.9   | 2026-10-11 | Adicionando Imagens no index, usando o codex para fazer a estilização e arrumando o update_campaign.php |
+|    3.1   | 2026-10-13 | Adicionando Protipagem e Sumário na documentação |
 
 ---
 
@@ -367,3 +391,8 @@
 | CODEX | 2026-10-11 | Estilização da CDQC |
 | GEMINI | 2026-10-11 | Gerar imagens para o index |
 | CLAUDE | 2026-10-11 | Ajuda com testes utilizando o Supabase como servidor |
+
+## 6.0 Prototipagem
+<img src="../images\proto_excalidraw.png" alt="Imagem da Prototipagem">
+
+Prototipagem feita no [Excalidraw](https://github.com/excalidraw/excalidraw.git)
