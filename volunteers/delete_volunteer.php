@@ -13,7 +13,7 @@ require_once '../admin/verify_adm.php'; ?>
 <?php include '../includes/header.php'; ?>
 
 <body>
-    <h1>Deletar Voluntário e registro de Doações</h1>
+    <h1>Deletar Voluntário e seu registro de Doações</h1>
     <main>
         <form action="" method="post">
             <label for="id">ID:</label>

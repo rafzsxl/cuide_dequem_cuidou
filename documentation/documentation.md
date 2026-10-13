@@ -1,5 +1,5 @@
 # Integrator Project Documentation
-
+## Em Portugues: [Documentação](\documentation_pt-br.md)
 ## 1.0 Introduction
 
 ### 1.1 Purpose
@@ -368,3 +368,4 @@ LGPD reference: <https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l1
 | CLAUDE | 2026-10-07 |  Help with INNER JOINS |
 | CODEX | 2026-10-11 |  CDQC Styling |
 | GEMINI | 2026-10-11 |  Generating images for index |
+| CLAUDE | 2026-10-11 |  Help with testing using Supabase as a server |

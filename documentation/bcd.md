@@ -1,3 +1,5 @@
+# Diagrama Entidade Relacionamento
+## Em Portugues: [BCD](\bcd_pt-br.md)
 ```mermaid
 erDiagram
 
@@ -36,53 +38,53 @@ erDiagram
         timestamp Data_Criacao
     }
 
-    USERS ||--o| VOLUNTARIOS : "Sao"
-    VOLUNTARIOS ||--o{ DOACOES : "Fazem"
-    USERS ||--o{ CAMPANHAS: "Criou"
+    USERS ||--o| VOLUNTARIOS : "Are"
+    VOLUNTARIOS ||--o{ DOACOES : "Do"
+    USERS ||--o{ CAMPANHAS: "Created"
 
 
 ```
 
-<!-- Símbolo	Significado
-||--||	Um para exatamente um
-||--o|	Um para zero ou um
-||--o{	Um para zero ou muitos
-||--|{	Um para um ou muitos
-o|--|{	Zero ou um para um ou muitos -->
+<!-- Symbol	Meaning
+||--||	One to exactly one
+||--o|	One to zero or one
+||--o{	One to zero or many
+||--|{	One to one or many
+o|--|{	Zero or one to one or many -->
 
 
-# Dicionário de Dados
-## Diagrama
- 
-| ID | Tabela | Nome do Campo | Descrição do Campo | Código do Campo no Banco de Dados | Tipo da Variável | Tipo de Dados e Tamanho da Variável | Máscara Campo | Opções de Colunas |
+# Data Dictionary
+## Diagram
+
+| ID | Table | Field Name | Field Description | Database Field Code | Variable Type | Data Type and Variable Size | Field Mask | Column Options |
 |---|---|---|---|---|---|---|---|---|
-| 1 | USERS | id | Código de identificação de cada registro de usuário | id_user | chave | INTEGER | 0-9 | Not Null, Auto Incremento |
-| 2 | USERS | email | E-mail de login do usuário no sistema | email_user | simples | VARCHAR (255) | A-Z | Not Null, Unique |
-| 3 | USERS | password | Senha de acesso do usuário ao sistema (armazenada em hash) | password_user | simples | VARCHAR (255) | A-Z | Not Null |
-| 4 | USERS | nome | Nome completo do usuário | nome_user | simples | VARCHAR (255) | A-Z | Not Null |
-| 5 | USERS | nasc | Data de nascimento do usuário | nasc_user | simples | DATE | DD/MM/AAAA | Not Null |
-| 6 | USERS | adm | Indica se o usuário é administrador do sistema | adm_user | simples | BOOLEAN | 0-1 | Not Null, Default FALSE |
-| 1 | VOLUNTÁRIOS | id | Código de identificação de cada registro de voluntário | id_volun | chave | INTEGER | 0-9 | Not Null, Auto Incremento |
-| 2 | VOLUNTÁRIOS | id_user | Código do usuário que se tornou voluntário, proveniente do relacionamento com a tabela USERS | id_user_fk | estrangeira | INTEGER | 0-9 | Not Null, Unique |
-| 3 | VOLUNTÁRIOS | cpf | Número do Cadastro de Pessoa Física do voluntário | cpf_volun | simples | VARCHAR (255) | 000.000.000-00 | Not Null, Unique |
-| 4 | VOLUNTÁRIOS | telefone | Telefone de contato do voluntário, com DDD | telefone_volun | simples | VARCHAR (255) | (00) 00000-0000 | Not Null |
-| 5 | VOLUNTÁRIOS | data_volun | Data e hora em que o usuário se tornou voluntário | data_volun | simples | TIMESTAMP | DD/MM/AAAA hh:mm:ss | Not Null, Default CURRENT_TIMESTAMP |
-| 1 | DOAÇÕES | id | Código de identificação de cada registro de doação | id_doa | chave | INTEGER | 0-9 | Not Null, Auto Incremento |
-| 2 | DOAÇÕES | id_volun | Código do voluntário que realizou a doação, proveniente do relacionamento com a tabela VOLUNTÁRIOS | id_volun_fk | estrangeira | INTEGER | 0-9 | Not Null |
-| 3 | DOAÇÕES | valor | Valor da doação, em reais | valor_doa | simples | DECIMAL (10,2) | 0-9 | Not Null |
-| 4 | DOAÇÕES | data | Data e hora em que a doação foi realizada | data_doa | simples | TIMESTAMP | DD/MM/AAAA hh:mm:ss | Not Null, Default CURRENT_TIMESTAMP |
-| 1 | CAMPANHAS | id | Código de identificação de cada registro de campanha | id_camp | chave | INTEGER | 0-9 | Not Null, Auto Incremento |
-| 2 | CAMPANHAS | id_user | Código do usuário que criou a campanha, proveniente do relacionamento com a tabela USERS | id_user_fk | estrangeira | INTEGER | 0-9 | Not Null |
-| 3 | CAMPANHAS | titulo | Título da campanha | titulo_camp | simples | VARCHAR (255) | A-Z | Not Null |
-| 4 | CAMPANHAS | descricao | Descrição detalhada da campanha | descricao_camp | simples | TEXT | A-Z | |
-| 5 | CAMPANHAS | url_imagem | Endereço (link) da imagem de capa da campanha | url_imagem_camp | simples | VARCHAR (255) | A-Z | |
-| 6 | CAMPANHAS | data_criacao | Data e hora em que a campanha foi criada | data_criacao_camp | simples | TIMESTAMP | DD/MM/AAAA hh:mm:ss | Not Null, Default CURRENT_TIMESTAMP |
+| 1 | USERS | id | Identification code of each user record | id_user | key | INTEGER | 0-9 | Not Null, Auto Increment |
+| 2 | USERS | email | User's login email in the system | email_user | simple | VARCHAR (255) | A-Z | Not Null, Unique |
+| 3 | USERS | password | User's password to access the system (stored as a hash) | password_user | simple | VARCHAR (255) | A-Z | Not Null |
+| 4 | USERS | name | User's full name | nome_user | simple | VARCHAR (255) | A-Z | Not Null |
+| 5 | USERS | birth_date | User's date of birth | nasc_user | simple | DATE | DD/MM/YYYY | Not Null |
+| 6 | USERS | admin | Indicates whether the user is a system administrator | adm_user | simple | BOOLEAN | 0-1 | Not Null, Default FALSE |
+| 1 | VOLUNTARIOS | id | Identification code of each volunteer record | id_volun | key | INTEGER | 0-9 | Not Null, Auto Increment |
+| 2 | VOLUNTARIOS | id_user | Code of the user who became a volunteer, from the relationship with the USERS table | id_user_fk | foreign | INTEGER | 0-9 | Not Null, Unique |
+| 3 | VOLUNTARIOS | cpf | Volunteer's Individual Taxpayer Registry (CPF) number | cpf_volun | simple | VARCHAR (255) | 000.000.000-00 | Not Null, Unique |
+| 4 | VOLUNTARIOS | phone | Volunteer's contact phone number, with area code | telefone_volun | simple | VARCHAR (255) | (00) 00000-0000 | Not Null |
+| 5 | VOLUNTARIOS | volunteer_date | Date and time when the user became a volunteer | data_volun | simple | TIMESTAMP | DD/MM/YYYY hh:mm:ss | Not Null, Default CURRENT_TIMESTAMP |
+| 1 | DOACOES | id | Identification code of each donation record | id_doa | key | INTEGER | 0-9 | Not Null, Auto Increment |
+| 2 | DOACOES | id_volun | Code of the volunteer who made the donation, from the relationship with the VOLUNTARIOS table | id_volun_fk | foreign | INTEGER | 0-9 | Not Null |
+| 3 | DOACOES | amount | Donation amount, in Brazilian reais | valor_doa | simple | DECIMAL (10,2) | 0-9 | Not Null |
+| 4 | DOACOES | date | Date and time when the donation was made | data_doa | simple | TIMESTAMP | DD/MM/YYYY hh:mm:ss | Not Null, Default CURRENT_TIMESTAMP |
+| 1 | CAMPANHAS | id | Identification code of each campaign record | id_camp | key | INTEGER | 0-9 | Not Null, Auto Increment |
+| 2 | CAMPANHAS | id_user | Code of the user who created the campaign, from the relationship with the USERS table | id_user_fk | foreign | INTEGER | 0-9 | Not Null |
+| 3 | CAMPANHAS | title | Campaign title | titulo_camp | simple | VARCHAR (255) | A-Z | Not Null |
+| 4 | CAMPANHAS | description | Detailed description of the campaign | descricao_camp | simple | TEXT | A-Z | |
+| 5 | CAMPANHAS | image_url | Address (link) of the campaign's cover image | url_imagem_camp | simple | VARCHAR (255) | A-Z | |
+| 6 | CAMPANHAS | creation_date | Date and time when the campaign was created | data_criacao_camp | simple | TIMESTAMP | DD/MM/YYYY hh:mm:ss | Not Null, Default CURRENT_TIMESTAMP |
 
 
-## Descrição de Tabelas
- | ID | Nome da Tabela | Descrição da Tabela | Quantidade de Atributos | Tabelas Relacionadas | Cardinalidade Máxima | Cardinalidade Mínima |
+## Table Descriptions
+ | ID | Table Name | Table Description | Number of Attributes | Related Tables | Maximum Cardinality | Minimum Cardinality |
 |---|---|---|---|---|---|---|
-| 1 | USERS | Armazenamento dos dados de cadastro dos usuários do sistema | 6 | VOLUNTÁRIOS<br>CAMPANHAS | VOLUNTÁRIOS (1:1)<br>CAMPANHAS (1:N) | VOLUNTÁRIOS (1:0)<br>CAMPANHAS (1:0) |
-| 2 | VOLUNTÁRIOS | Armazenamento dos dados complementares dos usuários que se tornam voluntários | 5 | USERS<br>DOAÇÕES | USERS (1:1)<br>DOAÇÕES (1:N) | USERS (0:1)<br>DOAÇÕES (1:0) |
-| 3 | DOAÇÕES | Armazenamento dos dados das doações realizadas pelos voluntários | 4 | VOLUNTÁRIOS | VOLUNTÁRIOS (N:1) | VOLUNTÁRIOS (0:1) |
-| 4 | CAMPANHAS | Armazenamento dos dados das campanhas criadas pelos usuários | 6 | USERS | USERS (N:1) | USERS (0:1) |
+| 1 | USERS | Storage of registration data for the system's users | 6 | VOLUNTARIOS<br>CAMPANHAS | VOLUNTARIOS (1:1)<br>CAMPANHAS (1:N) | VOLUNTARIOS (1:0)<br>CAMPANHAS (1:0) |
+| 2 | VOLUNTARIOS | Storage of supplementary data for users who become VOLUNTARIOS | 5 | USERS<br>DOACOES | USERS (1:1)<br>DOACOES (1:N) | USERS (0:1)<br>DOACOES (1:0) |
+| 3 | DOACOES | Storage of data on DOACOES made by VOLUNTARIOS | 4 | VOLUNTARIOS | VOLUNTARIOS (N:1) | VOLUNTARIOS (0:1) |
+| 4 | CAMPANHAS | Storage of data on CAMPANHAS created by users | 6 | USERS | USERS (N:1) | USERS (0:1) |

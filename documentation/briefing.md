@@ -1,5 +1,5 @@
 # Briefing
-
+## Em Portugues: [Briefing](\briefing_pt-br.md)
 ## Mission (What Does It Do Today?)
 
 ### Help elderly people in delicate situations, whether homeless or whose children are unable to care for them daily, by sending volunteers to assist them at home or by offering shelter at our center. Ensuring dignity, quality of life, and social inclusion for the elderly population.

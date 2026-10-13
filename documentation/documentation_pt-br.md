@@ -1,5 +1,5 @@
 # Documentação do Projeto Integrador 
-
+## In English: [Documentation](\documentation.md)
 ## 1.0 Introdução
 
 ### 1.1 Propósito
@@ -366,3 +366,4 @@
 | CLAUDE | 2026-10-07 | Ajuda com INNER JOINS |
 | CODEX | 2026-10-11 | Estilização da CDQC |
 | GEMINI | 2026-10-11 | Gerar imagens para o index |
+| CLAUDE | 2026-10-11 | Ajuda com testes utilizando o Supabase como servidor |
