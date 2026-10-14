@@ -374,6 +374,7 @@
 |    2.9   | 2026-10-11 | Adicionando Imagens no index, usando o codex para fazer a estilização e arrumando o update_campaign.php |
 |    3.1   | 2026-10-13 | Adicionando Protipagem e Sumário na documentação |
 |    3.2   | 2026-10-13 | Ajustando caminhos do README.md em pt-br |
+|    3.3   | 2026-10-13 | Melhorando a estilização |
 
 ---
 
@@ -392,6 +393,7 @@
 | CODEX | 2026-10-11 | Estilização da CDQC |
 | GEMINI | 2026-10-11 | Gerar imagens para o index |
 | CLAUDE | 2026-10-11 | Ajuda com testes utilizando o Supabase como servidor |
+| CODEX | 2026-10-13 | Melhoria da Estilização |
 
 ## 6.0 Prototipagem
 <img src="../images\proto_excalidraw.png" alt="Imagem da Prototipagem">

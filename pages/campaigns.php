@@ -21,7 +21,7 @@ require_once '../includes/functions.php';
         <?php if (isAdmin()): ?>
             <a href="../admin/create_campaign.php"><button class="btn-green">Criar Campanha</button></a>
             <a href="../admin/update_campaign.php"><button class="btn-blue">Editar Campanha</button></a>
-            <a href="../admin/delete_campaign.php"><button class="btn-yellow">Apagar Campanha</button></a>
+            <a href="../admin/delete_campaign.php"><button class="btn-yellow">Apagar Campanha</button></a><hr>
         <?php endif; ?>
 
         <br>

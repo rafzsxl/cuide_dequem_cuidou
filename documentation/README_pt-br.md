@@ -303,29 +303,32 @@ Existem também as versões em inglês (mesmos nomes, sem o sufixo `_pt-br`).
  
 ## Histórico de versões
  
-| Versão | Data | Modificações |
-| ---: | :---: | :--- |
-| 1.0 | 2026-09-18 | Estruturação inicial do projeto |
-| 1.1 | 2026-09-20 | Refinamento do escopo e objetivos |
-| 1.2 | 2026-09-24 | Arquivos de cadastro, login e logout |
-| 1.3 | 2026-09-24 | Preenchimento completo de RF, RN e RNF |
-| 1.4 | 2026-09-26 | Finalização da documentação e lançamento para a nuvem |
-| 1.5 | 2026-09-27 | Correção da documentação; header e footer |
-| 1.6 | 2026-09-27 | Conteúdo estático das páginas principais |
-| 1.7 | 2026-09-29 | Conteúdo de logout.php e sign_up.php; criação de edit.php |
-| 1.8 | 2026-09-30 | Correção de caminhos; pasta donations e profile.php; ajuste da estrutura do banco |
-| 1.9 | 2026-09-30 | Mais conteúdo e primeiras funções |
-| 2.0 | 2026-10-02 | Função de login |
-| 2.1 | 2026-10-02 | Funções de editar, logout e delete |
-| 2.2 | 2026-10-04 | Função de voluntariar-se |
-| 2.2 | 2026-10-07 | Correção do voluntariado; visualização de voluntários |
-| 2.3 | 2026-10-07 | Diversas novas funções |
-| 2.4 | 2026-10-08 | Início da estilização; páginas do perfil ADM |
-| 2.5 | 2026-10-09 | Correção de caminhos; visualização de campanhas |
-| 2.6 | 2026-10-09 | Funções nas páginas principais e especiais |
-| 2.7 | 2026-10-09 | Correção de caminhos; melhoria de UI/UX do ADM |
-| 2.8 | 2026-10-10 | Carrossel de parceiros; documentação e UX do ADM |
-| 2.9 | 2026-10-11 | Imagens no index; estilização; correção de update_campaign.php |
+|  Versão  |    Data    | Modificações |
+|---------:|:----------:|:--------------|
+|    1.0   | 2026-09-18 | Estruturação Inicial do Projeto |
+|    1.1   | 2026-09-20 | Refinamento do escopo e objetivos do projeto |
+|    1.2   | 2026-09-24 | Adicionando Arquivos para Cadastro, Login e Logout |
+|    1.3   | 2026-09-24 | Preenchimento completo de RF, RN e RNF |
+|    1.4   | 2026-09-26 | Finalização da Documentação & Lançamento para a Nuvem |
+|    1.5   | 2026-09-27 | Correção da Documentação e Implementação do Header e Footer |
+|    1.6   | 2026-09-27 | Colocando conteudo dentro do "index", "transparency", "partners", "donate", "contact" e "about" mas sem php |
+|    1.7   | 2026-09-29 | Adicionando conteudo dentro de "logout.php", "sign_up.php" e "logout.php" & Criando do "edit.php", mas sem integrar o backend ainda |
+|    1.8   | 2026-09-30 | Arrumando Alguns erros de Caminho, Criando a Pasta "donations" e o arquivo "profile.php", além de adicionar rota no header para profile, adicionar conteudo a algumas páginas e trocar estrutura do bcd com "Nome" e "Nascimento" dentro da tabela Users e "Telefone" e "CPF" dentro de Voluntários. |
+|    1.9   | 2026-09-30 | Adicionando Mais Conteúdo e Implementando algumas Funções. |
+|    2.0   | 2026-10-02 | Implementando Função de Login |
+|    2.1   | 2026-10-02 | Implementando Funções de Editar, Logout e Delete |
+|    2.2   | 2026-10-04 | Implementando Função de Voluntariar-se |
+|    2.2   | 2026-10-07 | FIX: Arrumando Função de Voluntariar-se e Adicionado Função para a Visualização de Voluntário|
+|    2.3   | 2026-10-07 | Implementando diversas novas funções |
+|    2.4   | 2026-10-08 | Iniciando a Estilização do site e criando páginas do perfil adm |
+|    2.5   | 2026-10-09 | Arumando Bugs de Caminho e Adicionando função para a visualização de campanhas |
+|    2.6   | 2026-10-09 | Implementando Funções nas páginas principais do CDQC e nas páginas especiais |
+|    2.7   | 2026-10-09 | Consertando erros de caminho e melhorando a UI e UX do User Admin |
+|    2.8   | 2026-10-10 | Adicionando animação de carrossel na página de parceiros, atualizando a documentação e melhorando a UX do usuário Admin |
+|    2.9   | 2026-10-11 | Adicionando Imagens no index, usando o codex para fazer a estilização e arrumando o update_campaign.php |
+|    3.1   | 2026-10-13 | Adicionando Protipagem e Sumário na documentação |
+|    3.2   | 2026-10-13 | Ajustando caminhos do README.md em pt-br |
+|    3.3   | 2026-10-13 | Melhorando a estilização |
  
 ---
  

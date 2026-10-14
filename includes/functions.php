@@ -184,12 +184,12 @@ function apagar_volun($conexao, $id)
         // Inicia uma transação para garantir que ambas as exclusões ocorram com sucesso
         $conexao->beginTransaction();
         
-        // Apaga as doações associadas a este voluntário primeiro
+        // 1. Apaga as doações associadas a este voluntário primeiro
         $stmtDoacoes = $conexao->prepare("DELETE FROM doacoes WHERE id_volun = :id");
         $stmtDoacoes->bindParam(":id", $id);
         $stmtDoacoes->execute();
         
-        // Apaga o voluntário sem violar a restrição de chave estrangeira
+        // 2. Agora apaga o voluntário sem violar a restrição de chave estrangeira
         $stmtVolun = $conexao->prepare("DELETE FROM voluntarios WHERE id = :id");
         $stmtVolun->bindParam(":id", $id);
         $stmtVolun->execute();
@@ -361,9 +361,8 @@ function campanhas($conexao)
                 echo "ID: {$campanha['id']}<br>";
             }
             else{
-
             }
-            echo "<strong>{$campanha['titulo']}</strong><br>";
+            echo "<h2>{$campanha['titulo']}</h2><br>";
             echo "{$campanha['descricao']}<br>";
             echo "<img src='{$campanha['url_imagem']}' alt='{$campanha['titulo']}' width='300'><br>";
             echo "Iniciada em: {$data}<br><hr>";

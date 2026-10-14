@@ -378,6 +378,7 @@ LGPD reference: <https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l1
 |    3.0   | 2026-10-13 | Adding README_pt-br.md |
 |    3.1   | 2026-10-13 | Adding prototyping and Table of Contents in the documentation |
 |    3.2   | 2026-10-13 | Adjusting paths in README.md for pt-br |
+|    3.3   | 2026-10-13 | Improving the Styling |
 
 ## 5.0 Use of AI
 
@@ -395,6 +396,7 @@ LGPD reference: <https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l1
 | CODEX | 2026-10-11 |  CDQC Styling |
 | GEMINI | 2026-10-11 |  Generating images for index |
 | CLAUDE | 2026-10-11 |  Help with testing using Supabase as a server |
+| CODEX | 2026-10-13 | Styling Improvements |
 
 ## 6.0 Prototyping
 <img src="../images\proto_excalidraw.png" alt="Prototyping Image">
