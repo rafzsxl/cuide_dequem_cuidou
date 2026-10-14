@@ -1,5 +1,5 @@
 <?php require_once '../includes/functions.php';
-require_once '../volunteers\verify_volun.php'; ?>
+require_once '../volunteers/verify_volun.php'; ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -25,7 +25,7 @@ require_once '../volunteers\verify_volun.php'; ?>
         <?php
         if ($_SERVER['REQUEST_METHOD'] == "POST") {
         if (doar($conexao, $_POST['valor'], $_POST['senha'])) {
-        header("Location: ../auth/profile.php");
+        header("Location: /cuide_dequem_cuidou/auth/profile.php");
         exit();
         }
         $erro = "Senha inválida ou não foi possível cadastrar.";

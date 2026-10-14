@@ -13,7 +13,7 @@ require_once '../admin/verify_adm.php'; ?>
 <?php include '../includes/header.php'; ?>
 <body>
     <h1>Todos os Voluntários</h1>
-    <a href="../volunteers\delete_volunteer.php">
+    <a href="/cuide_dequem_cuidou/volunteers/delete_volunteer.php">
         <button>Delete Um Voluntários</button>
     </a>
     <hr>

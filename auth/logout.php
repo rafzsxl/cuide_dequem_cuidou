@@ -25,7 +25,7 @@ require_once 'verify_user.php'; ?>
         <?php
         if ($_SERVER['REQUEST_METHOD'] == "POST") {
             if (logout_user($conexao, $_POST['senha'])) {
-                header("Location: ../index.php");
+                header("Location: /cuide_dequem_cuidou/index.php");
                 exit();
             }
             else{ echo "Senha inválida";}

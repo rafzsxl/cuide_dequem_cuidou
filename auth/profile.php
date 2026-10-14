@@ -12,25 +12,25 @@ require_once '../includes/functions.php'; ?>
 <?php include '../includes/header.php'; ?>
 <body>
     <main>
-        <img src="../images/media/user_profile.png" alt="Logo" width="10%">
+        <img src="/cuide_dequem_cuidou/images/media/user_profile.png" alt="Logo" width="10%">
 
-        <a href="edit.php">
+        <a href="/cuide_dequem_cuidou/auth/edit.php">
             <button>Editar</button>
         </a>
-        <a href="logout.php">
+        <a href="/cuide_dequem_cuidou/auth/logout.php">
             <button>Fazer Logout</button>
         </a>
-        <a href="delete.php">
+        <a href="/cuide_dequem_cuidou/auth/delete.php">
             <button>Deletar Conta</button>
         </a>
 
         <br>
 
-        <a href="../donations/donate.php">
+        <a href="/cuide_dequem_cuidou/donations/donate.php">
             <button>Contribua</button>
         </a>
         <?php if (!id_volun($conexao, $_SESSION['id'])): ?>
-            <a href="../volunteers/volunteer.php">
+            <a href="/cuide_dequem_cuidou/volunteers/volunteer.php">
                 <button>Voluntariar-se</button>
             </a>
         <?php endif; ?>

@@ -41,7 +41,7 @@ if (session_status() === PHP_SESSION_NONE) {
                 // Converte para true/false de verdade (o PostgreSQL pode devolver 't'/'f')
                 $_SESSION['admin'] = in_array($usuario['admin'], [true, 't', 1, '1'], true);
                 // Redireciona para a página inicial já logado
-                header("Location: ../index.php");
+                header("Location: /cuide_dequem_cuidou/index.php");
                 exit();
             } else {
                 echo "<p style='color: red;'>Erro ao iniciar a sessão automaticamente.</p>";

@@ -294,7 +294,7 @@ erDiagram
  
 Os documentos do projeto ficam em `documentation/`:
  
-- [`briefing_pt-br.md`](documentation_pt-br.md): missão, visão, valores, público e identidade visual.
+- [`briefing_pt-br.md`](briefieng_pt-br.md): missão, visão, valores, público e identidade visual.
 - [`bcd_pt-br.md`](bcd_pt-br.md): modelagem e dicionário de dados.
 - [`documentation_pt-br.md`](documentation_pt-br.md): documentação completa (SRS, histórico e uso de IA).
 Existem também as versões em inglês (mesmos nomes, sem o sufixo `_pt-br`).

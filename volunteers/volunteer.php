@@ -31,13 +31,13 @@ require_once '../auth/verify_user.php';
         <?php
         // Já é voluntário: não precisa se cadastrar de novo
         if (id_volun($conexao, $_SESSION['id'])) {
-            header("Location: ../auth/profile.php");
+            header("Location: /cuide_dequem_cuidou/auth/profile.php");
             exit();
         }
 
         if ($_SERVER['REQUEST_METHOD'] == "POST") {
             if (criar_volun($conexao, $_POST['cpf'], $_POST['telefone'], $_POST['senha'])) {
-                header("Location: ../auth/profile.php");
+                header("Location: /cuide_dequem_cuidou/index.php");
                 exit();
             }
             $erro = "Senha inválida ou não foi possível cadastrar.";

@@ -31,7 +31,7 @@ require_once 'verify_adm.php';
         <?php
         if ($_SERVER['REQUEST_METHOD'] == "POST") {
             if (criar_camp($conexao, $_POST['titulo'], $_POST['descricao'], $_POST['url'])) {
-                header("Location: ../pages/campaigns.php");
+                header("Location: /cuide_dequem_cuidou/pages/campaigns.php");
                 exit();
             }
             $erro = "Não foi Possivel criar a Campanha.";

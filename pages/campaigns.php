@@ -19,9 +19,9 @@ require_once '../includes/functions.php';
 
         <!-- Usa a função diretamente no IF -->
         <?php if (isAdmin()): ?>
-            <a href="../admin/create_campaign.php"><button class="btn-green">Criar Campanha</button></a>
-            <a href="../admin/update_campaign.php"><button class="btn-blue">Editar Campanha</button></a>
-            <a href="../admin/delete_campaign.php"><button class="btn-yellow">Apagar Campanha</button></a><hr>
+            <a href="/cuide_dequem_cuidou/admin/create_campaign.php"><button class="btn-green">Criar Campanha</button></a>
+            <a href="/cuide_dequem_cuidou/admin/update_campaign.php"><button class="btn-blue">Editar Campanha</button></a>
+            <a href="/cuide_dequem_cuidou/admin/delete_campaign.php"><button class="btn-yellow">Apagar Campanha</button></a><hr>
         <?php endif; ?>
 
         <br>

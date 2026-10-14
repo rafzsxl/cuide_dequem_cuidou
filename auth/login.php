@@ -39,7 +39,7 @@
                 // Converte para true/false de verdade (o PostgreSQL pode devolver 't'/'f')
                 $_SESSION['admin'] = in_array($usuario['admin'], [true, 't', 1, '1'], true);
 
-                header("Location: ../index.php");
+                header("Location: /cuide_dequem_cuidou/index.php");
                 exit();
             }
             $erro = "Usuário ou senha inválidos";

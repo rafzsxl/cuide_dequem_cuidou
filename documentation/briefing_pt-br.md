@@ -26,7 +26,7 @@
 
 ## Páginas Essenciais
 
-### Home, Quem Somos, Campanhas, Transparência, Voluntariar-se Cadastrar-se e Solicitar Ajuda
+### Home, Quem Somos, Campanhas, Transparência, Voluntariar-se e Cadastrar-se 
 
 ---
 

@@ -5,7 +5,7 @@ erDiagram
 
     USERS{
         int ID PK
-        varchar(255) Email
+        varchar(255) Email UK
         varchar(255) Password
         varchar(255) Nome
         date Nasc
