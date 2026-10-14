@@ -1,4 +1,4 @@
-# Diagrama Entidade Relacionamento
+# Entity-Relationship Diagram
 ## Em Portugues: [BCD](bcd_pt-br.md)
 ```mermaid
 erDiagram

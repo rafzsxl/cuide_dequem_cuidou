@@ -331,6 +331,7 @@ Existem também as versões em inglês (mesmos nomes, sem o sufixo `_pt-br`).
 |    3.3   | 2026-10-13 | Melhorando a estilização |
 |    3.4   | 2026-10-13 | Adicionando um README.md em Ingles |
 |    3.5   | 2026-10-14 | Arrumando a Função Deletar Usuário |
+|    3.6   | 2026-10-14 | Inicializando a sessão quando o usuário se cadastra |
  
 ---
  

@@ -301,36 +301,38 @@ Portuguese versions are also available (with the `_pt-br` suffix).
  
 ---
  
-## Version History
- 
-| Version |    Date    | Changes |
-|--------:|:----------:|:--------|
-|    1.0  | 2026-09-18 | Initial project structure setup |
-|    1.1  | 2026-09-20 | Scope and objectives refinement |
-|    1.2  | 2026-09-24 | Added files for Registration, Login, and Logout |
-|    1.3  | 2026-09-24 | Complete specification of FR, BR, and NFR |
-|    1.4  | 2026-09-26 | Finalized documentation & cloud deployment release |
-|    1.5  | 2026-09-27 | Documentation fixes and Header/Footer implementation |
-|    1.6  | 2026-09-27 | Added static content to "index", "transparency", "partners", "donate", "contact", and "about" (without PHP) |
-|    1.7  | 2026-09-29 | Added content to "logout.php", "sign_up.php", and created "edit.php" (backend integration pending) |
-|    1.8  | 2026-09-30 | Path bug fixes, created "donations" folder and "profile.php", added header navigation, updated BCD structure ("Nome" and "Nascimento" moved to Users; "Telefone" and "CPF" to Voluntários) |
-|    1.9  | 2026-09-30 | Added more content and implemented core functions |
-|    2.0  | 2026-10-02 | Implemented Login feature |
-|    2.1  | 2026-10-02 | Implemented Edit Profile, Logout, and Delete Account functions |
-|    2.2  | 2026-10-04 | Implemented Volunteer registration feature |
-|    2.2  | 2026-10-07 | FIX: Corrected Volunteer registration and added Volunteer profile viewing feature |
-|    2.3  | 2026-10-07 | Implemented various new functionalities |
-|    2.4  | 2026-10-08 | Started site styling and created admin profile pages |
-|    2.5  | 2026-10-09 | Fixed path issues and added campaign viewing capabilities |
-|    2.6  | 2026-10-09 | Implemented functions across main and special pages |
-|    2.7  | 2026-10-09 | Fixed path errors and improved Admin UI/UX |
-|    2.8  | 2026-10-10 | Added carousel animation to partners page, updated documentation, and enhanced Admin UX |
-|    2.9  | 2026-10-11 | Added images to index, applied styling via OpenAI Codex, and fixed `update_campaign.php` |
-|    3.1  | 2026-10-13 | Added prototyping links and Table of Contents to documentation |
-|    3.2  | 2026-10-13 | Adjusted paths in Portuguese README (`README_pt-br.md`) |
-|    3.3  | 2026-10-13 | UI/UX and styling polish |
+### Version History
+
+|  Version**  |    **Date**    | **Changes** |
+|---------:|:----------:|:--------------|
+|    1.0   | 2026-09-18 | Initial project structure |
+|    1.1   | 2026-09-20 | Refinement of the project scope and objectives |
+|    1.2   | 2026-09-24 | Adding files for Registration, Login, and Logout |
+|    1.3   | 2026-09-24 | Complete filling in of FR, BR, and NFR |
+|    1.4   | 2026-09-26 | Finalization of the documentation & launch to the cloud |
+|    1.5   | 2026-09-27 | Documentation fixes and implementation of Header and Footer |
+|    1.6   | 2026-09-27 | Adding content to "index", "transparency", "partners", "donate", "contact", and "about" but without PHP |
+|    1.7   | 2026-09-29 | Adding content to "logout.php", "sign_up.php", and "logout.php" & creating "edit.php", but without integrating the backend yet|
+|    1.8   | 2026-09-30 | Fixing some path errors, creating the "donations" folder and the "profile.php" file, adding a route to profile in the header, adding content to some pages, and changing the database structure so that "Name" and "Birth date" are in the Users table and "Phone" and "CPF" are in the Volunteers table. |
+|    1.9   | 2026-09-30 | Adding more content and implementing some functions. |
+|    2.0   | 2026-10-02 | Implementing the Login function |
+|    2.1   | 2026-10-02 | Implementing the Edit, Logout, and Delete functions |
+|    2.2   | 2026-10-04 | Implementing the Volunteer Function |
+|    2.2   | 2026-10-07 | FIX: Fixing the Volunteer Function and adding function for viewing volunteer|
+|    2.3   | 2026-10-07 | Implementing several new features |
+|    2.4   | 2026-10-08 | Starting to Style the Website and Creating Admin Profile Pages |
+|    2.5   | 2026-10-09 | Fixing Route Bugs and Adding a Feature to View Campaigns |
+|    2.6   | 2026-10-09 | Implementing Features on the CDQC Main Pages and Special Pages |
+|    2.7   | 2026-10-09 | Fixing route errors and improving the User Admin UI and UX |
+|    2.8   | 2026-10-10 | Adding a carousel animation to the partners page, updating the documentation, and improving the Admin user experience |
+|    2.9   | 2026-10-11 | Adding images to the index, using the Codex for styling, and fixing update_campaign.php |
+|    3.0   | 2026-10-13 | Adding README_pt-br.md |
+|    3.1   | 2026-10-13 | Adding prototyping and Table of Contents in the documentation |
+|    3.2   | 2026-10-13 | Adjusting paths in README.md for pt-br |
+|    3.3   | 2026-10-13 | Improving the Styling |
 |    3.4   | 2026-10-13 | Adding README.md in English |
 |    3.5   | 2026-10-14 | Fixing the deletar_user Function |
+|    3.6   | 2026-10-14 | Inicializing session when the user sing up |
  
 ---
  

@@ -1,6 +1,6 @@
 <?php
 $host = "192.168.10.67";
-$dbname = "cdqc";
+$dbname = "cuide_dequem_cuidou";
 $user = "cdqc";
 $pass = "adm123";
 

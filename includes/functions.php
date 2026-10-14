@@ -17,6 +17,7 @@ function isAdmin()
 function criar_user($conexao, $email, $senha, $nome, $nascimento, $admin = false)
 {
     $sql = "INSERT INTO users (email, password, nome, nascimento, admin) VALUES (:email, :senha, :nome, :nascimento, :admin)";
+
     try {
         $stmt = $conexao->prepare($sql);
         $stmt->bindParam(":email", $email);
