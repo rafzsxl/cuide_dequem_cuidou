@@ -379,6 +379,8 @@ LGPD reference: <https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l1
 |    3.1   | 2026-10-13 | Adding prototyping and Table of Contents in the documentation |
 |    3.2   | 2026-10-13 | Adjusting paths in README.md for pt-br |
 |    3.3   | 2026-10-13 | Improving the Styling |
+|    3.4   | 2026-10-13 | Adding README.md in English |
+|    3.5   | 2026-10-14 | Fixing the deletar_user Function |
 
 ## 5.0 Use of AI
 

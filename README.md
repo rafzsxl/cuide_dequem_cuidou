@@ -329,6 +329,8 @@ Portuguese versions are also available (with the `_pt-br` suffix).
 |    3.1  | 2026-10-13 | Added prototyping links and Table of Contents to documentation |
 |    3.2  | 2026-10-13 | Adjusted paths in Portuguese README (`README_pt-br.md`) |
 |    3.3  | 2026-10-13 | UI/UX and styling polish |
+|    3.4   | 2026-10-13 | Adding README.md in English |
+|    3.5   | 2026-10-14 | Fixing the deletar_user Function |
  
 ---
  

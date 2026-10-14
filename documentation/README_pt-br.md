@@ -329,6 +329,8 @@ Existem também as versões em inglês (mesmos nomes, sem o sufixo `_pt-br`).
 |    3.1   | 2026-10-13 | Adicionando Protipagem e Sumário na documentação |
 |    3.2   | 2026-10-13 | Ajustando caminhos do README.md em pt-br |
 |    3.3   | 2026-10-13 | Melhorando a estilização |
+|    3.4   | 2026-10-13 | Adicionando um README.md em Ingles |
+|    3.5   | 2026-10-14 | Arrumando a Função Deletar Usuário |
  
 ---
  
