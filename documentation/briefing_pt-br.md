@@ -1,5 +1,5 @@
 # Briefieng
-## In English: [Briefing](\briefing.md)
+## In English: [Briefing](briefing.md)
 ## Missão (O que Faz Hoje?)
 
 ### Ajudar idosos em situações delicadas, seja em situação de rua ou que os filhos não tem condições de cuidar deles no dia a dia e ajuda-los dispondo enviando voluntários diariamente para auxilia-los ou dispondo abrigo em nosso centro. Garantindo dignidade, qualidade de Vida e Inclusão social para a população da terceira idade

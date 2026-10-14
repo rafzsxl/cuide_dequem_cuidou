@@ -1,5 +1,5 @@
 # Documentação do Projeto Integrador 
-## In English: [Documentation](\documentation.md)
+## In English: [Documentation](documentation.md)
 
 ## 📌 Sumário
 - [1.0 Introdução](#10-introdução)
@@ -373,6 +373,7 @@
 |    2.8   | 2026-10-10 | Adicionando animação de carrossel na página de parceiros, atualizando a documentação e melhorando a UX do usuário Admin |
 |    2.9   | 2026-10-11 | Adicionando Imagens no index, usando o codex para fazer a estilização e arrumando o update_campaign.php |
 |    3.1   | 2026-10-13 | Adicionando Protipagem e Sumário na documentação |
+|    3.2   | 2026-10-13 | Ajustando caminhos do README.md em pt-br |
 
 ---
 

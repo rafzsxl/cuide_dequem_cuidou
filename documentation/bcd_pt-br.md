@@ -1,5 +1,5 @@
 # Diagrama Entidade Relacionamento
-## In English: [BCD](\bcd.md)
+## In English: [BCD](bcd.md)
 ```mermaid
 erDiagram
 

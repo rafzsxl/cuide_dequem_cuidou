@@ -1,5 +1,5 @@
 # Integrator Project Documentation
-## Em Portugues: [Documentação](\documentation_pt-br.md)
+## Em Portugues: [Documentação](documentation_pt-br.md)
 
 ## 📌 Table of Contents
 - [1.0 Introduction](#10-introduction)
@@ -376,7 +376,8 @@ LGPD reference: <https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l1
 |    2.8   | 2026-10-10 | Adding a carousel animation to the partners page, updating the documentation, and improving the Admin user experience |
 |    2.9   | 2026-10-11 | Adding images to the index, using the Codex for styling, and fixing update_campaign.php |
 |    3.0   | 2026-10-13 | Adding README_pt-br.md |
-|    3.1   | 2026-10-13 | Adding prototyping and Table of Contents in the documentation|
+|    3.1   | 2026-10-13 | Adding prototyping and Table of Contents in the documentation |
+|    3.2   | 2026-10-13 | Adjusting paths in README.md for pt-br |
 
 ## 5.0 Use of AI
 

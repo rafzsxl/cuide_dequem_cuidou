@@ -204,7 +204,7 @@ Com a conta administradora, aparecem no cabeçalho os botões **Visualizar Usuá
  
 ## Especificação de requisitos
  
-Abaixo está um resumo. A lista completa de requisitos funcionais, regras de negócio e requisitos não funcionais está na [documentação completa](documentation/documentation_pt-br.md).
+Abaixo está um resumo. A lista completa de requisitos funcionais, regras de negócio e requisitos não funcionais está na [documentação completa](documentation_pt-br.md).
  
 ### Requisitos funcionais (RF)
  
@@ -237,7 +237,7 @@ Abaixo está um resumo. A lista completa de requisitos funcionais, regras de neg
 ### Restrições
  
 - O conteúdo de **Transparência** e **Parceiros** é estático (fixo no código), sem persistência em banco.
-[Documentação completa em pt-br](documentation/documentation_pt-br.md)
+[Documentação completa em pt-br](documentation_pt-br.md)
  
 ---
  
@@ -294,9 +294,9 @@ erDiagram
  
 Os documentos do projeto ficam em `documentation/`:
  
-- [`briefing_pt-br.md`](\documentation_pt-br.md): missão, visão, valores, público e identidade visual.
-- [`bcd_pt-br.md`](\bcd_pt-br.md): modelagem e dicionário de dados.
-- [`documentation_pt-br.md`](\documentation_pt-br.md): documentação completa (SRS, histórico e uso de IA).
+- [`briefing_pt-br.md`](documentation_pt-br.md): missão, visão, valores, público e identidade visual.
+- [`bcd_pt-br.md`](bcd_pt-br.md): modelagem e dicionário de dados.
+- [`documentation_pt-br.md`](documentation_pt-br.md): documentação completa (SRS, histórico e uso de IA).
 Existem também as versões em inglês (mesmos nomes, sem o sufixo `_pt-br`).
  
 ---
