@@ -384,7 +384,7 @@ LGPD reference: <https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l1
 |    3.6   | 2026-10-14 | Inicializing session when the user sing up |
 |    3.7   | 2026-10-14 | Uploading to the MOBAX Server |
 |    3.8   | 2026-10-14 | Fixing incorrect paths in MOBAX |
- 
+|    3.9   | 2026-10-15 | Improving the user logout process by removing the Logout.php page so it doesn't ask for a password |
 
 ## 5.0 Use of AI
 

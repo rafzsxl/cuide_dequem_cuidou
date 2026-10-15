@@ -381,6 +381,7 @@
 |    3.6   | 2026-10-14 | Inicializando a sessão quando o usuário se cadastra |
 |    3.7   | 2026-10-14 | Subindo para o Servidor MOBAX |
 |    3.8   | 2026-10-14 | Arrumando caminhos errados do MOBAX |
+|    3.9   | 2026-10-15 | Melhorando o Logout do Uusário removendo a página de Logout.php para não pedir senha |
  
 
 ---
@@ -403,6 +404,6 @@
 | CODEX | 2026-10-13 | Melhoria da Estilização |
 
 ## 6.0 Prototipagem
-<img src="../images\proto_excalidraw.png" alt="Imagem da Prototipagem">
+<img src="../images/proto_excalidraw.png" alt="Imagem da Prototipagem">
 
 Prototipagem feita no [Excalidraw](https://github.com/excalidraw/excalidraw.git)

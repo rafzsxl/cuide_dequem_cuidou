@@ -7,7 +7,6 @@ function isAdmin()
     if (session_status() === PHP_SESSION_NONE) {
         session_start();
     }
-
     return !empty($_SESSION['admin']) && $_SESSION['admin'] === true;
 }
 
@@ -16,18 +15,22 @@ function isAdmin()
 // Criar Usuário
 function criar_user($conexao, $email, $senha, $nome, $nascimento, $admin = false)
 {
+    // Consulta ao Banco e Prepara para inserir valores
     $sql = "INSERT INTO users (email, password, nome, nascimento, admin) VALUES (:email, :senha, :nome, :nascimento, :admin)";
-
+    // Tudo o que está dentro de try será executado e ser der erro o catch nos informará
     try {
+        // Prepara a query SQL no banco antes de enviar os dadps reais
         $stmt = $conexao->prepare($sql);
+        // Vinculação de Parametros(bind)
         $stmt->bindParam(":email", $email);
         $stmt->bindParam(":senha", $senha);
         $stmt->bindParam(":nome", $nome);
         $stmt->bindParam(":nascimento", $nascimento);
         $stmt->bindValue(":admin", $admin, PDO::PARAM_BOOL);
-
+        //Executo e caso de certo imprime mensagem
         $stmt->execute();
         echo "Usuário Criado com Sucesso";
+        //Caso de Errado ele mostrará o que ocorreu3
     } catch (PDOException $e) {
         echo "Erro: " . $e->getMessage();
     }
@@ -59,7 +62,9 @@ function logout_user($conexao, $senha)
     $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
 
     if ($usuario && $usuario['password'] == $senha) {
+        // Limpa todos os Dados armazenados na sessão
         $_SESSION = array();
+        // Destroi todos eles.
         session_destroy();
     }
 }
@@ -108,7 +113,7 @@ function delete_user($conexao, $senha)
             // 3. Apaga as doações vinculadas a esse voluntário
             $stmtDoacoes = $conexao->prepare("DELETE FROM doacoes WHERE id_volun = :volun_id");
             $stmtDoacoes->bindParam(":volun_id", $volun_id);
-            $stmtDoacoes->execute();   
+            $stmtDoacoes->execute();
             // 4. Apaga o registro de voluntário
             $stmtDelVolun = $conexao->prepare("DELETE FROM voluntarios WHERE id = :volun_id");
             $stmtDelVolun->bindParam(":volun_id", $volun_id);
