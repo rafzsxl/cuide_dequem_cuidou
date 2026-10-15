@@ -17,12 +17,12 @@
         <h1>Entre em sua Conta</h1>
         <form action="" method="post">
             <label for="email">E-mail:</label>
-            <input type="text" name="email" id="email" placeholder="Insira o E-mail" required><br>
+            <input type="email" name="email" id="email" placeholder="Insira o E-mail" required><br>
             <label type="senha">Senha:</label>
             <input type="password" name="senha" id="senha" placeholder="Insira a senha" required><br>
             <a href="sign_up.php">Ainda Não Possui Uma Conta?</a><br>
             <input type="reset" value="Limpar">
-            <input type="submit" value="Cadastrar">
+            <input type="submit" value="Entrar">
         </form>
         <?php
         if (session_status() == PHP_SESSION_NONE) {

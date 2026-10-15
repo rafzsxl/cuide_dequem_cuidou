@@ -332,6 +332,8 @@ Existem também as versões em inglês (mesmos nomes, sem o sufixo `_pt-br`).
 |    3.4   | 2026-10-13 | Adicionando um README.md em Ingles |
 |    3.5   | 2026-10-14 | Arrumando a Função Deletar Usuário |
 |    3.6   | 2026-10-14 | Inicializando a sessão quando o usuário se cadastra |
+|    3.7   | 2026-10-14 | Subindo para o Servidor MOBAX |
+|    3.8   | 2026-10-14 | Arrumando caminhos errados do MOBAX |
  
 ---
  
@@ -349,3 +351,37 @@ Existem também as versões em inglês (mesmos nomes, sem o sufixo `_pt-br`).
 | Codex | 2026-10-11 | Estilização da CDQC |
 | Gemini | 2026-10-11 | Gerar imagens para o index |
 | Claude | 2026-10-11 | Ajuda com testes usando o Supabase como servidor |
+
+
+```mermaid
+graph TD
+    %% Raiz do Projeto
+    Root["Início (index.php)"]
+
+    %% Páginas Públicas
+    Root --> Pages["Páginas Públicas"]
+    Pages --> About["Quem Somos? (about.php)"]
+    Pages --> Campaigns["Campanhas (campaigns.php)"]
+    Pages --> Contact["Contatos (contact.php)"]
+
+    %% Seção de Autenticação
+    Root --> Auth["Autenticação e Perfil"]
+    Auth --> Login["Entrar (login.php)"]
+    Auth --> SignUp["Cadastre-se (sign_up.php)"]
+    Auth --> Profile["Sua Conta (profile.php)"]
+    
+    Profile --> Edit["Editar Informações (edit.php)"]
+    Profile --> Logout["Fazer Logout (logout.php)"]
+    Profile --> Delete["Deletar Conta (delete.php)"]
+
+    %% Seção de Doações
+    Root --> Donations["Doações"]
+    Donations --> Donate["Realizar Doação (donate.php)"]
+    Donations --> ViewDonations["Relatório de Doações (view_donations.php) [Admin]"]
+
+    %% Seção Administrativa de Campanhas
+    Campaigns --> AdminCheck{"É Administrador?"}
+    AdminCheck -- Sim --> AdminCreate["Criar Campanha (create_campaign.php)"]
+    AdminCheck -- Sim --> AdminUpdate["Editar Campanha (update_campaign.php)"]
+    AdminCheck -- Sim --> AdminDelete["Apagar Campanha (delete_campaign.php)"]
+```

@@ -17,18 +17,18 @@
         <div class="partner-logos">
             <!-- Sequência Principal -->
             <a href="#">
-                <img src="../images/partners/sr.leao.png" alt="Logo Sr. Leão" width="20%">
+                <img src="/cuide_dequem_cuidou/images/partners/sr.leao.png" alt="Logo Sr. Leão" width="20%">
             </a>
             <a href="https://github.com/nicolas-damada/scene-band_hub.git" target="_blank">
-                <img src="../images/partners/scena.png" alt="Logo SCENA">
+                <img src="/cuide_dequem_cuidou/images/partners/scena.png" alt="Logo SCENA">
             </a>
 
             <!-- Cópia exata para criar a ilusão de carrossel infinito -->
             <a href="#">
-                <img src="../images/partners/sr.leao.png" alt="Logo Sr. Leão" width="20%">
+                <img src="/cuide_dequem_cuidou/images/partners/sr.leao.png" alt="Logo Sr. Leão" width="20%">
             </a>
             <a href="https://github.com/nicolas-damada/scene-band_hub.git" target="_blank">
-                <img src="../images/partners/scena.png" alt="Logo SCENA">
+                <img src="/cuide_dequem_cuidou/images/partners/scena.png" alt="Logo SCENA">
             </a>
         </div>
     </div>

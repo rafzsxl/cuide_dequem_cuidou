@@ -5,7 +5,7 @@ require_once __DIR__ . '/functions.php';
 
 <header>
     <a href="../index.php">
-        <img src="../images/media/logo.png" alt="Logo" width="15%">
+        <img src="/cuide_dequem_cuidou/images/media/logo.png" alt="Logo" width="15%">
     </a>
 
     <div>

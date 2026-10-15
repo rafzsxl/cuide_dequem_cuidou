@@ -379,6 +379,9 @@
 |    3.4   | 2026-10-13 | Adicionando um README.md em Ingles |
 |    3.5   | 2026-10-14 | Arrumando a Função Deletar Usuário |
 |    3.6   | 2026-10-14 | Inicializando a sessão quando o usuário se cadastra |
+|    3.7   | 2026-10-14 | Subindo para o Servidor MOBAX |
+|    3.8   | 2026-10-14 | Arrumando caminhos errados do MOBAX |
+ 
 
 ---
 

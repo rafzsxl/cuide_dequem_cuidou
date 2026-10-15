@@ -1,11 +1,11 @@
 <footer>
   <div>
-    <a href="../donations/donate.php">
+    <a href="/cuide_dequem_cuidou/donations/donate.php">
       <button>Doe Agora</button>
     </a>
   </div>
   <div>
-    <a href="../pages/contact.php">
+    <a href="/cuide_dequem_cuidou/pages/contact.php">
       <button>Contatos</button>
     </a>
   </div>

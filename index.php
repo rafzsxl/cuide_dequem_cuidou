@@ -7,9 +7,9 @@
     <title>Cuide de Quem Cuidou</title>
     <link rel="stylesheet" href="style/style.css">
 </head>
-<?php include 'includes/header.php'; ?>
 
 <body>
+    <?php include 'includes/header.php'; ?>
     <h1>Bem Vindo a Cuide De Quem Cuidou</h1>
 
     <hr>

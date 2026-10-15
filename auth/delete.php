@@ -16,7 +16,7 @@ require_once 'verify_user.php'; ?>
     <main>
         <h1>Apagar Conta</h1>
         <form action="" method="post">
-            <label type="senha">Senha:</label>
+            <label for="senha">Senha:</label>
             <input type="password" name="senha" id="senha" placeholder="Insira a senha" required><br>
             <input type="reset" value="Limpar">
             <input type="submit" value="Apagar">
