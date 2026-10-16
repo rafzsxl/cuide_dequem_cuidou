@@ -382,6 +382,7 @@
 |    3.7   | 2026-10-14 | Subindo para o Servidor MOBAX |
 |    3.8   | 2026-10-14 | Arrumando caminhos errados do MOBAX |
 |    3.9   | 2026-10-15 | Melhorando o Logout do Uusário removendo a página de Logout.php para não pedir senha |
+|    4.0   | 2026-10-15 | Realmente Melhorando o Logout do Uusário removendo a página de Logout.php para não pedir senha |
  
 
 ---

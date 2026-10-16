@@ -69,6 +69,7 @@ function logout_user($conexao, $senha)
     }
 }
 
+
 // Função de Atualizar Usuário
 function atualizar_user($conexao, $id, $email, $senha, $nome, $nascimento)
 {
