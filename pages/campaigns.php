@@ -17,7 +17,7 @@ require_once '../includes/functions.php';
     <main>
         <h1>Campanhas</h1>
 
-        <!-- Usa a função diretamente no IF -->
+        <!-- Caso o Usuário não seja admin ele não será capaz de visualizar os botões abaixo -->
         <?php if (isAdmin()): ?>
             <a href="/cuide_dequem_cuidou/admin/create_campaign.php"><button class="btn-green">Criar Campanha</button></a>
             <a href="/cuide_dequem_cuidou/admin/update_campaign.php"><button class="btn-blue">Editar Campanha</button></a>

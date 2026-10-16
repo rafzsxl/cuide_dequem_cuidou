@@ -337,6 +337,8 @@ Portuguese versions are also available (with the `_pt-br` suffix).
 |    3.8   | 2026-10-14 | Fixing incorrect paths in MOBAX |
 |    3.9   | 2026-10-15 | Improving the user logout process by removing the Logout.php page so it doesn't ask for a password |
 |    4.0   | 2026-10-15 | Really Improving the user logout process by removing the Logout.php page so it doesn't ask for a password |
+|    4.1   | 2026-10-16 | Commenting on Some Code and Fixing the Logout Function |
+|    4.2   | 2026-10-16 | Commenting on the Code |
 
 ---
  

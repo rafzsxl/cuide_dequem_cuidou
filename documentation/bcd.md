@@ -88,3 +88,5 @@ o|--|{	Zero or one to one or many -->
 | 2 | VOLUNTARIOS | Storage of supplementary data for users who become VOLUNTARIOS | 5 | USERS<br>DOACOES | USERS (1:1)<br>DOACOES (1:N) | USERS (0:1)<br>DOACOES (1:0) |
 | 3 | DOACOES | Storage of data on DOACOES made by VOLUNTARIOS | 4 | VOLUNTARIOS | VOLUNTARIOS (N:1) | VOLUNTARIOS (0:1) |
 | 4 | CAMPANHAS | Storage of data on CAMPANHAS created by users | 6 | USERS | USERS (N:1) | USERS (0:1) |
+
+Complete dictionary in [Sheets](https://docs.google.com/spreadsheets/d/1kQBWz0KUzEATyMAzL4i63pjJT7w9XaANPRvfs1ywy4w/edit?usp=sharing), but in Portuguese

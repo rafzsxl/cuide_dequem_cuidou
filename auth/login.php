@@ -24,6 +24,7 @@
             <input type="reset" value="Limpar">
             <input type="submit" value="Entrar">
         </form>
+        <!--Chama o Php e executa a função abaixo caso o metodo requisitado pela página seja o post e não tenha iniciado sessão-->
         <?php
         if (session_status() == PHP_SESSION_NONE) {
             session_start();
@@ -39,9 +40,11 @@
                 // Converte para true/false de verdade (o PostgreSQL pode devolver 't'/'f')
                 $_SESSION['admin'] = in_array($usuario['admin'], [true, 't', 1, '1'], true);
 
+                // Por ultimo volta para a Página Inicial caso tenha dado certo
                 header("Location: /cuide_dequem_cuidou/index.php");
                 exit();
             }
+            // Caso não de certo ele imprime a mensagem de erro
             $erro = "Usuário ou senha inválidos";
         }
         ?>

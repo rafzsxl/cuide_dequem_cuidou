@@ -88,3 +88,5 @@ o|--|{	Zero ou um para um ou muitos -->
 | 2 | VOLUNTÁRIOS | Armazenamento dos dados complementares dos usuários que se tornam voluntários | 5 | USERS<br>DOAÇÕES | USERS (1:1)<br>DOAÇÕES (1:N) | USERS (0:1)<br>DOAÇÕES (1:0) |
 | 3 | DOAÇÕES | Armazenamento dos dados das doações realizadas pelos voluntários | 4 | VOLUNTÁRIOS | VOLUNTÁRIOS (N:1) | VOLUNTÁRIOS (0:1) |
 | 4 | CAMPANHAS | Armazenamento dos dados das campanhas criadas pelos usuários | 6 | USERS | USERS (N:1) | USERS (0:1) |
+
+Dicionário completo em [Sheets](https://docs.google.com/spreadsheets/d/1kQBWz0KUzEATyMAzL4i63pjJT7w9XaANPRvfs1ywy4w/edit?usp=sharing)

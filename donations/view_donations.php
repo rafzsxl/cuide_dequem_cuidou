@@ -16,6 +16,7 @@ require_once '../admin/verify_adm.php'; ?>
     <h1>Todas as Doações</h1>
     <hr>
     <main>
+    <!--Puxa a função de ralatório-->
         <?php relatorio_doacoes($conexao); ?>
     </main>
     <h3>Total Arrecadado:</h3>

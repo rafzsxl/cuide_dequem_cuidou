@@ -23,6 +23,7 @@ require_once '../volunteers/verify_volun.php'; ?>
         </form>
         <?php
         if ($_SERVER['REQUEST_METHOD'] == "POST") {
+            // Atrela a função os dados recebidos pelo Post
             if (doar($conexao, $_POST['valor'], $_POST['senha'])) {
                 header("Location: /cuide_dequem_cuidou/auth/profile.php");
                 exit();

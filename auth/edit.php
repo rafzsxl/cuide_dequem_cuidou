@@ -28,6 +28,7 @@ require_once 'verify_user.php'; ?>
             <input type="reset" value="Limpar">
             <input type="submit" value="Editar">
         </form>
+        <!--Chama o Php e executa a função abaixo caso o metodo requisitado pela página seja o post-->
         <?php
         if ($_SERVER['REQUEST_METHOD'] == "POST") {
             if (atualizar_user($conexao, $_SESSION['id'], $_POST['email'], $_POST['senha'], $_POST['nome'], $_POST['nascimento'])) {
