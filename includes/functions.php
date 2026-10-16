@@ -4,9 +4,11 @@ require_once __DIR__ . '/../database/connect.php';
 // Função para verificar se o usuário é admin == true
 function isAdmin()
 {
+    // Caso não tenha iniciado a sessão, a sessão é iniciada.
     if (session_status() === PHP_SESSION_NONE) {
         session_start();
     }
+    //Caso a Sessão já tenha sido iniciada, é verificado se o user da sessão é admin == true
     return !empty($_SESSION['admin']) && $_SESSION['admin'] === true;
 }
 
@@ -52,30 +54,22 @@ function login_user($conexao, $email)
 }
 
 // Função de Logout
-function logout_user($conexao, $senha)
+function logout_user()
 {
-    $id = $_SESSION['id'];
-
-    $stmt = $conexao->prepare("SELECT password FROM users WHERE id = :id");
-    $stmt->bindParam(":id", $id);
-    $stmt->execute();
-    $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
-
-    if ($usuario && $usuario['password'] == $senha) {
-        // Limpa todos os Dados armazenados na sessão
-        $_SESSION = array();
-        // Destroi todos eles.
-        session_destroy();
-    }
+    // Limpa todos os Dados armazenados na sessão
+    $_SESSION = array();
+    // Destroi todos eles.
+    session_destroy();
 }
-
 
 // Função de Atualizar Usuário
 function atualizar_user($conexao, $id, $email, $senha, $nome, $nascimento)
 {
     $sql = "UPDATE users SET email = :email, password = :password, nome = :nome, nascimento = :nascimento WHERE id = :id";
     try {
+        // Prepara a query SQL no banco antes de enviar os dados reais
         $stmt = $conexao->prepare($sql);
+        // Vinculação de Parametros(bind)
         $stmt->bindParam(":id", $id);
         $stmt->bindParam(":email", $email);
         $stmt->bindParam(":password", $senha);

@@ -23,31 +23,36 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
 <body>
     <?php include '../includes/header.php'; ?>
     <main>
-        <img src="../images/media/user_profile.png" alt="Logo" width="10%">
+        <img src="/cuide_dequem_cuidou/images/media/user_profile.png" alt="Logo" width="10%">
         <div class="actions">
-            <a href="../auth/edit.php">
+
+            <a href="/cuide_dequem_cuidou/auth/edit.php">
                 <button>Editar</button>
             </a>
-            <!-- Formulário para substituir o arquivo logout.php excluído -->
+            
+            <!-- Formulário para substituir o arquivo logout.php excluído e para fazer logou -->
             <form action="" method="POST" style="display: inline;">
                 <input type="hidden" name="action" value="logout">
                 <button type="submit">Fazer Logout</button>
             </form>
 
+            <!--Chama o Php e defne que se o usuário não for admin, o botão aparece, caso o contrario não -->
             <?php if (!isAdmin($conexao, $_SESSION['id'])): ?>
-                <a href="../auth/delete.php">
+                <a href="/cuide_dequem_cuidou/auth/delete.php">
                     <button>Deletar Conta</button>
                 </a>
+            <!--Fecha o If-->
             <?php endif; ?>
         </div>
         <br>
         <div class="Contributions">
 
-            <a href="../donations/donate.php">
+            <a href="/cuide_dequem_cuidou/donations/donate.php">
                 <button>Contribua</button>
             </a>
+        '<!--Mesma coisa do If do Admin, mas com id_voluntario que verifica se o usuário é ou não voluntário, caso seja o botão a seguir não aparece-->'
             <?php if (!id_volun($conexao, $_SESSION['id'])): ?>
-                <a href="../volunteers/volunteer.php">
+                <a href="/cuide_dequem_cuidou/volunteers/volunteer.php">
                     <button>Voluntariar-se</button>
                 </a>
             <?php endif; ?>

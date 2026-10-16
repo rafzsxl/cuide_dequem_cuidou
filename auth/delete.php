@@ -21,12 +21,14 @@ require_once 'verify_user.php'; ?>
             <input type="reset" value="Limpar">
             <input type="submit" value="Apagar">
         </form>
+        <!--Chama o Php e executa a função abaixo caso o metodo requisitado pela página seja o post-->
         <?php
         if ($_SERVER['REQUEST_METHOD'] == "POST") {
             if (delete_user($conexao, $_POST['senha'])) {
                 header("Location: /cuide_dequem_cuidou/index.php");
                 exit();
             }
+            // Caso não funcione ele imprime esta mensagem
             $erro = "Senha inválida";
         }
         ?>
