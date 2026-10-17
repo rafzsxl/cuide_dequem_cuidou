@@ -388,6 +388,8 @@ LGPD reference: <https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l1
 |    4.0   | 2026-10-15 | Really Improving the user logout process by removing the Logout.php page so it doesn't ask for a password |
 |    4.1   | 2026-10-16 | Commenting on Some Code and Fixing the Logout Function |
 |    4.2   | 2026-10-16 | Commenting on the Code |
+|    4.3   | 2026-10-17 | Fixing README |
+
 
 ## 5.0 Use of AI
 

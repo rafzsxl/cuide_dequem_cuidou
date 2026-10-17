@@ -81,7 +81,6 @@ Visitors can learn about the NGO, fundraising campaigns, partners, and contact i
 ├── auth/             # Account and user session management
 │   ├── sign_up.php
 │   ├── login.php
-│   ├── logout.php
 │   ├── profile.php
 │   ├── edit.php
 │   ├── delete.php
@@ -121,23 +120,26 @@ Visitors can learn about the NGO, fundraising campaigns, partners, and contact i
 ### Prerequisites
  
 - **PHP** with `PDO` and `pdo_pgsql` extensions enabled (verify with `php -m`).
-- **PostgreSQL** installed and running (or a Supabase cloud project).
+- **[PostgreSQL](#postgresql)** installed and running (or a [Supabase](#supabase) cloud project).
 - **Git**.
-### Step 1: Clone the repository
+- **Web Browser**.
+
+### PostgreSQL
+##### Step 1: Clone the repository
  
 ```bash
 git clone https://github.com/rafzsxl/cuide_dequem_cuidou.git
 cd cuide_dequem_cuidou
 ```
- 
-### Step 2: Create the database
+
+#### Step 2: Create the database
  
 Create a dedicated user for the application (do not use `postgres`) and a database owned by this user.
  
 To log into PostgreSQL:
  
 ```bash
-psql -U postgres
+sudo psql -U postgres
 ```
  
 To create the user and database:
@@ -145,10 +147,23 @@ To create the user and database:
 ```sql
 CREATE USER cdqc WITH PASSWORD 'cdqc123';
 CREATE DATABASE cdqc OWNER cdqc;
-\q
 ```
- 
-### Step 3: Create tables
+Verify that the database was created and belongs to the created user with:
+````bash
+\l
+```` 
+
+Exit the Postgres user:
+````bash
+\q
+```` 
+
+or simply type:
+````bash
+sudo psql -U postgres -c "CREATE USER cdqc WITH PASSWORD 'cdqc123'; CREATE DATABASE cdqc OWNER cdqc;"
+```` 
+
+#### Step 3: Create tables
  
 Execute the `database/tables.pgsql` script in the newly created database:
  
@@ -160,7 +175,7 @@ This script creates the `users`, `voluntarios`, `campanhas`, and `doacoes` table
  
 > Do not re-run this script on an existing database: it recreates tables from scratch and does not replace migrations.
  
-### Step 4: Configure the connection
+#### Step 4: Configure the connection
  
 The database connection (via PDO) is managed in `database/connect.php`, which defines four variables at the top of the file:
  
@@ -173,7 +188,7 @@ $pass   = "cdqc123";     // Database password
  
 Adjust these values to match your local environment. **Do not publish real passwords to the repository.** If using Supabase, set your project's connection details here.
  
-### Step 5: Start the application
+#### Step 5: Start the application
  
 In the root directory of the project, open your terminal and run:
  
@@ -185,21 +200,97 @@ Access `http://localhost:8000` in your web browser.
  
 > PHP's built-in web server is intended for development and evaluation purposes only, not for production.
  
----
- 
-## Create or Promote an Administrator
- 
-Public registration creates standard user accounts. There are two ways to get an admin account:
- 
-- **Demo Account:** `database/tables.pgsql` automatically inserts `adm@gmail.com` with the password `adm123`. Use this **only in development** environments and change the password or remove the account before deployment.
-- **Promote your own account:** Register an account via `sign_up.php`, connect to your database, and set the `admin` column to true:
-```sql
-UPDATE users SET admin = TRUE WHERE email = 'your_email@example.com';
-SELECT email, admin FROM users WHERE admin = TRUE;
+### Supabase
+#### Step 1: Clone the repository
+```bash
+git clone https://github.com/rafzsxl/cuide_dequem_cuidou.git
+cd cuide_dequem_cuidou
 ```
- 
-With an admin account logged in, the **View Users** and **View Donations** buttons will appear in the header, and **ADD**, **Edit**, and **Remove** buttons will be enabled on the campaigns page.
- 
+
+#### Step 2: Create the database
+1. Access the Supabase Dashboard
+2. Click on New Project
+3. Fill in the project name (e.g., cuide_dequem_cuidou), set a strong password for the database, and select the closest region.
+4. Wait for the creation and provisioning of the database.
+
+#### Step 3: Execute the table scripts
+1. In the sidebar of the Supabase panel, go to the SQL Editor tab (Icon >_).
+2. Click on New Query.
+3. Open the database/tables.pgsql file of the project in your local code editor and copy all of its content.
+4. Paste the content into the Supabase SQL editor and click the Run button (or press Ctrl + Enter / Cmd + Enter), or copy the code below:
+````sql
+CREATE TABLE users(
+    id SERIAL PRIMARY KEY,
+    email VARCHAR(255) UNIQUE,
+    password VARCHAR(255),
+    nome VARCHAR(255),
+    nascimento DATE,
+    ADMIN BOOLEAN);
+CREATE TABLE voluntarios(
+    id SERIAL PRIMARY KEY,
+    cpf VARCHAR(14),
+    telefone VARCHAR(20),
+    data_volun timestamp,
+    user_id INT,
+    CONSTRAINT fk_users FOREIGN KEY (user_id)
+    REFERENCES users(id));
+CREATE TABLE campanhas(
+    id SERIAL PRIMARY KEY, 
+    titulo VARCHAR(255),
+    descricao TEXT,
+    url_imagem VARCHAR(255),
+    data_criacao timestamp,
+    user_id INT,
+    CONSTRAINT fk_users FOREIGN KEY (user_id)
+    REFERENCES users(id));
+CREATE TABLE doacoes(
+    id SERIAL PRIMARY KEY,
+    valor DECIMAL,
+    data timestamp,
+    id_volun INT,
+    CONSTRAINT fk_voluntarios FOREIGN KEY (id_volun)
+    REFERENCES voluntarios(id));
+INSERT INTO users VALUES (0, 'adm@gmail.com', 'adm123', 'Administrador', '05/01/2010', TRUE);
+````
+5. Make sure the script executed successfully without errors by running one of the 4 queries below:
+````sql
+SELECT * FROM users;
+````
+````sql
+SELECT * FROM campanhas;
+````
+````sql
+SELECT * FROM voluntarios;
+````
+````sql
+SELECT * FROM doacoes;
+````
+#### Step 4: Obtain connection credentials
+1. In the sidebar, go to Project Settings (Gear icon) > Database.
+2. Look for the Connection Settings or Connection String section.
+3. In the URI or Parameters tab, you will find the required details to fill in the connection:
+    - Host: db.xxxx.supabase.co (or the address returned by the panel)
+    - Database Name: postgres
+    - User: postgres (or your direct connection user)
+    - Port: 5432 or 6543
+    - Password: The password you defined when creating the project on Supabase.
+
+#### Step 5: Configure the connection in PHP
+Open the database/connect.php file in the project root and update it with the information provided by Supabase:
+````php
+$host   = "your-db-host.supabase.co"; // Supabase Host
+$dbname = "postgres";               // Default Supabase database name
+$port = 5432;
+$user   = "postgres";               // Database user
+$pass   = "your_supabase_password"; // Password defined in Supabase
+````
+
+#### Step 6: Start the application
+At the root of the project, open your terminal and type:
+````php
+php -S localhost:8000
+````
+Access http://localhost:8000 in your web browser.
 ---
  
 ## Requirements Specification
@@ -339,6 +430,7 @@ Portuguese versions are also available (with the `_pt-br` suffix).
 |    4.0   | 2026-10-15 | Really Improving the user logout process by removing the Logout.php page so it doesn't ask for a password |
 |    4.1   | 2026-10-16 | Commenting on Some Code and Fixing the Logout Function |
 |    4.2   | 2026-10-16 | Commenting on the Code |
+|    4.3   | 2026-10-17 | Fixing README |
 
 ---
  
