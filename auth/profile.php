@@ -50,7 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
             <a href="/cuide_dequem_cuidou/donations/donate.php">
                 <button>Contribua</button>
             </a>
-        '<!--Mesma coisa do If do Admin, mas com id_voluntario que verifica se o usuário é ou não voluntário, caso seja o botão a seguir não aparece-->'
+        <!--Mesma coisa do If do Admin, mas com id_voluntario que verifica se o usuário é ou não voluntário, caso seja o botão a seguir não aparece-->
             <?php if (!id_volun($conexao, $_SESSION['id'])): ?>
                 <a href="/cuide_dequem_cuidou/volunteers/volunteer.php">
                     <button>Voluntariar-se</button>

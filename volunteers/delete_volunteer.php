@@ -24,6 +24,8 @@ require_once '../admin/verify_adm.php'; ?>
         <?php
         if ($_SERVER['REQUEST_METHOD'] == "POST") {
             apagar_volun($conexao, $_POST['id']);
+            header("Location: /cuide_dequem_cuidou/volunteers/view_volunteer.php");
+                exit();
         } ?>
     </main>
     <?php include '../includes/footer.php'; ?>

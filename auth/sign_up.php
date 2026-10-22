@@ -44,7 +44,7 @@ if (session_status() === PHP_SESSION_NONE) {
                 header("Location: /cuide_dequem_cuidou/index.php");
                 exit();
             } else {
-                echo "<p style='color: red;'>Erro ao iniciar a sessão automaticamente.</p>";
+                echo "<p style='color: red;'>Erro ao iniciar a sessão.</p>";
             }      
         }
         ?>

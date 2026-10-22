@@ -24,6 +24,8 @@ require_once 'verify_adm.php'; ?>
         <?php
         if ($_SERVER['REQUEST_METHOD'] == "POST") {
             apagar_camp($conexao, $_POST['id']);
+            header("Location: /cuide_dequem_cuidou/pages/campaigns.php");
+            exit();
         } ?>
     </main>
     <?php include '../includes/footer.php'; ?>

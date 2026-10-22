@@ -98,127 +98,127 @@
 
 **Descrição:** O sistema deve permitir que visitantes se cadastrem informando nome, e-mail, telefone, CPF e senha, através da página `sign_up.php` .
 **Prioridade:** Alta
-**Versão:** 1.0
-**Data:** 2026-09-24
+**Versão:** 4.3
+**Data:** 2026-10-17
 
 ### - RF002 - Login de Usuário
 
 **Descrição:** O sistema deve permitir que usuários cadastrados façam login informando e-mail e senha, através da página `login.php` . Usuários sem conta devem ser direcionados ao cadastro através de um link na própria página.
 **Prioridade:** Alta
-**Versão:** 1.0
-**Data:** 2026-09-24
+**Versão:** 4.3
+**Data:** 2026-10-17
 
 ### - RF003 - Logout de Usuário
 
 **Descrição:** O sistema deve permitir que o usuário encerre sua sessão. O usuário acessa o botão "Fazer Logout" na página `profile.php` , é direcionado à página `logout.php` e confirma a saída informando a senha da conta e clicando no botão "Sair".
 **Prioridade:** Alta
-**Versão:** 1.2
-**Data:** 2026-09-27
+**Versão:** 4.3
+**Data:** 2026-10-17
 
 ### - RF004 - Visualização de Perfil
 
 **Descrição:** O sistema deve exibir na página `profile.php` as informações do usuário logado, como e-mail cadastrado.
 **Prioridade:** Média
-**Versão:** 1.0
-**Data:** 2026-09-24
+**Versão:** 4.3
+**Data:** 2026-10-17
 
 ### - RF005 - Edição de Perfil
 
 **Descrição:** O sistema deve permitir que o usuário edite seus dados cadastrais (e-mail, CPF, senha e telefone) através da página `edit.php` .
 **Prioridade:** Alta
-**Versão:** 1.1
-**Data:** 2026-09-26
+**Versão:** 4.3
+**Data:** 2026-10-17
 
 ### - RF006 - Listagem de Campanhas
 
 **Descrição:** O sistema deve exibir na página `campaigns.php` a lista de campanhas ativas da CDQC, com título, descrição e imagem.
 **Prioridade:** Alta
-**Versão:** 1.0
-**Data:** 2026-09-24
+**Versão:** 4.3
+**Data:** 2026-10-17
 
 ### - RF007 - Criação de Campanha (ADM)
 
 **Descrição:** O sistema deve permitir que o Administrador crie uma nova campanha informando título, descrição e imagem (upload), através da página `create_campaign.php` , acessada pelo botão "ADICIONAR" na página `campaigns.php` , visível apenas quando `User == ADM` .
 **Prioridade:** Alta
-**Versão:** 1.2
-**Data:** 2026-09-27
+**Versão:** 4.3
+**Data:** 2026-10-17
 
 ### - RF008 - Edição de Campanha (ADM)
 
 **Descrição:** O sistema deve permitir que o Administrador edite os dados de uma campanha existente (título, descrição e imagem) através da página `update_campaign.php` , acessada pelo botão "Editar" na página `campaigns.php` .
 **Prioridade:** Alta
-**Versão:** 1.2
-**Data:** 2026-09-27
+**Versão:** 4.3
+**Data:** 2026-10-17
 
 ### - RF009 - Remoção de Campanha (ADM)
 
 **Descrição:** O sistema deve permitir que o Administrador remova uma campanha existente através da página `delete_campaign.php` , acessada pelo botão "Remover" na página `campaigns.php` , mediante confirmação com a senha da conta.
 **Prioridade:** Alta
-**Versão:** 1.2
-**Data:** 2026-09-27
+**Versão:** 4.3
+**Data:** 2026-10-17
 
 ### - RF010 - Envio de Doação (Teórico)
 
 **Descrição:** O sistema deve permitir que o usuário voluntário simule o envio de uma doação, informando o valor e confirmando com a senha da conta, através da página `donate.php` , sem integração real com sistema de pagamento.
 **Prioridade:** Alta
-**Versão:** 1.2
-**Data:** 2026-09-27
+**Versão:** 4.3
+**Data:** 2026-10-17
 
 ### - RF011 - Cadastro de Voluntário
 
 **Descrição:** O sistema deve permitir que o usuário se registre como voluntário, informando nome completo, data de nascimento e senha da conta, através da página `volunteer.php` .
 **Prioridade:** Alta
-**Versão:** 1.2
-**Data:** 2026-09-27
+**Versão:** 4.3
+**Data:** 2026-10-17
 
 ### - RF012 - Visualização de Transparência
 
 **Descrição:** O sistema deve exibir na página `transparency.php` o total arrecadado e um link para download do relatório de gastos e receitas em formato PDF.
 **Prioridade:** Alta
-**Versão:** 1.1
-**Data:** 2026-09-26
+**Versão:** 4.3
+**Data:** 2026-10-17
 
 ### - RF013 - Visualização Institucional (Quem Somos)
 
 **Descrição:** O sistema deve exibir na página `about.php` a missão, princípios e história da CDQC.
 **Prioridade:** Média
-**Versão:** 1.2
-**Data:** 2026-09-27
+**Versão:** 4.3
+**Data:** 2026-10-17
 
 ### - RF014 - Visualização de Parceiros
 
 **Descrição:** O sistema deve exibir na página `partners.php` um carrossel de imagens com projetos e instituições parceiras da CDQC.
 **Prioridade:** Baixa
-**Versão:** 1.1
-**Data:** 2026-09-26
+**Versão:** 4.3
+**Data:** 2026-10-17
 
 ### - RF015 - Página de Contato
 
 **Descrição:** O sistema deve exibir na página `contact.php` as informações de contato da CDQC (telefone, e-mail, Instagram e endereço do centro de acolhimento).
 **Prioridade:** Média
-**Versão:** 1.1
-**Data:** 2026-09-26
+**Versão:** 4.3
+**Data:** 2026-10-17
 
 ### - RF016 - Navegação por Menu Hambúrguer
 
 **Descrição:** O sistema deve exibir um menu hambúrguer responsivo, contendo os links: Início, Quem Somos, Campanhas, Transparência, Parceiros e Contatos.
 **Prioridade:** Média
-**Versão:** 1.2
-**Data:** 2026-09-27
+**Versão:** 4.3
+**Data:** 2026-10-17
 
 ### - RF017 - Visualização de Usuários (ADM)
 
 **Descrição:** O sistema deve permitir que o Administrador visualize a lista de usuários e voluntários cadastrados, através da página `view_users.php` , acessível pelo botão "Visualizar Usuários" no header quando `User == ADM` .
 **Prioridade:** Média
-**Versão:** 1.2
-**Data:** 2026-09-27
+**Versão:** 4.3
+**Data:** 2026-10-17
 
 ### - RF018 - Visualização de Doações (ADM)
 
 **Descrição:** O sistema deve permitir que o Administrador visualize o histórico de doações realizadas pelos voluntários, através da página `view_donations.php` , acessível pelo botão "Ver Doações" no header quando `User == ADM` .
 **Prioridade:** Média
-**Versão:** 1.2
-**Data:** 2026-09-27
+**Versão:** 4.3
+**Data:** 2026-10-17
 
 ---
 
@@ -230,78 +230,78 @@
 
 **Descrição:** Todo cadastro de usuário deve ser validado antes da liberação de acesso ao sistema (ex.: confirmação de e-mail).
 **Prioridade:** Alta
-**Versão:** 1.0
-**Data:** 2026-09-24
+**Versão:** 4.3
+**Data:** 2026-10-17
 
 ### - RN002 - Restrição de Ações Administrativas
 
 **Descrição:** Apenas usuários do tipo Administrador (ADM) podem criar, editar ou remover campanhas.
 **Prioridade:** Alta
-**Versão:** 1.0
-**Data:** 2026-09-24
+**Versão:** 4.3
+**Data:** 2026-10-17
 
 ### - RN003 - Doação Teórica sem Cobrança Real
 
 **Descrição:** O fluxo de doação não deve processar nenhuma cobrança financeira real, servindo apenas como demonstração funcional do sistema.
 **Prioridade:** Alta
-**Versão:** 1.0
-**Data:** 2026-09-24
+**Versão:** 4.3
+**Data:** 2026-10-17
 
 ### - RN004 - Sessão Única por Usuário
 
 **Descrição:** O sistema deve encerrar a sessão do usuário após logout, exigindo novo login para acessar áreas restritas (perfil, doação, voluntariado).
 **Prioridade:** Média
-**Versão:** 1.0
-**Data:** 2026-09-24
+**Versão:** 4.3
+**Data:** 2026-10-17
 
 ### - RN005 - Doação Restrita a Voluntários
 
 **Descrição:** O sistema deve permitir o envio de doações apenas para usuários logados que já estejam cadastrados como voluntários. Usuários não voluntários devem ser direcionados ao cadastro de voluntariado antes de doar.
 **Prioridade:** Alta
-**Versão:** 1.2
-**Data:** 2026-09-27
+**Versão:** 4.3
+**Data:** 2026-10-17
 
 ### - RN006 - Validação de Upload de Imagem
 
 **Descrição:** O sistema deve aceitar, no upload de imagens de campanhas, apenas arquivos dos tipos JPG, PNG ou WEBP, com tamanho máximo de 5MB.
 **Prioridade:** Alta
-**Versão:** 1.1
-**Data:** 2026-09-26
+**Versão:** 4.3
+**Data:** 2026-10-17
 
 ### - RN007 - Exibição Condicional de Voluntariado
 
 **Descrição:** O botão "Voluntariar-se" não deve ser exibido para usuários que já estejam cadastrados como voluntários.
 **Prioridade:** Média
-**Versão:** 1.1
-**Data:** 2026-09-26
+**Versão:** 4.3
+**Data:** 2026-10-17
 
 ### - RN008 - Redirecionamento de Visitante
 
 **Descrição:** Usuários não autenticados que tentarem doar ou se voluntariar devem ser redirecionados à página de login antes de prosseguir.
 **Prioridade:** Alta
-**Versão:** 1.1
-**Data:** 2026-09-26
+**Versão:** 4.3
+**Data:** 2026-10-17
 
 ### - RN009 - Restrição de Visualização Administrativa
 
 **Descrição:** Os botões "Visualizar Usuários" e "Ver Doações" só devem ser exibidos no header, e as páginas `view_users.php` e `view_donations.php` só devem ser acessíveis, quando `User == ADM` .
 **Prioridade:** Alta
-**Versão:** 1.2
-**Data:** 2026-09-27
+**Versão:** 4.3
+**Data:** 2026-10-17
 
 ### - RN010 - Exibição Condicional do Menu de Voluntariado
 
 **Descrição:** O acesso à página `volunteer.php` deve ser oferecido apenas para usuários logados que ainda não sejam voluntários ( `User = Logado && != Voluntário` ).
 **Prioridade:** Média
-**Versão:** 1.2
-**Data:** 2026-09-27
+**Versão:** 4.3
+**Data:** 2026-10-17
 
 ### - RN011 - Confirmação por Senha na Exclusão de Campanha
 
 **Descrição:** A exclusão de uma campanha deve exigir que o Administrador informe a senha da sua conta na página `delete_campaign.php` .
 **Prioridade:** Alta
-**Versão:** 1.2
-**Data:** 2026-09-27
+**Versão:** 4.3
+**Data:** 2026-10-17
 
 ---
 
@@ -313,36 +313,36 @@
 
 **Descrição:** O sistema deve seguir as diretrizes WCAG 2.1 nível AA, garantindo contraste adequado de texto considerando o público idoso.
 **Prioridade:** Alta
-**Versão:** 1.0
-**Data:** 2026-09-24
+**Versão:** 4.3
+**Data:** 2026-10-17
 
 ### - RNF002 - Tecnologia
 
 **Descrição:** O sistema deve ser desenvolvido em PHP, com persistência de dados em banco PostgreSQL.
 **Prioridade:** Alta
-**Versão:** 1.0
-**Data:** 2026-09-24
+**Versão:** 4.3
+**Data:** 2026-10-17
 
 ### - RNF003 - Segurança de Dados
 
 **Descrição:** As informações pessoais dos usuários devem ser armazenadas de forma segura, evitando exposição de dados sensíveis (senhas, e-mails, CPF).
 **Prioridade:** Alta
-**Versão:** 1.0
-**Data:** 2026-09-24
+**Versão:** 4.3
+**Data:** 2026-10-17
 
 ### - RNF004 - Usabilidade
 
 **Descrição:** A interface deve utilizar textos grandes, botões claramente identificáveis e navegação simplificada, considerando o público idoso como usuário final indireto.
 **Prioridade:** Alta
-**Versão:** 1.0
-**Data:** 2026-09-24
+**Versão:** 4.3
+**Data:** 2026-10-17
 
 ### - RNF005 - Conformidade com a LGPD
 
 **Descrição:** O sistema deve tratar dados pessoais sensíveis (CPF, data de nascimento) em conformidade com a Lei Geral de Proteção de Dados ([LGPD](https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm)), armazenando-os de forma segura e utilizando-os apenas para as finalidades do sistema.
 **Prioridade:** Alta
-**Versão:** 1.1
-**Data:** 2026-09-26
+**Versão:** 4.3
+**Data:** 2026-10-17
 
 ---
 
@@ -386,6 +386,8 @@
 |    4.1   | 2026-10-16 | Comentando um Pouco de Código e consertando a função de logout |
 |    4.2   | 2026-10-16 | Comentando o código |
 |    4.3   | 2026-10-17 | Arrumando README |
+|    4.4   | 2026-10-21 | Melhorando estilização, Corrigindo Versionamento de Rn s, Rnf s e de Rf s e adicionando dump do database |
+|    4.5   | 2026-10-21 | Corrigindo e Implementando Headers |
 
  
 

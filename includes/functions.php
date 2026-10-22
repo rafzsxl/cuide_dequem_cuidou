@@ -34,7 +34,6 @@ function criar_user($conexao, $email, $senha, $nome, $nascimento, $admin = false
         echo "Usuário Criado com Sucesso";
         //Caso de Errado ele mostrará o que ocorreu3
     } catch (PDOException $e) {
-        echo "Erro: " . $e->getMessage();
     }
 }
 
@@ -49,7 +48,6 @@ function login_user($conexao, $email)
 
         return $stmt->fetch(PDO::FETCH_ASSOC);
     } catch (PDOException $e) {
-        echo "ERRO: " . $e->getMessage();
     }
 }
 
@@ -78,7 +76,6 @@ function atualizar_user($conexao, $id, $email, $senha, $nome, $nascimento)
 
         $stmt->execute();
     } catch (PDOException $e) {
-        echo "Erro: " . $e->getMessage();
     }
 }
 
@@ -127,7 +124,6 @@ function delete_user($conexao, $senha)
     } catch (PDOException $e) {
         // Se ocorrer qualquer erro, desfaz todas as alterações
         $conexao->rollBack();
-        echo "Erro: " . $e->getMessage();
         return false;
     }
 }
@@ -164,7 +160,6 @@ function criar_volun($conexao, $cpf, $telefone, $senha)
 
         return true;
     } catch (PDOException $e) {
-        echo "Erro: " . $e->getMessage();
         return false;
     }
 }
@@ -194,7 +189,6 @@ function relatorio_volun($conexao)
             echo "Voluntário desde: {$data}<br><hr>";
         }
     } catch (PDOException $e) {
-        echo "Erro: " . $e->getMessage();
     }
 }
 
@@ -221,7 +215,6 @@ function apagar_volun($conexao, $id)
     } catch (PDOException $e) {
         // Se algo der errado, reverte as alterações
         $conexao->rollBack();
-        echo "ERRO: " . $e->getMessage();
     }
 }
 
@@ -271,7 +264,6 @@ function relatorio_doacoes($conexao)
             echo "<hr>";
         }
     } catch (PDOException $e) {
-        echo "Erro: " . $e->getMessage();
     }
 }
 
@@ -304,7 +296,6 @@ function doar($conexao, $valor, $senha)
 
         return true;
     } catch (PDOException $e) {
-        echo "Erro: " . $e->getMessage();
         return false;
     }
 }
@@ -323,7 +314,6 @@ function total_doacoes($conexao)
 
         echo "<strong>R$ {$total_formatado}</strong>";
     } catch (PDOException $e) {
-        echo "Erro: " . $e->getMessage();
     }
 }
 
@@ -347,7 +337,6 @@ function criar_camp($conexao, $titulo, $descricao, $url)
 
         return true;
     } catch (PDOException $e) {
-        echo "Erro: " . $e->getMessage();
         return false;
     }
 }
@@ -362,7 +351,6 @@ function apagar_camp($conexao, $id)
         $stmt->execute();
         echo "Campanha de ID = $id Removido com sucesso";
     } catch (PDOException $e) {
-        echo "ERRO: " . $e->getMessage();
     }
 }
 
@@ -385,10 +373,9 @@ function campanhas($conexao)
             echo "<h2>{$campanha['titulo']}</h2><br>";
             echo "{$campanha['descricao']}<br>";
             echo "<img src='{$campanha['url_imagem']}' alt='{$campanha['titulo']}' width='300'><br>";
-            echo "Iniciada em: {$data}<br><hr>";
+            echo "Realizada em: {$data}<br><hr>";
         }
     } catch (PDOException $e) {
-        echo "Erro: " . $e->getMessage();
     }
 }
 
@@ -407,7 +394,6 @@ function atualizar_camp($conexao, $id_campanha, $titulo, $descricao, $url)
         $stmt->execute();
         return true;
     } catch (PDOException $e) {
-        echo "Erro: " . $e->getMessage();
         return false;
     }
 }

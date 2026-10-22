@@ -170,6 +170,12 @@ Execute the `database/tables.pgsql` script in the newly created database:
 ```bash
 psql -h 127.0.0.1 -U cdqc -d cdqc -f database/tables.pgsql
 ```
+or
+
+Restore the database from the backup located in the root folder `(cuide_dequem_cuidou)`
+````bash
+psql -U cdqc -d cdqc -f cdqc.sql
+````
  
 This script creates the `users`, `voluntarios`, `campanhas`, and `doacoes` tables, and inserts a demo administrator account (email: `adm@gmail.com`, password: `adm123`).
  
@@ -290,7 +296,9 @@ At the root of the project, open your terminal and type:
 ````php
 php -S localhost:8000
 ````
+
 Access http://localhost:8000 in your web browser.
+
 ---
  
 ## Requirements Specification
@@ -431,6 +439,8 @@ Portuguese versions are also available (with the `_pt-br` suffix).
 |    4.1   | 2026-10-16 | Commenting on Some Code and Fixing the Logout Function |
 |    4.2   | 2026-10-16 | Commenting on the Code |
 |    4.3   | 2026-10-17 | Fixing README |
+|    4.4   | 2026-10-21 | Improving styling, correcting the versioning of Rn s, Rnf s, and Rf s, and adding a database dump |
+|    4.5   | 2026-10-21 | Correcting and Implementing Headers  |
 
 ---
  

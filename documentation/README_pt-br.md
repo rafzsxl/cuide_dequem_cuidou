@@ -85,9 +85,10 @@ Visitantes podem conhecer a ONG, as campanhas de arrecadação, os parceiros e a
 │   ├── edit.php
 │   ├── delete.php
 │   └── verify_user.php
-├── database/         # Script SQL das tabelas e conexão com o banco
-│   ├── tables.pgsql
+├── database/         # Script SQL das tabelas, dump e conexão com o banco
+│   └── cdqc.sql
 │   └── connect.php
+│   ├── tables.pgsql
 ├── volunteers/       # Voluntariado
 │   ├── volunteer.php
 │   ├── delete_volunteer.php
@@ -126,7 +127,7 @@ Visitantes podem conhecer a ONG, as campanhas de arrecadação, os parceiros e a
 
 ### PostgreSQL
 
-### Passo 1: Clonar o repositório
+#### Passo 1: Clonar o repositório
 
 ```bash
 git clone https://github.com/rafzsxl/cuide_dequem_cuidou.git
@@ -138,7 +139,7 @@ Crie um usuário próprio para a aplicação (não use o usuário `postgres`) e 
 Para acessar o PostgreSQL:
  
 ```bash
-suso psql -U postgres
+sudo psql -U postgres
 ```
  
 Para criar o usuário e o banco:
@@ -170,8 +171,13 @@ psql -h 127.0.0.1 -U cdqc -d cdqc -f database/tables.pgsql
 ```
  
 O script cria as tabelas `users`, `voluntarios`, `campanhas` e `doacoes` e insere uma conta de administrador de demonstração (e-mail `adm@gmail.com`, senha `adm123`).
- 
-> Não reexecute o script em um banco existente: ele cria as tabelas do zero e não substitui uma migração.
+
+ou
+
+Restitua o banco de Dados a Partir do Backup dentro da pasta da raiz `(cuide_dequem_cuidou)`
+````bash
+psql -U cdqc -d cdqc -f cdqc.sql
+````
  
 #### Passo 4: Configurar a conexão
  
@@ -525,6 +531,8 @@ Existem também as versões em inglês (mesmos nomes, sem o sufixo `_pt-br`).
 |    4.1   | 2026-10-16 | Comentando um Pouco de Código e consertando a função de logout |
 |    4.2   | 2026-10-16 | Comentando o código |
 |    4.3   | 2026-10-17 | Arrumando README |
+|    4.4   | 2026-10-21 | Melhorando estilização, Corrigindo Versionamento de Rn s, Rnf s e de Rf s e adicionando dump do database |
+|    4.5   | 2026-10-21 | Corrigindo e Implementando Headers  |
  
 ---
  
