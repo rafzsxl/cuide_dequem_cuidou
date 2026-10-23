@@ -174,7 +174,7 @@ or
 
 Restore the database from the backup located in the root folder `(cuide_dequem_cuidou)`
 ````bash
-psql -U cdqc -d cdqc -f cdqc.sql
+psql -U cdqc -d cdqc -f database/cdqc.sql
 ````
  
 This script creates the `users`, `voluntarios`, `campanhas`, and `doacoes` tables, and inserts a demo administrator account (email: `adm@gmail.com`, password: `adm123`).

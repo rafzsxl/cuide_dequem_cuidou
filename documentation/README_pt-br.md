@@ -176,7 +176,7 @@ ou
 
 Restitua o banco de Dados a Partir do Backup dentro da pasta da raiz `(cuide_dequem_cuidou)`
 ````bash
-psql -U cdqc -d cdqc -f cdqc.sql
+psql -U cdqc -d cdqc -f database/cdqc.sql
 ````
  
 #### Passo 4: Configurar a conexão
