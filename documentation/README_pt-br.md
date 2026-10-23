@@ -534,6 +534,8 @@ Existem também as versões em inglês (mesmos nomes, sem o sufixo `_pt-br`).
 |    4.3   | 2026-10-17 | Arrumando README |
 |    4.4   | 2026-10-21 | Melhorando estilização, Corrigindo Versionamento de Rn s, Rnf s e de Rf s e adicionando dump do database |
 |    4.5   | 2026-10-21 | Corrigindo e Implementando Headers  |
+|    4.6   | 2026-10-23 | Corrigindo Comando do README  |
+|    4.7   | 2026-10-23 | Adicioando Parceiros e Melhorando Estilização |
  
 ---
  
@@ -551,6 +553,7 @@ Existem também as versões em inglês (mesmos nomes, sem o sufixo `_pt-br`).
 | Codex | 2026-10-11 | Estilização da CDQC |
 | Gemini | 2026-10-11 | Gerar imagens para o index |
 | Claude | 2026-10-11 | Ajuda com testes usando o Supabase como servidor |
+| CODEX | 2026-10-23 | Estilização da página partners |
 
 
 ```mermaid

@@ -391,6 +391,8 @@ LGPD reference: <https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l1
 |    4.3   | 2026-10-17 | Fixing README |
 |    4.4   | 2026-10-21 | Improving styling, correcting the versioning of Rn s, Rnf s, and Rf s, and adding a database dump |
 |    4.5   | 2026-10-21 | Correcting and Implementing Headers  |
+|    4.6   | 2026-10-23 | Correcting a command in the README  |
+|    4.7   | 2026-10-23 | Adding Partners and Improving Styling |
 
 
 ## 5.0 Use of AI
@@ -410,6 +412,7 @@ LGPD reference: <https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l1
 | GEMINI | 2026-10-11 |  Generating images for index |
 | CLAUDE | 2026-10-11 |  Help with testing using Supabase as a server |
 | CODEX | 2026-10-13 | Styling Improvements |
+| CODEX | 2026-10-23 | Styling of the “partners” page |
 
 ## 6.0 Prototyping
 <img src="../images\proto_excalidraw.png" alt="Prototyping Image">

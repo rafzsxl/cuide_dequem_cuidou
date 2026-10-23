@@ -388,6 +388,8 @@
 |    4.3   | 2026-10-17 | Arrumando README |
 |    4.4   | 2026-10-21 | Melhorando estilização, Corrigindo Versionamento de Rn s, Rnf s e de Rf s e adicionando dump do database |
 |    4.5   | 2026-10-21 | Corrigindo e Implementando Headers |
+|    4.6   | 2026-10-23 | Corrigindo Comando do README  |
+|    4.7   | 2026-10-23 | Adicioando Parceiros e Melhorando Estilização |
 
  
 
@@ -409,6 +411,7 @@
 | GEMINI | 2026-10-11 | Gerar imagens para o index |
 | CLAUDE | 2026-10-11 | Ajuda com testes utilizando o Supabase como servidor |
 | CODEX | 2026-10-13 | Melhoria da Estilização |
+| CODEX | 2026-10-23 | Estilização da página partners |
 
 ## 6.0 Prototipagem
 <img src="../images/proto_excalidraw.png" alt="Imagem da Prototipagem">

@@ -354,9 +354,17 @@ th { color: var(--verde-escuro); background: var(--superficie-suave); }
 .partners::before { left: 0; background: linear-gradient(90deg, var(--superficie), transparent); }
 .partners::after { right: 0; background: linear-gradient(270deg, var(--superficie), transparent); }
 
-.partner-logos { display: inline-flex; align-items: center; animation: slide 24s linear infinite; }
-.partners:hover .partner-logos, .partners:focus-within .partner-logos { animation-play-state: paused; }
-.partner-logos a { display: inline-flex; align-items: center; justify-content: center; margin: 0 3rem; }
+.partner-logos {
+    display: flex;
+    width: max-content;
+    flex: 0 0 auto;
+    align-items: center;
+    animation: slide 36s linear infinite;
+    will-change: transform;
+}
+.partners:hover .partner-logos,
+.partners:focus-within .partner-logos { animation-play-state: paused; }
+.partner-logos a { display: inline-flex; align-items: center; justify-content: center; flex: 0 0 auto; margin: 0 3rem; }
 .partner-logos img { width: auto; max-width: 180px; height: 64px; object-fit: contain; }
 
 /* ---------- Rodapé e movimento reduzido ---------- */
@@ -624,19 +632,21 @@ body:has(> section#Principios) > section:nth-of-type(3) h4 {
 
 /* Parceiros: amplia a área do carrossel e padroniza a presença visual dos logotipos. */
 body:has(> .partners) > h1 {
-    margin-bottom: 1.5rem;
+    width: min(1500px, calc(100% - 4rem));
+    margin: 2.75rem auto 2rem;
+    text-align: center;
 }
 
 body:has(> .partners) > .partners {
-    width: min(var(--largura-conteudo), calc(100% - 3rem));
+    width: min(1500px, calc(100% - 4rem));
     margin: 0 auto;
 }
 
 .partners {
-    min-height: 190px;
+    min-height: 280px;
     display: flex;
     align-items: center;
-    padding: 2.25rem 0;
+    padding: 3rem 0;
     background: linear-gradient(135deg, var(--superficie), #f1f6f3);
     border: 1px solid var(--borda);
     border-radius: var(--raio);
@@ -647,21 +657,38 @@ body:has(> .partners) > .partners {
 .partners::after { background: linear-gradient(270deg, #f1f6f3, transparent); }
 
 .partner-logos a {
-    width: 250px;
-    height: 112px;
-    margin: 0 1.5rem;
-    padding: 1rem 1.25rem;
-    background: var(--superficie);
+    width: 290px;
+    height: 164px;
+    margin: 0 1.25rem;
+    padding: 1.25rem 1.75rem;
     border: 1px solid var(--borda);
-    border-radius: 14px;
-    box-shadow: 0 4px 14px rgba(27, 66, 46, 0.08);
-    transition: transform 160ms ease, box-shadow 160ms ease;
+    border-radius: 18px;
+    box-shadow: 0 8px 20px rgba(27, 66, 46, 0.1);
+    transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
 }
+
+/* Cores distintas ajudam a separar visualmente cada marca, inclusive logos claras. */
+.partner-logos a:nth-child(9n + 1) { background: #e3f0fa; }
+.partner-logos a:nth-child(9n + 2) {
+    background: linear-gradient(145deg, #40594b, #30463a);
+    border-color: #6f8878;
+}
+.partner-logos a:nth-child(9n + 3) { background: #f3eafa; }
+.partner-logos a:nth-child(9n + 4) { background: #fff0e3; }
+.partner-logos a:nth-child(9n + 5) { background: #e2f3f1; }
+.partner-logos a:nth-child(9n + 6) { background: #fff4d9; }
+.partner-logos a:nth-child(9n + 7) { background: #fce8eb; }
+.partner-logos a:nth-child(9n + 8) { background: #e9ecfb; }
+.partner-logos a:nth-child(9n) { background: #edf1e2; }
 
 .partner-logos a:hover,
 .partner-logos a:focus-visible {
-    transform: translateY(-3px);
-    box-shadow: var(--sombra);
+    z-index: 2;
+    border-color: #719b83;
+    outline: 3px solid rgba(23, 107, 75, 0.22);
+    outline-offset: 3px;
+    transform: translateY(-4px);
+    box-shadow: 0 10px 24px rgba(27, 66, 46, 0.16);
 }
 
 .partner-logos img {
@@ -669,13 +696,13 @@ body:has(> .partners) > .partners {
     width: auto;
     max-width: 100%;
     height: auto;
-    max-height: 84px;
+    max-height: 124px;
     object-fit: contain;
 }
 
 .partner-logos a:nth-child(2) img,
 .partner-logos a:nth-child(4) img {
-    max-height: 52px;
+    max-height: 68px;
 }
 
 @media (max-width: 700px) {
@@ -695,13 +722,31 @@ body:has(> .partners) > .partners {
     }
 
     .partner-logos a {
-        width: 205px;
-        height: 100px;
-        margin: 0 0.75rem;
+        width: 245px;
+        height: 138px;
+        margin: 0 0.65rem;
     }
 }
 
 @media (prefers-reduced-motion: reduce) {
+    .partners {
+        justify-content: flex-start;
+        overflow-x: auto;
+        overscroll-behavior-inline: contain;
+        scrollbar-color: #719b83 #e8f0eb;
+        scrollbar-width: thin;
+    }
+
+    .partners::before,
+    .partners::after { content: none; }
+
+    .partner-logos {
+        width: max-content;
+        animation: none;
+        will-change: auto;
+    }
+
+    .partner-logos a:nth-child(n + 10) { display: none; }
     .partner-logos a { transition: none; }
 }
 
