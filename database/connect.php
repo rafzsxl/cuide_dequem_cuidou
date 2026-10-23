@@ -1,8 +1,9 @@
 <?php
-$host = "192.168.10.67";
-$dbname = "cuide_dequem_cuidou";
+$host = "127.0.0.1";
+$dbname = "cdqc";
 $user = "cdqc";
-$pass = "adm123";
+$pass = "cdqc123";
+$port = "5432";
 
 try {
     //$conexao faz a ponte ente o PHP) e o banco de dados PostgreSQL.

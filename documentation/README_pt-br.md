@@ -188,6 +188,7 @@ $host   = "127.0.0.1";   // endereço do servidor PostgreSQL
 $dbname = "cdqc";        // nome do banco
 $user   = "cdqc";        // usuário do banco
 $pass   = "cdqc123";     // senha do usuário
+$port = "5432";         // Porta do Banco
 ```
  
 Ajuste esses valores para o seu ambiente. **Não publique senhas reais no repositório.** Se estiver usando o Supabase, use os dados de conexão do seu projeto.

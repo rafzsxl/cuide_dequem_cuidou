@@ -190,6 +190,7 @@ $host   = "127.0.0.1";   // PostgreSQL server address
 $dbname = "cdqc";        // Database name
 $user   = "cdqc";        // Database username
 $pass   = "cdqc123";     // Database password
+$port = "5432";         // Database Port
 ```
  
 Adjust these values to match your local environment. **Do not publish real passwords to the repository.** If using Supabase, set your project's connection details here.
