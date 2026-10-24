@@ -443,7 +443,7 @@ Portuguese versions are also available (with the `_pt-br` suffix).
 |    4.4   | 2026-10-21 | Improving styling, correcting the versioning of Rn s, Rnf s, and Rf s, and adding a database dump |
 |    4.5   | 2026-10-21 | Correcting and Implementing Headers  |
 |    4.6   | 2026-10-23 | Correcting a command in the README  |
-|    4.6   | 2026-10-23 | Adding Partners and Improving Styling |
+|    4.7   | 2026-10-23 | Adding Partners and Improving Styling |
 
 ---
  
@@ -465,33 +465,33 @@ Portuguese versions are also available (with the `_pt-br` suffix).
 
 ```mermaid
 graph TD
- %% Project Root
-    Root[“Home (index.php)”]
+    %% Project Root
+    Root["Home (index.php)"]
 
     %% Public Pages
-    Root --> Pages[“Public Pages”]
-    Pages --> About[“About Us (about.php)”]
-    Pages --> Campaigns[“Campaigns (campaigns.php)”]
-    Pages --> Contact[“Contact Us (contact.php)”]
+    Root --> Pages["Public Pages"]
+    Pages --> About["About Us (about.php)"]
+    Pages --> Campaigns["Campaigns (campaigns.php)"]
+    Pages --> Contact["Contact Us (contact.php)"]
 
     %% Authentication Section
-    Root --> Auth[“Authentication and Profile”]
-    Auth --> Login[“Log In (login.php)”]
-    Auth --> SignUp[“Sign Up (sign_up.php)”]
-    Auth --> Profile[“Your Account (profile.php)”]
+    Root --> Auth["Authentication and Profile"]
+    Auth --> Login["Log In (login.php)"]
+    Auth --> SignUp["Sign Up (sign_up.php)"]
+    Auth --> Profile["Your Account (profile.php)"]
 
-    Profile --> Edit[“Edit Information (edit.php)”]
-    Profile --> Logout[“Log Out (logout.php)”]
-    Profile --> Delete[“Delete Account (delete.php)”]
+    Profile --> Edit["Edit Information (edit.php)"]
+    Profile --> Logout["Log Out (logout.php)"]
+    Profile --> Delete["Delete Account (delete.php)"]
 
     %% Donations Section
-    Root --> Donations[“Donations”]
-    Donations --> Donate[“Make a Donation (donate.php)”]
-    Donations --> ViewDonations[“Donation Report (view_donations.php) [Admin]”]
+    Root --> Donations["Donations"]
+    Donations --> Donate["Make a Donation (donate.php)"]
+    Donations --> ViewDonations["Donation Report (view_donations.php) [Admin]"]
 
     %% Campaign Administration Section
-    Campaigns --> AdminCheck{“Are you an administrator?”}
-    AdminCheck -- Yes --> AdminCreate[“Create Campaign (create_campaign.php)”]
-    AdminCheck -- Yes --> AdminUpdate[“Edit Campaign (update_campaign.php)”]
-    AdminCheck -- Yes --> AdminDelete[“Delete Campaign (delete_campaign.php)”]
+    Campaigns --> AdminCheck{"Are you an administrator?"}
+    AdminCheck -- Yes --> AdminCreate["Create Campaign (create_campaign.php)"]
+    AdminCheck -- Yes --> AdminUpdate["Edit Campaign (update_campaign.php)"]
+    AdminCheck -- Yes --> AdminDelete["Delete Campaign (delete_campaign.php)"]
 ```
