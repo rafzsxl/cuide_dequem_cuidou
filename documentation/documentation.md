@@ -393,6 +393,7 @@ LGPD reference: <https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l1
 |    4.5   | 2026-10-21 | Correcting and Implementing Headers  |
 |    4.6   | 2026-10-23 | Correcting a command in the README  |
 |    4.7   | 2026-10-23 | Adding Partners and Improving Styling |
+|    4.8   | 2026-10-27 | Re-adding Catch to all functions and fixing the donate function |
 
 
 ## 5.0 Use of AI

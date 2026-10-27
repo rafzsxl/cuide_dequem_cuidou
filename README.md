@@ -444,6 +444,7 @@ Portuguese versions are also available (with the `_pt-br` suffix).
 |    4.5   | 2026-10-21 | Correcting and Implementing Headers  |
 |    4.6   | 2026-10-23 | Correcting a command in the README  |
 |    4.7   | 2026-10-23 | Adding Partners and Improving Styling |
+|    4.8   | 2026-10-27 | Re-adding Catch to all functions and fixing the donate function |
 
 ---
  

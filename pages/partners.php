@@ -31,7 +31,7 @@
             <a href="https://github.com/nicolas-damada/scene-band_hub.git" target="_blank">
                 <img src="/cuide_dequem_cuidou/images/partners/scena.png" alt="Logo SCENA">
             </a>
-            <a href="">
+            <a href="https://github.com/rafaelgazola/projeto_cantina.git" target="_blank">
                 <img src="/cuide_dequem_cuidou/images/partners/sr.leao.png" alt="Logo Sr. Leão" width="20%">
             </a>
             <a href="https://github.com/AlefAlves22/stockhub" target="_blank">
@@ -60,7 +60,7 @@
             <a href="https://github.com/nicolas-damada/scene-band_hub.git" target="_blank">
                 <img src="/cuide_dequem_cuidou/images/partners/scena.png" alt="Logo SCENA">
             </a>
-            <a href="">
+            <a href="https://github.com/rafaelgazola/projeto_cantina.git" target="_blank">
                 <img src="/cuide_dequem_cuidou/images/partners/sr.leao.png" alt="Logo Sr. Leão" width="20%">
             </a>
             <a href="https://github.com/AlefAlves22/stockhub" target="_blank">

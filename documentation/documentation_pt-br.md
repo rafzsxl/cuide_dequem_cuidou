@@ -390,6 +390,7 @@
 |    4.5   | 2026-10-21 | Corrigindo e Implementando Headers |
 |    4.6   | 2026-10-23 | Corrigindo Comando do README  |
 |    4.7   | 2026-10-23 | Adicioando Parceiros e Melhorando Estilização |
+|    4.8   | 2026-10-27 | Adicionando Catch em todas as funções novamente e corrigindo função de doar |
 
  
 
